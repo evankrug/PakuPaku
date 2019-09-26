@@ -1,0 +1,11 @@
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.deps.json
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.runtimeconfig.json
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.runtimeconfig.dev.json
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.dll
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.pdb
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.csprojResolveAssemblyReference.cache
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.csproj.CoreCompileInputs.cache
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.AssemblyInfoInputs.cache
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.AssemblyInfo.cs
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.dll
+J:\Fall2019\Maintenance & Reengineering\firebreathingrubberduckies\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.pdb
