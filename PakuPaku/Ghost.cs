@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace PakuPaku
 {
+    public enum Ghosts
+    {
+        stinky, //red
+        kinky, //pink
+        hinky, //blue
+        blaine  //yellow
+
+}
     class Ghost
     {
-        private String name;
-        public Ghost(String name)
+        public Ghost(Ghosts ghostname)
         {
-            this.name = name;
-            Console.WriteLine(name + " has spawned. Beware!");
+            Console.WriteLine(ghostname.ToString() + " has spawned. Beware!");
         }
+
+        
+
+       
     }
 }

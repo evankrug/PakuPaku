@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PakuPaku", "PakuPaku\PakuPaku.csproj", "{C26818C4-C274-41F0-8F66-B8AFD2515A86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PakuPaku", "PakuPaku\PakuPaku.csproj", "{C26818C4-C274-41F0-8F66-B8AFD2515A86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8A4BC7C6-C1AA-4B19-9183-547C9DF8486A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
