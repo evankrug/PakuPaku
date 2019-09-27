@@ -206,7 +206,7 @@ type
 		data:string[14];
 	end;
 
-	pTextLineLong=^tTextLineLong;
+	pTextLineLong=^tTextLineLong;   /* END OF DIAGRAM DOCUMENTATION PROGRESS */
 	tTextLineLong=record
 		x,y:byte;
 		center:boolean;
