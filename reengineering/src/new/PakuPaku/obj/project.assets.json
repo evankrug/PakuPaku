@@ -664,23 +664,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\yangz\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\luedtkemi\\.nuget\\packages\\": {},
+>>>>>>> adb7546123f3afa209cec00c4a20cc2e44463e38
     "C:\\PROGRAM FILES\\DOTNET\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "J:\\CSSE\\se\\se3860\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\PakuPaku.csproj",
       "projectName": "PakuPaku",
       "projectPath": "J:\\CSSE\\se\\se3860\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\PakuPaku.csproj",
       "packagesPath": "C:\\Users\\yangz\\.nuget\\packages\\",
       "outputPath": "J:\\CSSE\\se\\se3860\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\obj\\",
+=======
+      "projectUniqueName": "J:\\FBRD\\reengineering\\src\\new\\PakuPaku\\PakuPaku.csproj",
+      "projectName": "PakuPaku",
+      "projectPath": "J:\\FBRD\\reengineering\\src\\new\\PakuPaku\\PakuPaku.csproj",
+      "packagesPath": "C:\\Users\\luedtkemi\\.nuget\\packages\\",
+      "outputPath": "J:\\FBRD\\reengineering\\src\\new\\PakuPaku\\obj\\",
+>>>>>>> adb7546123f3afa209cec00c4a20cc2e44463e38
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\PROGRAM FILES\\DOTNET\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\yangz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\luedtkemi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> adb7546123f3afa209cec00c4a20cc2e44463e38
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

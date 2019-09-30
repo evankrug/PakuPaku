@@ -1,0 +1,11 @@
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.deps.json
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.runtimeconfig.json
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.runtimeconfig.dev.json
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.dll
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\bin\Debug\netcoreapp2.0\PakuPaku.pdb
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.csprojResolveAssemblyReference.cache
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.csproj.CoreCompileInputs.cache
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.AssemblyInfoInputs.cache
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.AssemblyInfo.cs
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.dll
+J:\CSSE\se\se3860\firebreathingrubberduckies\reengineering\src\new\PakuPaku\obj\Debug\netcoreapp2.0\PakuPaku.pdb

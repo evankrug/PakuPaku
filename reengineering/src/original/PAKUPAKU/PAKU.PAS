@@ -206,7 +206,7 @@ type
 		data:string[14];
 	end;
 
-	pTextLineLong=^tTextLineLong;   /* END OF DIAGRAM DOCUMENTATION PROGRESS */
+	pTextLineLong=^tTextLineLong;   
 	tTextLineLong=record
 		x,y:byte;
 		center:boolean;
@@ -253,14 +253,14 @@ const
 	fieldWidth=28;
 	fieldEndX=fieldWidth*3+fieldOffsetX;
 
-	ghostData:array[0..3] of tGhostData=(
+	ghostData:array[0..3] of tGhostData=( 
 		(nickname:'STINKY'; behavior:'HOUND'; 	color:4; cX:40; cY:32; d:move_left; hX:78; hY:1),
 		(nickname:'KINKY';	behavior:'HUNTER';	color:5; cX:41; cY:39; d:move_up; 	hX:1;  hY:1),
 		(nickname:'HINKY';	behavior:'SCHIZO';	color:3; cX:34; cY:39; d:move_down; hX:78; hY:85),
 		(nickname:'BLAINE'; behavior:'ELUSIVE'; color:6; cX:47; cY:39; d:move_up; 	hX:1;  hY:85)
 	);
 
-	levelData:array[1..21] of tLevelData=(
+	levelData:array[1..21] of tLevelData=( 
 		(symbol:$38; points:100;	rate:6; frightTime:1320; flashes:600),
 		(symbol:$39; points:300;	rate:5; frightTime:1200; flashes:600),
 		(symbol:$3A; points:500;	rate:5; frightTime:1080; flashes:600),
@@ -843,7 +843,7 @@ begin
 	killVoices;
 	midiSiren:=0;
 end;
-
+/* Current end on class Diagram */
 procedure checkGlobalKeys(ch:char; fromMenu:boolean);
 begin
 	case ch of
