@@ -664,23 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kruge\\.nuget\\packages\\": {},
+    "C:\\Users\\yangz\\.nuget\\packages\\": {},
     "C:\\PROGRAM FILES\\DOTNET\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "J:\\Fall2019\\Maintenance & Reengineering\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\PakuPaku.csproj",
+      "projectUniqueName": "J:\\CSSE\\se\\se3860\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\PakuPaku.csproj",
       "projectName": "PakuPaku",
-      "projectPath": "J:\\Fall2019\\Maintenance & Reengineering\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\PakuPaku.csproj",
-      "packagesPath": "C:\\Users\\kruge\\.nuget\\packages\\",
-      "outputPath": "J:\\Fall2019\\Maintenance & Reengineering\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\obj\\",
+      "projectPath": "J:\\CSSE\\se\\se3860\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\PakuPaku.csproj",
+      "packagesPath": "C:\\Users\\yangz\\.nuget\\packages\\",
+      "outputPath": "J:\\CSSE\\se\\se3860\\firebreathingrubberduckies\\reengineering\\src\\new\\PakuPaku\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\PROGRAM FILES\\DOTNET\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\kruge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yangz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
