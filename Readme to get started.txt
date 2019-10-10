@@ -1,1 +1,0 @@
-use unity to create a project. delete everything inside. copy the project content over and work on it. copy back when done. then commit.

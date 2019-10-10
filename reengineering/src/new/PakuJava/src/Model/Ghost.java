@@ -12,28 +12,22 @@ package Model;
 
 
 
-public class Ghost 
+public class Ghost extends movingGameObect
 {
     public enum Ghosts{
-        stinky, //red
-        kinky, //pink
-        hinky, //blue
-        blaine;  //yellow
+        stinky("stinky"), //red
+        kinky("kinky"), //pink
+        hinky("hinky"), //blue
+        blaine("blaine");  //yellow
 
-        private String ToString() 
-        {
-            switch (this) {
-		case stinky:
-			return "stinky";
-		case kinky:
-			return "kinky";
-		case hinky:
-			return "hinky";
-		case blaine:
-			return "blaine";
-		default:
-			return "invalid ghost";
-		}
+        private String name;
+
+        Ghosts(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
         }
     }
     
