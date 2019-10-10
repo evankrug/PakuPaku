@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="PakuPaku_WAR">
+    <output-path>$PROJECT_DIR$/out/artifacts/PakuPaku_WAR</output-path>
+    <root id="archive" name="PakuPaku_WAR.war" />
+  </artifact>
+</component>

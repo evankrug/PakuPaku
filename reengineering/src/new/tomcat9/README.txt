@@ -11,17 +11,17 @@ SETUP TOMCAT 9.0.26 IN INTELIJ IDEA ON LAB COMPUTERS   !! RECOMMENDED !!
     + Set the 'Tomcat Home' field to be reengineering\src\new\tomcat9
     + Make sure the libraries section has 'jsp-api.jar' and 'servlet-api.jar'
     
-    + Go to File > Project Structure > Project. Make sure '11' is selected under 'Project SDK'
-    + Go to > Modules. Select PakuPaku. Make sure Module SDK is '11'. If there is an existing Tomcat instance that is red, remove it.
+    + Go to File > Project Structure > Project. Make sure '1.8' is selected under 'Project SDK'
+    + Go to > Modules. Select PakuPaku. Make sure Module SDK is '1.8'. If there is an existing Tomcat instance that is red, remove it.
     + Click '+' > 'Jar or Directories' and in the popup select apache-tomcat-9.0.26-windows-x64.zip and click 'OK'
     + Click 'OK' at the bottom of the popup windows
 
 
     + Click 'Add Configuration' on the top bar, next to the green build hammer
     + Click ' + ', select Tomcat Server > Local from the popup
-    + Rename the instance to PakuPaku
+    + Rename the instance to 'PakuPaku'
     + Check that HTTP port is 8080.
-    + Set 'On Update action' to Redeploy and uncheck Show dialog
+    + Set 'On Update action' to 'Update Resources' and uncheck the 'Show dialog' box
     + Go to the 'Deployment' tab. Click ' + ' and select artifact from the dropdown menu
     + Select PakuPaku_WAR_Exploded. Set 'Application context' to /pakupaku
     + Click 'OK'
