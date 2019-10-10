@@ -1,2 +1,11 @@
 /reengineering/src/new/Paku/nbproject/private/
 /reengineering/src/new/Paku/build/
+/reengineering/src/new/PakuJava/out/
+/reengineering/src/new/PakuJava/build/
+/reengineering/src/new/Pakujava/nbproject/private/
+/reengineering/src/new/tomcat9/apache-tomcat-9.0.26/webapps/
+/reengineering/src/new/tomcat9/apache-tomcat-9.0.26/logs/
+/reengineering/src/new/tomcat9/apache-tomcat-9.0.26/temp/
+/reengineering/src/new/tomcat9/apache-tomcat-9.0.26/BUILDING.txt
+/reengineering/src/new/tomcat9/apache-tomcat-9.0.26/RUNNING.txt
+*.vpp.bak_*
