@@ -1,0 +1,49 @@
+{
+  "Makeup": [
+    {
+      "RowNum": 1,
+      "Service": "Makeup Application",
+      "Price": 30,
+      "Time": 15
+    },
+    {
+      "RowNum": 2,
+      "Service": "Airbrush Makeup",
+      "Price": 40,
+      "Time": 30
+    },
+    {
+      "RowNum": 3,
+      "Service": "Full Makeup",
+      "Price": 50,
+      "Time": 45
+    },
+    {
+      "RowNum": 4,
+      "Service": "Makeup Lessons",
+      "Price": 60,
+      "Time": 60
+    }
+  ],
+
+  "Lashes": [
+    {
+      "RowNum": 1,
+      "Service": "Classic Lashes",
+      "Price": 40,
+      "Time": 180
+    },
+    {
+      "RowNum": 2,
+      "Service": "Volume Lashes",
+      "Price": 60,
+      "Time": 200
+    },
+    {
+      "RowNum": 3,
+      "Service": "Faux Lashes",
+      "Price": 20,
+      "Time": 30
+    }
+  ]
+}

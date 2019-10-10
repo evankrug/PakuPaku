@@ -1,0 +1,66 @@
+.about_area {
+    margin: 6vw;
+    margin-top: 2vw;
+}
+
+.about_header {
+    font-weight: bold;
+    color: var(--secondary_color);
+    font-size: 2em;
+    font-family: Roboto, sans-serif;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+}
+
+.about_body {
+    font-family: Roboto, sans-serif;
+    word-wrap: break-spaces;
+    padding-bottom: 1em;
+}
+
+.about_stylist {
+    font-family: Roboto, sans-serif;
+    color: dimgray;
+    padding-bottom:.7em;
+}
+
+.about_stylist_img {
+    height: 40vh;
+    float:left;
+    padding-right: 1em;
+    padding-bottom: 2em;
+}
+
+.about_stylist_section {
+    margin-bottom: 2em;
+    height: fit-content;
+}
+
+.about_location {
+    margin-bottom: 2em;
+}
+
+.kippy_img {
+    margin-bottom: 5vh;
+    flex-wrap: wrap;
+    height: 40vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    max-width: 90%;
+    align-self: center!important;
+}
+
+.about_kippy {
+    padding-bottom: 1em;
+    justify-content: center;
+}
+
+.kippy_text {
+    padding-bottom: 1em;
+}
+
+.kippy_images {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

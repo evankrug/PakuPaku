@@ -1,0 +1,152 @@
+{
+  "Coloring": [
+    {
+      "RowNum": 1,
+      "Service": "Color & Style",
+      "Price": 55,
+      "Time": 60
+    },
+    {
+      "RowNum": 2,
+      "Service": "Full Foil",
+      "Price": 65,
+      "Time": 60
+    },
+    {
+      "RowNum": 3,
+      "Service": "3/4 Foil",
+      "Price": 55,
+      "Time": 60
+    },
+    {
+      "RowNum": 4,
+      "Service": "Partial Foil",
+      "Price": 45,
+      "Time": 60
+    },
+    {
+      "RowNum": 5,
+      "Service": "Deca Foil",
+      "Price": 24,
+      "Time": 60
+    },
+    {
+      "RowNum": 6,
+      "Service": "Balayage",
+      "Price": "See Stylist",
+      "Time": 60
+    },
+    {
+      "RowNum": 7,
+      "Service": "Handpainting",
+      "Price": "See Stylist",
+      "Time": 60
+    },
+    {
+      "RowNum": 8,
+      "Service": "Sombre",
+      "Price": "See Stylist",
+      "Time": 60
+    },
+    {
+      "RowNum": 9,
+      "Service": "Overlay/Gloss",
+      "Price": 15,
+      "Time": 60
+    },
+    {
+      "RowNum": 10,
+      "Service": "Extra Colors",
+      "Price": 12,
+      "Time": 60
+    }
+  ],
+  "Haircut": [
+    {
+      "RowNum": 1,
+      "Service": "Haircut & Style",
+      "Price": 30,
+      "Time": 60
+    },
+    {
+      "RowNum": 2,
+      "Service": "Long Haircut & Style",
+      "Price": 40,
+      "Time": 60
+    },
+    {
+      "RowNum": 3,
+      "Service": "Wet Chemical Cut",
+      "Price": 25,
+      "Time": 60
+    },
+    {
+      "RowNum": 4,
+      "Service": "Men's Haircut",
+      "Price": 20,
+      "Time": 60
+    },
+    {
+      "RowNum": 5,
+      "Service": "Kid's Haircut (12 and under)",
+      "Price": 18,
+      "Time": 60
+    },
+    {
+      "RowNum": 6,
+      "Service": "Treatments",
+      "Price": 15,
+      "Time": 60
+    },
+    {
+      "RowNum": 7,
+      "Service": "Blow Outs",
+      "Price": 15,
+      "Time": 60
+    },
+    {
+      "RowNum": 8,
+      "Service": "Thermal Style",
+      "Price": 40,
+      "Time": 60
+    },
+    {
+      "RowNum": 9,
+      "Service": "Updo",
+      "Price": 58,
+      "Time": 60
+    },
+    {
+      "RowNum": 10,
+      "Service": "Bridal Updo",
+      "Price": 68,
+      "Time": 60
+    }
+  ],
+  "Texture": [
+    {
+      "RowNum": 1,
+      "Service": "Perm",
+      "Price": 55,
+      "Time": 60
+    },
+    {
+      "RowNum": 2,
+      "Service": "Perm (Long)",
+      "Price": 70,
+      "Time": 60
+    },
+    {
+      "RowNum": 3,
+      "Service": "Perm Straightener",
+      "Price": 50,
+      "Time": 60
+    },
+    {
+      "RowNum": 4,
+      "Service": "Chemical Straightener",
+      "Price": "See Stylist",
+      "Time": 60
+    }
+  ]
+}

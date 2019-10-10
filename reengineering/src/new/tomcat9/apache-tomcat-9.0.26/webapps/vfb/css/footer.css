@@ -1,0 +1,28 @@
+.footer_bar {
+    align-self: flex-end;
+    background-color: var(--primary_color)!important;
+    flex-direction: row!important;
+    height: 5%;
+    justify-content: center;
+}
+
+.social_media_icon {
+    align-self: center;
+    cursor: pointer;
+    height: 70%;
+}
+
+.facebook_logo {
+    margin-right: 7px;
+}
+
+.instagram_logo {
+    margin-left: 7px;
+    margin-right: 4px;
+}
+
+.text_icon_logo {
+    margin-left: 7px;
+    color: var(--secondary_color);
+    padding-bottom: .5vh;
+}
