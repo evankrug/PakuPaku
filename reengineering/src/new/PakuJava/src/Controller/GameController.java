@@ -32,7 +32,7 @@ public class GameController {
 
     public GameController() {
         System.out.println("Game controller has been created");
-        ghostlist = new ArrayList<Ghost>();
+        ghostlist = new ArrayList<>();
     }
 
     //Responsible for setting up the game

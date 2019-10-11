@@ -32,7 +32,7 @@ public class Ghost extends movingGameObect
     }
     
     public Ghost(Ghosts ghostname){
-            System.out.println(ghostname.ToString() + " has spawned. Beware!");
+            System.out.println(ghostname.toString() + " has spawned. Beware!");
     
     }
 }
