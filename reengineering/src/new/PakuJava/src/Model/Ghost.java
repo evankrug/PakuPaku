@@ -22,6 +22,7 @@ public class Ghost extends movingGameObject
 
         private String name;
 
+
         Ghosts(String name) {
             this.name = name;
         }
