@@ -12,7 +12,7 @@ package Model;
 
 
 
-public class Ghost extends movingGameObect
+public class Ghost extends movingGameObject
 {
     public enum Ghosts{
         stinky("stinky"), //red
@@ -21,6 +21,7 @@ public class Ghost extends movingGameObect
         blaine("blaine");  //yellow
 
         private String name;
+
 
         Ghosts(String name) {
             this.name = name;
@@ -32,7 +33,6 @@ public class Ghost extends movingGameObect
     }
     
     public Ghost(Ghosts ghostname){
-            System.out.println(ghostname.toString() + " has spawned. Beware!");
-    
+            System.out.println(ghostname.getName() + " has spawned. Beware!");
     }
 }

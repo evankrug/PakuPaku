@@ -9,7 +9,7 @@ package Model;
  *
  * @author kruge
  */
-public class Paku {
+public class Paku extends movingGameObject{
     public Paku()
         {
             System.out.println("Paku has been constructed");

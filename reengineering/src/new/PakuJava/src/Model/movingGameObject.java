@@ -1,4 +1,5 @@
 package Model;
+import java.util.ArrayList;
 
 import java.util.ArrayList;
 
@@ -27,6 +28,12 @@ public class movingGameObject {
 		this.state = state;
 		this.FacingDirection = FacingDirection;
 	}
+
+	public movingGameObject(){
+
+	}
+
+	private nextStep
 
 	
     
