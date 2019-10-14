@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
-
+import Model.movingGameObject;
 /**
  *
  * @author kruge
@@ -12,7 +12,7 @@ package Model;
 
 
 
-public class Ghost extends movingGameObect
+public class Ghost extends movingGameObject
 {
     public enum Ghosts{
         stinky("stinky"), //red
