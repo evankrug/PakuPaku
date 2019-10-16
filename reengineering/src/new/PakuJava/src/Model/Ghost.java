@@ -35,4 +35,9 @@ public class Ghost extends movingGameObject
     public Ghost(Ghosts ghostname){
             System.out.println(ghostname.getName() + " has spawned. Beware!");
     }
+
+    public void move()
+    {
+        
+    }
 }
