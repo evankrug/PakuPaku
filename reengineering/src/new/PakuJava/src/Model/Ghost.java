@@ -38,6 +38,6 @@ public class Ghost extends movingGameObject
 
     public void move()
     {
-        
+
     }
 }

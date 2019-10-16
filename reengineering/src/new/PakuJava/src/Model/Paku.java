@@ -10,8 +10,22 @@ package Model;
  * @author kruge
  */
 public class Paku extends movingGameObject{
-    public Paku()
-        {
-            System.out.println("Paku has been constructed");
-        }
+
+    private static Paku paku = new Paku();
+    private Paku()
+    {
+        System.out.println("Paku has been constructed");
+    }
+
+    public static Paku getInstance()
+    {
+        return paku;
+    }
+
+    public void move()
+    {
+
+    }
+
+
 }
