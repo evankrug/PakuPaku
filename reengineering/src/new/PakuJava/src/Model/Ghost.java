@@ -5,6 +5,7 @@
  */
 package Model;
 import Model.movingGameObject;
+import org.json.simple.JSONObject;
 /**
  *
  * @author kruge

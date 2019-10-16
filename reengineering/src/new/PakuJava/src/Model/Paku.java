@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Model;
+import Model.movingGameObject;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -22,8 +24,12 @@ public class Paku extends movingGameObject{
         return paku;
     }
 
-    public void move()
+
+    JSONObject jo = new JSONObject();
+
+    public void move(Direction dir)
     {
+        jo.put(dir.toString());
 
     }
 
