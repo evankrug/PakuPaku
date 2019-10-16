@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controller;
 
 import Model.Ghost;
@@ -32,7 +28,7 @@ public class GameController {
 
     public GameController() {
         System.out.println("Game controller has been created");
-        ghostlist = new ArrayList<Ghost>();
+        ghostlist = new ArrayList<>();
     }
 
     //Responsible for setting up the game

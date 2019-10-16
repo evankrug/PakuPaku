@@ -6,8 +6,8 @@ import java.util.ArrayList;
  * @author kruge
  */
 public class Dot {
-	
-	private boolean eaten;
+	private final int POINTS = 10;
+	protected boolean eaten;
 	private ArrayList<Integer> position;
 	
 	public Dot(int x, int y){
@@ -17,7 +17,8 @@ public class Dot {
 		position.add(y);
 	}
 	
-	public void gotEaten(){
+	public void gotEaten(Score score){
+		score.addScore(POINTS);
 		eaten = true;
 	}
     

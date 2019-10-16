@@ -22,6 +22,7 @@ public class Ghost extends movingGameObject
 
         private String name;
 
+
         Ghosts(String name) {
             this.name = name;
         }
@@ -32,7 +33,6 @@ public class Ghost extends movingGameObject
     }
     
     public Ghost(Ghosts ghostname){
-            System.out.println(ghostname.ToString() + " has spawned. Beware!");
-    
+            System.out.println(ghostname.getName() + " has spawned. Beware!");
     }
 }
