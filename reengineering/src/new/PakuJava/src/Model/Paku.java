@@ -6,6 +6,7 @@
 package Model;
 import Model.movingGameObject;
 import org.json.simple.JSONObject;
+import Controller.Controls
 
 /**
  *
@@ -29,11 +30,11 @@ public class Paku extends movingGameObject{
     }
 
 
-    JSONObject jo = new JSONObject();
+    //JSONObject jo = new JSONObject();
 
-    public void move(Direction dir)
+    public void move(Controls dir)
     {
-        jo.put(dir.toString());
+        //jo.put(dir.toString());
 
     }
 
@@ -53,6 +54,12 @@ public class Paku extends movingGameObject{
     public boolean isDead(){
         return remainingLife <= 0;
     }
+
+    public int getRemainingLife()
+    {
+        return remainingLife;
+    }
+
 
 
 }

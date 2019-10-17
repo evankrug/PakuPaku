@@ -6,6 +6,7 @@
 package Model;
 import Model.movingGameObject;
 import org.json.simple.JSONObject;
+import Controller.Controls;
 /**
  *
  * @author kruge

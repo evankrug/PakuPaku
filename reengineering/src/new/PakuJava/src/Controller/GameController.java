@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
 
+import netscape.javascript.JSObject;
+import org.json.simple.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 
 /**
  *
@@ -34,6 +39,9 @@ public class GameController {
     private final double ghostSpeed = 10;
     private final double ghostSpeedToThePower = 0.6;
     private Paku paku;
+
+
+    private JSONObject jo = new JSONObject();
 
     public GameController() {
         System.out.println("Game controller has been created");
@@ -73,6 +81,11 @@ public class GameController {
         return null;
     }
 
+    public uiInput(JSONObject input)
+    {
+        
+    }
+
     private void pakuUpdate(Controls input){
         pakuMove(input);
         if(collideWithGhost())
@@ -94,7 +107,9 @@ public class GameController {
         pakuEatsDots();
     }
 
-    private void pakuEatsDots() {
+    private void pakuEatsDots()
+    {
+
     }
 
     private void collideWithGhostProtocol() {
@@ -104,16 +119,27 @@ public class GameController {
         }
     }
 
-    private boolean checkPakuAlive() {
+    private boolean checkPakuAlive()
+    {
+       if(!paku.isDead())
+           return true;
+       return false;
 
     }
 
+    /**
+     * Calls each ghost's move method, which updates the ghost's position
+     */
     private void ghostsMove() {
         for (Ghost ghost: ghostlist) {
             ghost.move();
         }
     }
 
+    /**
+     * checks whether paku collided with ghost
+     * @return
+     */
     private boolean collideWithGhost() {
         for(Ghost ghost : ghostlist){
             if((ghost.getPositionX() == paku.getPositionX()){
@@ -124,8 +150,12 @@ public class GameController {
         return false;
     }
 
-    private void pakuMove(Controls input){
-
+    /**
+     * Calls paku's move method, which updates the paku's position
+     */
+    private void pakuMove(Controls input)
+    {
+        paku.move(input);
 
     }
 }
