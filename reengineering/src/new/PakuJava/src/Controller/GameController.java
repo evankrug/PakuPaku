@@ -26,6 +26,10 @@ public class GameController {
     private final int fruitCounter2 = fruitCounter1 - 100;
     private final int elroy = 20;  //I believe this refers to the number of dots paku must eat before blinky speeds up. Source: https://paku.fandom.com/wiki/Blinky
     private final int superElroy = 10;
+    private final int dotPoint = 10;
+
+    private int gamelevel;
+    private GameStatus gameStatus;
 
     private final double ghostSpeed = 10;
     private final double ghostSpeedToThePower = 0.6;
@@ -34,17 +38,18 @@ public class GameController {
     public GameController() {
         System.out.println("Game controller has been created");
         ghostlist = new ArrayList<>();
+        gamelevel = 0;
     }
 
     //Responsible for setting up the game
     public void startGame() {
         paku = Paku.getInstance();
         spawnGhosts();
-
+        gameStatus = GameStatus.staring;
     }
 
     public int increaseGhostSpeed(int ghostSpeed) {
-        return Math.pow(a, ghostSpeedToThePower)
+        return (int) Math.pow(gamelevel, ghostSpeedToThePower);
     }
 
     //creates the four ghosts for gameplay
@@ -59,26 +64,48 @@ public class GameController {
 
     //Called every frame(or whenever timer ticks)
     public void update(){
-        Controlls input = receivedUserInput();
-
+        Controls input = receivedUserInput();
+        pakuUpdate(input);
     }
 
     //talks to frontend, return input enum
-    private Controlls receivedUserInput() {
+    private Controls receivedUserInput() {
         return null;
     }
 
-    private void pakuUpdate(){
+    private void pakuUpdate(Controls input){
+        pakuMove(input);
         if(collideWithGhost())
         {
-            if(!checkPakuAlive()){
-                resetGame();
-            }
+            collideWithGhostProtocol();
+            if(gameStatus == GameStatus.GameOver)
+                return;
         }
         else{
-            pakuMove();
             ghostsMove();
         }
+        if(collideWithGhost())
+        {
+            collideWithGhostProtocol();
+            if(gameStatus == GameStatus.GameOver)
+                return;
+        }
+        
+        pakuEatsDots();
+    }
+
+    private void pakuEatsDots() {
+    }
+
+    private void collideWithGhostProtocol() {
+        if(!checkPakuAlive()){
+            gameStatus = GameStatus.GameOver;
+            return;
+        }
+    }
+
+    private boolean checkPakuAlive() {
+
     }
 
     private void ghostsMove() {
@@ -89,7 +116,7 @@ public class GameController {
 
     private boolean collideWithGhost() {
         for(Ghost ghost : ghostlist){
-            if(ghost.getPosition() == paku.getPosition()){
+            if((ghost.getPositionX() == paku.getPositionX()){
                 return true;
             }
         }
@@ -97,9 +124,8 @@ public class GameController {
         return false;
     }
 
-    private void pakuMove()
-    {
-        paku.move();
+    private void pakuMove(Controls input){
+
 
     }
 }

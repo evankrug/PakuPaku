@@ -14,9 +14,13 @@ import org.json.simple.JSONObject;
 public class Paku extends movingGameObject{
 
     private static Paku paku = new Paku();
+    private int remainingLife;
+    private final int STARTINGLIFES = 3;
+
     private Paku()
     {
         System.out.println("Paku has been constructed");
+        remainingLife = STARTINGLIFES;
     }
 
     public static Paku getInstance()
@@ -31,6 +35,23 @@ public class Paku extends movingGameObject{
     {
         jo.put(dir.toString());
 
+    }
+
+    @Override
+    public boolean getPosition() {
+        return false;
+    }
+
+    public void substractLife(){
+        remainingLife--;
+    }
+
+    public void addLife(){
+        remainingLife++;
+    }
+
+    public boolean isDead(){
+        return remainingLife <= 0;
     }
 
 
