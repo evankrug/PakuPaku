@@ -6,8 +6,6 @@ import org.json.simple.JSONObject;
 
 public abstract class movingGameObject {
 
-
-
 	public enum States{
 
 	}
@@ -36,8 +34,8 @@ public abstract class movingGameObject {
 
 	}
 
-	public abstract void move();
-	public abstract boolean getPosition();
+	public abstract void move(Direction dir);
+	public abstract int getPosition();
 
 
 	
