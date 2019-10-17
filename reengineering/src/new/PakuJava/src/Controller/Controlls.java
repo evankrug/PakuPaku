@@ -1,7 +1,6 @@
-package Model;
+package Controller;
 
-public enum Direction
-{
+public enum Controlls {
     up,
     down,
     left,

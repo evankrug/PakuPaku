@@ -4,8 +4,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 
-public class movingGameObject {
-	
+public abstract class movingGameObject {
+
+
+
 	public enum States{
 
 	}
@@ -35,6 +37,8 @@ public class movingGameObject {
 	}
 
 	public abstract void move();
+	public abstract boolean getPosition();
+
 
 	
     
