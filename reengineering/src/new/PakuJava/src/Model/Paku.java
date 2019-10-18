@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model;/*
 import Model.movingGameObject;
 import org.json.simple.JSONObject;
-import Controller.Controls
+import Controller.Controls;*/
 
 /**
  *
@@ -31,16 +31,16 @@ public class Paku extends movingGameObject{
 
 
     //JSONObject jo = new JSONObject();
-
-    public void move(Controls dir)
+    @ Override
+    public void move(Direction dir)
     {
         //jo.put(dir.toString());
 
     }
 
     @Override
-    public boolean getPosition() {
-        return false;
+    public int getPosition() {
+        return 0;
     }
 
     public void substractLife(){

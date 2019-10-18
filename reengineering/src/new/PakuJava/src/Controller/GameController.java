@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
 
-import netscape.javascript.JSObject;
+/*import netscape.javascript.JSObject;
 import org.json.simple.JSONObject;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.GsonBuilder;*/
 
 
 /**
@@ -41,7 +41,7 @@ public class GameController {
     private Paku paku;
 
 
-    private JSONObject jo = new JSONObject();
+    //private JSONObject jo = new JSONObject();
 
     public GameController() {
         System.out.println("Game controller has been created");
@@ -81,7 +81,7 @@ public class GameController {
         return null;
     }
 
-    public uiInput(JSONObject input)
+    //public void uiInput(JSONObject input)
     {
         
     }
@@ -132,7 +132,7 @@ public class GameController {
      */
     private void ghostsMove() {
         for (Ghost ghost: ghostlist) {
-            ghost.move();
+            //ghost.move();
         }
     }
 
@@ -142,9 +142,9 @@ public class GameController {
      */
     private boolean collideWithGhost() {
         for(Ghost ghost : ghostlist){
-            if((ghost.getPositionX() == paku.getPositionX()){
-                return true;
-            }
+           // if((ghost.getPositionX() == paku.getPositionX()){
+          //      return true;
+           // }
         }
 
         return false;
@@ -155,7 +155,7 @@ public class GameController {
      */
     private void pakuMove(Controls input)
     {
-        paku.move(input);
+       // paku.move(input);
 
     }
 }

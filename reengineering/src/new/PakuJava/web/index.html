@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Import CSS Files -->
+    <link rel="stylesheet" type="text/css" href="css/board.css">
+    <link rel="stylesheet" type="text/css" href="css/ghost.css">
+    <link rel="stylesheet" type="text/css" href="css/player.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+
+    <!-- Import JS Libraries -->
+    <script type="application/javascript" src="lib/jquery-3.4.1.min.js"></script>
+
+    <!-- Import JS Files -->
+    <script type="application/javascript" src="js/util.js"></script>
+
+    <!-- Import Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Namco 8-bit-esque font -->
+
+    <meta charset="UTF-8">
+    <title>PakuPaku</title>
+    <link href="resources/favicon.ico" rel="icon" type="imgate/x-icon" />
+</head>
+<body>
+    <div id="display">
+        <div id="left_container">
+            <div id="game_board"></div>
+            <div id="score_display"></div>
+        </div>
+        <div id="right_container">
+            <div id="score_container">
+                <div id="high_score_lbl">high score</div>
+                <div id="high_score">00136210</div>
+                <div id="your_score_lbl">your score</div>
+                <div id="your_score">00136210</div>
+            </div>
+            <div id="sound_display" sound="on">
+                <span class="sound_text">S</span>
+                <span class="sound_hotkey">O</span>
+                <span class="sound_text">UND</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
