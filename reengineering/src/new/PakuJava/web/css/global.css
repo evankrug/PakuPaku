@@ -4,6 +4,8 @@
     --primary_text: white;
     --font_family: 'Press Start 2p' Monospace;
     --screen_height: 100vh;
+    --aspect_ratio_width: 3.2;
+    --aspect_ratio_height: 2;
 }
 
 html {
@@ -35,7 +37,7 @@ body {
 }
 
 #display {
-    width: calc(var(--screen_height) * 4 / 3); /* maintains 4:3 aspect ration */
+    width: calc(var(--screen_height) * var(--aspect_ratio_width) / var(--aspect_ratio_height)); /* maintains 4:3 aspect ration */
     height: var(--screen_height);
     background-color: orange; /*TODO: Remove ME*/
     display: flex;

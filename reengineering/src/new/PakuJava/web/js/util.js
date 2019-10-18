@@ -1,17 +1,16 @@
 class Util {
-
     // Class variables
     rootStyle;
-
-
+    aspectRatio = {
+        height: 2,
+        width: 3.2
+    };
     // This method updates the
     heightAdjust = () => {
         let height =window.innerHeight;
         let width = window.innerWidth;
         if(height > width)
-        {
-            this.setPropertyValue("--screen_height", (width / 4 * 3)+ "px");
-        }
+            this.setPropertyValue("--screen_height", (width / this.aspectRatio.width * this.aspectRatio.height)+ "px");
     };
 
     // Sets the value of a given CSS property/value. Throws an exception if no such property exists.
