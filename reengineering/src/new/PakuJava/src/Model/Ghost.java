@@ -14,7 +14,7 @@ import Controller.Controls;*/
 
 
 
-public class Ghost extends MovingGameObject
+public abstract class Ghost extends movingGameObject
 {
     public enum Ghosts{
         stinky("stinky"), //red
