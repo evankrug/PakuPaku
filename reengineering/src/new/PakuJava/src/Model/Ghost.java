@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model;/*
 import Model.movingGameObject;
 import org.json.simple.JSONObject;
-import Controller.Controls;
+import Controller.Controls;*/
 /**
  *
  * @author kruge
@@ -38,8 +38,13 @@ public class Ghost extends movingGameObject
             System.out.println(ghostname.getName() + " has spawned. Beware!");
     }
 
-    public void move()
-    {
+    @ Override
+    public void move(Direction dir)   {
 
+    }
+
+    @ Override
+    public int getPosition() {
+        return 0;
     }
 }

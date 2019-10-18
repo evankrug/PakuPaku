@@ -1,0 +1,58 @@
+:root {
+    --background: #000;
+    --paku: yellow;
+    --primary_text: white;
+    --font_family: 'Press Start 2p' Monospace;
+    --screen_height: 100vh;
+}
+
+html {
+    background-color: var(--background);
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height:100vh;
+    font-family: var(--font_family);
+    justify-content: center;
+}
+
+#left_container {
+    flex: 1;
+    height: 100%;
+}
+
+#right_container {
+    flex: 1;
+    background-color: yellow;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#display {
+    width: calc(var(--screen_height) * 4 / 3); /* maintains 4:3 aspect ration */
+    height: var(--screen_height);
+    background-color: orange; /*TODO: Remove ME*/
+    display: flex;
+    flex-direction: row;
+}
+
+#game_board {
+    background-image: url(../resources/svg/Pacman_Background.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex: 9;
+}
+
+#score_display {
+    color: var(--primary_text);
+    flex: 1;
+    background-color: blue;
+    width: 100%;
+}
