@@ -5,5 +5,5 @@ public enum Controls {
     down,
     left,
     right,
-    none
+    none;
 }
