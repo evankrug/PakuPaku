@@ -29,13 +29,14 @@ public class Ghost extends MovingGameObject
             this.name = name;
         }
 
-        public String getName() {
+        //public String getName() {
             return name;
         }
     }
     
-    public Ghost(Ghosts ghostname){
-            System.out.println(ghostname.getName() + " has spawned. Beware!");
+    public Ghost()
+    {
+
     }
 
     @ Override
