@@ -40,8 +40,7 @@ public class GameController {
     private final double ghostSpeedToThePower = 0.6;
     private Paku paku;
 
-
-    //private JSONObject jo = new JSONObject();
+    private JSONObject jo = new JSONObject();
 
     public GameController() {
         System.out.println("Game controller has been created");

@@ -12,7 +12,7 @@ import Controller.Controls;*/
  *
  * @author kruge
  */
-public class Paku extends movingGameObject{
+public class Paku extends MovingGameObject{
 
     private static Paku paku = new Paku();
     private int remainingLife;
