@@ -21,17 +21,33 @@
     <link href="resources/favicon.ico" rel="icon" type="imgate/x-icon" />
 </head>
 <body>
-    <div id="display">
-        <div id="left_container">
+    <div id="display" class="container">
+        <div id="left_container" class="container">
             <div id="game_board"></div>
-            <div id="score_display"></div>
+            <div id="bottom_row">
+                <div id="lives" class="container">
+                    <div id="life_1"></div>
+                    <div id="life_2"></div>
+                    <div id="live_3"></div>
+                </div>
+                <div id="powerups" class="container">
+                    <div id="powerup_7"></div>
+                    <div id="powerup_6"></div>
+                    <div id="powerup_5"></div>
+                    <div id="powerup_4"></div>
+                    <div id="powerup_3"></div>
+                    <div id="powerup_2"></div>
+                    <div id="powerup_1"></div>
+                    <div id="powerup_0"></div>
+                </div>
+            </div>
         </div>
-        <div id="right_container">
+        <div id="right_container" class="container">
             <div id="score_container">
                 <div id="high_score_lbl">high score</div>
-                <div id="high_score">00136210</div>
+                <div id="high_score" class="score">00136210</div>
                 <div id="your_score_lbl">your score</div>
-                <div id="your_score">00136210</div>
+                <div id="your_score" class="score">00136210</div>
             </div>
             <div id="sound_display" sound="on">
                 <span class="sound_text">S</span>

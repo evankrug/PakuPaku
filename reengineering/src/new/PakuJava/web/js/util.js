@@ -2,14 +2,15 @@ class Util {
     // Class variables
     rootStyle;
     aspectRatio = {
-        height: 2,
-        width: 3.2
+        height: 2, // 100
+        width: 3.2 // 160
     };
-    // This method updates the
+    // This method updates adjusts the height/width relationship to allow the screen to fit in windows
+    // where the height > calculated width
     heightAdjust = () => {
         let height =window.innerHeight;
         let width = window.innerWidth;
-        if(height > width)
+        if(height > (width * this.aspectRatio.height / this.aspectRatio.width))
             this.setPropertyValue("--screen_height", (width / this.aspectRatio.width * this.aspectRatio.height)+ "px");
     };
 

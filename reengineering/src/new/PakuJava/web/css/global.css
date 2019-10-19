@@ -2,14 +2,19 @@
     --background: #000;
     --paku: yellow;
     --primary_text: white;
-    --font_family: 'Press Start 2p' Monospace;
+    --font_family: 'Press Start 2P', Monospace;
     --screen_height: 100vh;
     --aspect_ratio_width: 3.2;
     --aspect_ratio_height: 2;
+    --font_size: 35px;
+    --font_gray_1: #A9A9A9;
+    --font_teal_dark: #00A9AA;
 }
 
 html {
     background-color: var(--background);
+    text-transform: uppercase;
+    font-size: var(--font_size);
 }
 
 body {
@@ -23,25 +28,39 @@ body {
     justify-content: center;
 }
 
-#left_container {
-    flex: 1;
-    height: 100%;
+.container {
+    display: flex;
 }
 
-#right_container {
-    flex: 1;
-    background-color: yellow;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.score {
+    color: var(--font_teal_dark);
 }
 
 #display {
     width: calc(var(--screen_height) * var(--aspect_ratio_width) / var(--aspect_ratio_height)); /* maintains 4:3 aspect ration */
     height: var(--screen_height);
-    background-color: orange; /*TODO: Remove ME*/
-    display: flex;
     flex-direction: row;
+    align-self: center;
+    border: 6px solid white; /*TODO: REMOVE ME*/
+}
+
+#display > .container {
+    flex-direction: column;
+    height: 100%;
+}
+
+#left_container {
+    flex: 84;
+}
+
+#right_container {
+    flex: 76;
+    background-color: yellow; /* TODO: Remove me */
+}
+
+#right_container > div {
+    color: var(--font_gray_1);
+    align-self: center;
 }
 
 #game_board {
@@ -49,12 +68,20 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    flex: 9;
+    flex: 93;
 }
 
-#score_display {
-    color: var(--primary_text);
-    flex: 1;
-    background-color: blue;
+#bottom_row {
+    flex: 7;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#lives {
+    flex: 3;
+}
+
+#powerups {
+    flex: 11;
 }
