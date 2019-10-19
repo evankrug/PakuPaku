@@ -43,7 +43,6 @@ public class GameController {
     private final int pointsPerLife = 10000;
     private final int startingLives = 3;
     private final int startingLevel = 0;
-
     private final int startingDots = 244;
     private final int fruitCounter1 = startingDots - 70;
     private final int fruitCounter2 = fruitCounter1 - 100;
@@ -58,13 +57,14 @@ public class GameController {
     private final double ghostSpeedToThePower = 0.6;
     private Paku paku;
 
+    private int frame;  //the number of the current frame
+    private Controls inputDirection;
+
 
     private JSONObject jo = new JSONObject();
 
     private ArrayList[][] map = new ArrayList[28][31];
 
-
-    //private JSONObject jo = new JSONObject();
 
 
     public GameController() {
@@ -128,9 +128,15 @@ public class GameController {
         return null;
     }
 
-    //public void uiInput(JSONObject input)
+
+
+    /*
+    This method receives the data from the UI i the form of a JSON object
+     */
+    public void uiInput(JSONObject input)
     {
-        
+        frame = input.frame;
+        String inputDir = input.input;
     }
 
     private void pakuUpdate(Controls input){
