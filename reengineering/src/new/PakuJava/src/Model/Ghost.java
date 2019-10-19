@@ -17,7 +17,7 @@ import Controller.Controls;*/
 public abstract class Ghost extends movingGameObject
 {
     GhostState state;
-    private Location loc;
+
 
     public enum Ghosts{
         stinky("stinky"), //red
@@ -32,7 +32,7 @@ public abstract class Ghost extends movingGameObject
             this.name = name;
         }
 
-        //public String getName() {
+        public String getName() {
             return name;
         }
     }
@@ -47,10 +47,6 @@ public abstract class Ghost extends movingGameObject
 
     }
 
-    @ Override
-    public int getPosition() {
-        return 0;
-    }
 
     public void setState(GhostState state)
     {

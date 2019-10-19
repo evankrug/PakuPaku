@@ -46,10 +46,6 @@ public class Paku extends MovingGameObject{
 
     }
 
-    @Override
-    public int getPosition() {
-        return 0;
-    }
 
     public void substractLife(){
         remainingLife--;
