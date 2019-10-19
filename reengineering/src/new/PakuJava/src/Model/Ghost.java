@@ -17,6 +17,7 @@ import Controller.Controls;*/
 public abstract class Ghost extends movingGameObject
 {
     GhostState state;
+    private Location loc;
 
     public enum Ghosts{
         stinky("stinky"), //red
