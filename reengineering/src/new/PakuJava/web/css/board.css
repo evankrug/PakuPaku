@@ -1,0 +1,35 @@
+
+#game_board {
+    background-image: url(../resources/svg/Pacman_Background.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex: 93;
+}
+
+#game_board::before {
+    content: "GAME OVER";
+    font-family: var(--font_family);
+    font-size: var(--font_size);
+    color: var(--paku);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    line-height: 16;
+}
+
+#bottom_row {
+    flex: 7;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#lives {
+    flex: 3;
+}
+
+#powerups {
+    flex: 11;
+}

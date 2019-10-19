@@ -8,7 +8,16 @@
     --aspect_ratio_height: 2;
     --font_size: 35px;
     --font_gray_1: #A9A9A9;
+    --font_gray_light: #E9E9E9;
     --font_teal_dark: #00A9AA;
+    --red: red; /*UPDATE COLOR*/
+    --green: green; /*UPDATE COLOR*/
+}
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 html {
@@ -55,7 +64,6 @@ body {
 
 #right_container {
     flex: 76;
-    background-color: yellow; /* TODO: Remove me */
 }
 
 #right_container > div {
@@ -63,25 +71,41 @@ body {
     align-self: center;
 }
 
-#game_board {
-    background-image: url(../resources/svg/Pacman_Background.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    flex: 93;
+#score_container {
+    margin-top: 13vh;
 }
 
-#bottom_row {
-    flex: 7;
-    width: 100%;
+#score_container > div {
+    text-align: center;
+}
+
+#your_score_lbl {
+    margin-top: 7vh;
+}
+
+#sound_display {
     display: flex;
-    flex-direction: row;
+    flex: 1;
+    align-items: flex-end;
 }
 
-#lives {
-    flex: 3;
+.sound_hotkey {
+    color: var(--font_gray_light);
 }
 
-#powerups {
-    flex: 11;
+.sound_status {
+    width: 4vw;
+    margin-left: 1vw;
+}
+
+.sound_status::before {
+    content: "ON";
+    font-family: var(--font_family);
+    font-size: var(--font_size);
+    color: var(--green);
+}
+
+#sound_display[sound="off"] > .sound_status::before {
+    content: "OFF";
+    color: var(--red);
 }

@@ -39,7 +39,6 @@ class Util {
     }
 }
 
-
 // Main Method
 let util = new Util();
 util.initGame();
