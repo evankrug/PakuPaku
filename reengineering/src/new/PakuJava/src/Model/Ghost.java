@@ -16,6 +16,8 @@ import Controller.Controls;*/
 
 public abstract class Ghost extends movingGameObject
 {
+    GhostState state;
+
     public enum Ghosts{
         stinky("stinky"), //red
         kinky("kinky"), //pink
@@ -47,5 +49,10 @@ public abstract class Ghost extends movingGameObject
     @ Override
     public int getPosition() {
         return 0;
+    }
+
+    public void setState(GhostState state)
+    {
+        this.state = state;
     }
 }
