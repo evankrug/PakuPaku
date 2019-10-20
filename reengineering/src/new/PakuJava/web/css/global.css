@@ -6,7 +6,7 @@
     --screen_height: 100vh;
     --aspect_ratio_width: 3.2;
     --aspect_ratio_height: 2;
-    --font_size: 35px;
+    --font_size: 2vw; /*35px;*/
     --font_gray_1: #A9A9A9;
     --font_gray_light: #E9E9E9;
     --font_teal_dark: #00A9AA;
