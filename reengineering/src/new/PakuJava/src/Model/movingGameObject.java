@@ -10,9 +10,10 @@ public abstract class movingGameObject {
 
 	}
 	private ArrayList<Integer> position;
-	private States state;
-	private Direction facingDirection;
-	private Location loc;
+	protected States state;
+	protected Direction facingDirection;
+	protected Location loc;
+	protected int modX, modY;
 
 	public movingGameObject(int x, int y, States state, Direction dir){
 		position = new ArrayList<>();

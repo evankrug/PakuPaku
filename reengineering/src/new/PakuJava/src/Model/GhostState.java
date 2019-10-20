@@ -2,7 +2,8 @@ package Model;
 
 public enum GhostState
 {
-    normal,
-    scared,
-    eyes
+    scatter,
+    chase,
+    flee,
+    eaten
 }
