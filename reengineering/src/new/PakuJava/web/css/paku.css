@@ -1,0 +1,62 @@
+#paku {
+    background: black;
+    width: 200px;
+}
+
+#paku circle {
+    stroke: yellow;
+    fill: none;
+}
+
+#paku circle {
+    stroke: yellow;
+    stroke-dasharray: 20,5;
+    fill: none;
+}
+
+#paku circle {
+    stroke: yellow;
+    stroke-dasharray: 126,100;
+    fill: none;
+}
+
+#paku circle {
+    stroke: yellow;
+    stroke-dasharray: 126,100;
+    stroke-dashoffset: -15;
+    fill: none;
+}
+
+#paku circle {
+    stroke: yellow;
+    stroke-dasharray: 126,100;
+    stroke-dashoffset: -15;
+    stroke-width: 10%;
+    fill: none;
+}
+
+#paku circle {
+    stroke: yellow;
+    stroke-dasharray: 126,100;
+    stroke-dashoffset: -15;
+    stroke-width: 50%;
+    fill: none;
+}
+
+#paku circle {
+    stroke: yellow;
+    stroke-width: 50%;
+    fill: none;
+    animation: chomp 0.15s linear infinite alternate;
+}
+
+@keyframes chomp {
+    from {
+        stroke-dasharray: 157,100;
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dasharray: 126,100;
+        stroke-dashoffset: -15;
+    }
+}

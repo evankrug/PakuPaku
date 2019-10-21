@@ -4,7 +4,7 @@
     <!-- Import CSS Files -->
     <link rel="stylesheet" type="text/css" href="css/board.css">
     <link rel="stylesheet" type="text/css" href="css/ghost.css">
-    <link rel="stylesheet" type="text/css" href="css/player.css">
+    <link rel="stylesheet" type="text/css" href="css/paku.css">
     <link rel="stylesheet" type="text/css" href="css/global.css">
 
     <!-- Import JS Libraries -->
@@ -23,7 +23,11 @@
 <body>
     <div id="display" class="container">
         <div id="left_container" class="container">
-            <div id="game_board"></div>
+            <div id="game_board">
+                <svg id="paku" viewbox="0 0 100 100">
+                    <circle cx="50%" cy="50%" r="25%" ></circle>
+                </svg>
+            </div>
             <div id="bottom_row">
                 <div id="lives" class="container">
                     <div id="life_1"></div>
