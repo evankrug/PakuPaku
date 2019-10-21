@@ -11,45 +11,32 @@ import Controller.Controls;*/
 import java.util.Random;
 
 /**
- *
  * @author kruge
  */
 
 
-
 public abstract class Ghost extends movingGameObject {
 
+    protected final int FAR_RIGHT = 26;
     private final int JAIL_BOTTOM = 17;
     private final int JAIL_TOP = 12;
     private final int JAIL_LEFT = 10;
     private final int JAIL_RIGHT = 17;
+    private final int JAIL_DOOR = 13;
     private final int WARP_LEVEL = 14;
-    protected final int FAR_RIGHT = 26;
-    GhostState state;
+    private final int EATEN_Y = 10;
+    private final int EATEN_X = 13;
     protected boolean jailSkip;
-    protected int dx, dy;
+    protected boolean allowTurn = false;
+    protected boolean alternate = false;
     protected int changeX, changeY;
     protected int absoluteX, absoluteY;
     protected Random random;
     protected int testAmount;
     protected int exitCounter;
-    public enum Ghosts {
-        stinky("stinky"), //red
-        kinky("kinky"), //pink
-        hinky("hinky"), //blue
-        blaine("blaine");  //yellow
-
-        private String name;
-
-
-        Ghosts(String name) {
-            this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }
-    }
+    protected int howFar;
+    protected int fleeTotal;
+    GhostState state;
 
     public Ghost() {
         random = new Random();
@@ -61,42 +48,30 @@ public abstract class Ghost extends movingGameObject {
 
     }
 
-    protected boolean inJail()
-    {
-        if(loc.getxLoc() >= JAIL_LEFT && loc.getxLoc() <= JAIL_RIGHT)
-        {
-            if(loc.getyLoc() <= JAIL_BOTTOM && loc.getyLoc() >= JAIL_TOP)
+    protected boolean inJail() {
+        if (loc.getxLoc() >= JAIL_LEFT && loc.getxLoc() <= JAIL_RIGHT) {
+            if (loc.getyLoc() <= JAIL_BOTTOM && loc.getyLoc() >= JAIL_TOP)
                 return true;
             else
                 return false;
-        }
-        else
+        } else
             return false;
     }
-    protected void jailMove()
-    {
-        if(state.equals(GhostState.eaten) && loc.getyLoc() < JAIL_TOP)
-        {
+
+    protected void jailMove() {
+        if (state.equals(GhostState.eaten) && loc.getyLoc() < JAIL_TOP) {
             loc.setyLoc(loc.getyLoc() + 1);
-            if(loc.getyLoc() == JAIL_BOTTOM)
+            if (loc.getyLoc() == JAIL_BOTTOM)
                 state = GhostState.scatter;
 
-        }
-        else
-        {
-            if(exitCounter < 0)
-            {
-                if(loc.getyLoc() == JAIL_TOP)
-                {
+        } else {
+            if (exitCounter < 0) {
+                if (loc.getyLoc() == JAIL_TOP) {
                     facingDirection = Direction.down;
-                }
-                else if(loc.getyLoc() == JAIL_BOTTOM)
-                {
+                } else if (loc.getyLoc() == JAIL_BOTTOM) {
                     facingDirection = Direction.up;
                 }
-            }
-            else
-            {
+            } else {
 
             }
             switch (facingDirection) {
@@ -115,70 +90,174 @@ public abstract class Ghost extends movingGameObject {
             }
         }
     }
-    protected void checkWarp()
-    {
-        if(facingDirection.equals(Direction.right))
-        {
-            if(loc.getxLoc() == FAR_RIGHT && loc.getyLoc() == WARP_LEVEL)
-            {
+
+    protected void checkWarp() {
+        if (facingDirection.equals(Direction.right)) {
+            if (loc.getxLoc() == FAR_RIGHT && loc.getyLoc() == WARP_LEVEL) {
                 loc.setxLoc(1);
             }
-        }
-        else if(facingDirection.equals(Direction.left))
-        {
-            if(loc.getxLoc() == 1 && loc.getyLoc() == WARP_LEVEL)
-            {
+        } else if (facingDirection.equals(Direction.left)) {
+            if (loc.getxLoc() == 1 && loc.getyLoc() == WARP_LEVEL) {
                 loc.setxLoc(FAR_RIGHT);
             }
         }
     }
 
-    protected void scatterMove(int scatterX, int scatterY)
-    {
+    protected void scatterMove(int scatterX, int scatterY) {
         changeX = scatterX - loc.getxLoc();
         changeY = scatterY - loc.getyLoc();
     }
 
-    protected void fleeMove()
-    {
+    protected void fleeMove() {
         changeX = loc.getxLoc() - Paku.getInstance().getLocation().getxLoc();
         changeY = loc.getyLoc() - Paku.getInstance().getLocation().getyLoc();
     }
 
-    protected void eatenMove()
-    {
-
-    }
-    protected void calculateMove()
-    {
-        int randomInt = random.nextInt(10);
-        if(!jailSkip)
-        {
-
-            absoluteX = Math.abs(changeX);
-            absoluteY = Math.abs(changeY);
-            if(facingDirection.equals(Direction.up) || facingDirection.equals(Direction.left))
-            {
-                testAmount = -1;
+    protected void eatenMove() {
+        if (loc.getyLoc() == JAIL_DOOR) {
+            if (loc.getyLoc() >= (JAIL_BOTTOM + 4) && loc.getyLoc() > JAIL_BOTTOM) {
+                facingDirection = Direction.down;
+                jailSkip = true;
             }
-            else
-            {
-                testAmount = 1;
-            }
-            if(facingDirection.equals(Direction.up) || facingDirection.equals(Direction.down))
-            {
-                if(modY == 0)
-                {
-                    if((randomInt > 1 && )
-                }
-                if()
-            }
+        } else {
+            changeX = EATEN_X - loc.getxLoc();
+            changeY = EATEN_Y - loc.getyLoc();
         }
     }
 
+    protected void calculateMove() {
+        int randomInt = random.nextInt(10);
+        if (!jailSkip) {
 
-    public void setState(GhostState state)
-    {
+            absoluteX = Math.abs(changeX);
+            absoluteY = Math.abs(changeY);
+            if (facingDirection.equals(Direction.up) || facingDirection.equals(Direction.left)) {
+                testAmount = -1;
+            } else {
+                testAmount = 1;
+            }
+            if (facingDirection.equals(Direction.up) || facingDirection.equals(Direction.down)) {
+                if (modY == 0) {
+                    if (randomInt > 1) {
+                        if (loc.getxLoc() == 9 || loc.getxLoc() == 18)
+                            if (loc.getyLoc() > 8 && loc.getyLoc() < 18)
+                                allowTurn = true;
+                            else
+                                allowTurn = false;
+                        else
+                            allowTurn = false;
+
+                    } else
+                        allowTurn = false;
+                    if (absoluteX > absoluteY || changeY > 0)
+                        if (allowTurn || randomInt > 8) {
+                            if () {
+
+                            } else if () {
+
+                            }
+                        } else {
+                            if () {
+
+                            } else ()
+                            {
+
+                            }
+
+                        }
+
+                }
+            } else if (facingDirection.equals(Direction.left) || facingDirection.equals(Direction.right)) {
+                if (modX == 0) {
+                    if (randomInt > 1) {
+                        if (loc.getxLoc() > 9 && loc.getxLoc() < 18)
+                            if (loc.getyLoc() > 10 || loc.getyLoc() < 22)
+                                allowTurn = true;
+                            else
+                                allowTurn = false;
+                        else
+                            allowTurn = false;
+
+                    } else
+                        allowTurn = false;
+                    if (absoluteX > absoluteY || changeY > 0)
+                        if (allowTurn || randomInt > 8) {
+                            if () {
+
+                            } else if () {
+
+                            }
+                        } else {
+                            if () {
+
+                            } else ()
+                            {
+
+                            }
+
+                        }
+                }
+
+            } // left/right check
+        } // jailskip check
+
+        if (!state.equals(GhostState.flee)) {
+            if(!(loc.getyLoc() == 13))
+                if(!(loc.getxLoc() < 6 || loc.getxLoc() > 20))
+                    if(!alternate)
+                    {
+                        if(facingDirection.equals(Direction.up))
+                        {
+                            if()
+                                loc.setyLoc(loc.getyLoc() - howFar);
+                            else
+                                loc.setyLoc(loc.getyLoc() - 1);
+                        }
+                        else if(facingDirection.equals(Direction.right))
+                        {
+                            if()
+                                loc.setxLoc(loc.getxLoc() + howFar);
+                            else
+                                loc.setxLoc(loc.getxLoc() + 1);
+                        }
+                        else if(facingDirection.equals(Direction.down))
+                        {
+                            if()
+                                loc.setyLoc(loc.getyLoc() + howFar);
+                            else
+                                loc.setyLoc(loc.getyLoc() + 1);
+                        }
+                        else if(facingDirection.equals(Direction.left))
+                        {
+                            if()
+                                loc.setxLoc(loc.getxLoc() - howFar);
+                            else
+                                loc.setxLoc(loc.getxLoc() - 1);
+                        }
+                    }
+        }
+
+    }
+
+    public void setState(GhostState state) {
         this.state = state;
     }
-}
+
+
+    public enum Ghosts {
+        stinky("stinky"), //red
+        kinky("kinky"), //pink
+        hinky("hinky"), //blue
+        blaine("blaine");  //yellow
+
+        private String name;
+
+
+        Ghosts(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }

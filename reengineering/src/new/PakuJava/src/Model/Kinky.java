@@ -9,6 +9,7 @@ public class Kinky extends Ghost
     private final int STARTING_Y = 11;
     private final int SCATTER_X = 1;
     private final int SCATTER_Y = 1;
+    private final int KINKY_VARIANCE = 4;
     public Kinky()
     {
 
@@ -18,15 +19,38 @@ public class Kinky extends Ghost
     @ Override
     public void move(Direction dir) {
         Location paku = Paku.getInstance().getLocation();
+        Direction pakuDir = Paku.getInstance().getFacingDirection();
+        alternate = !alternate;
         modX = loc.getxLoc() % 3;
         modY = (loc.getyLoc() + 1) % 3;
         if (inJail()) {
             jailMove();
         } else {
+            checkWarp();
             if (state.equals(GhostState.scatter)) {
                 scatterMove(SCATTER_X, SCATTER_Y);
             } else if (state.equals(GhostState.chase)) {
-
+                if(pakuDir.equals(Direction.up)) {
+                    changeX = paku.getxLoc() - KINKY_VARIANCE;
+                    changeY = paku.getyLoc() - KINKY_VARIANCE;
+                }
+                else if (pakuDir.equals(Direction.down))
+                {
+                    changeX = paku.getxLoc();
+                    changeY = paku.getyLoc() + KINKY_VARIANCE;
+                }
+                else if (pakuDir.equals(Direction.left))
+                {
+                    changeX = paku.getxLoc() - KINKY_VARIANCE;
+                    changeY = paku.getyLoc();
+                }
+                else if(pakuDir.equals(Direction.right))
+                {
+                    changeX = paku.getxLoc() + KINKY_VARIANCE;
+                    changeY = paku.getyLoc();
+                }
+                changeX = changeX - loc.getxLoc();
+                changeY = changeY - loc.getyLoc();
             } else if (state.equals(GhostState.flee)) {
                 fleeMove();
             } else if (state.equals(GhostState.eaten)) {

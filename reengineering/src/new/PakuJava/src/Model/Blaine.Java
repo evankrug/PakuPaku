@@ -18,12 +18,13 @@ public class Blaine extends Ghost
     @Override
     public void move(Direction dir) {
         Location paku = Paku.getInstance().getLocation();
+        alternate = !alternate;
         modX = loc.getxLoc() % 3;
         modY = (loc.getyLoc() + 1) % 3;
         if (inJail()) {
             jailMove();
         } else {
-
+            checkWarp();
             if (state.equals(GhostState.scatter)) {
                 scatterMove(SCATTER_X, SCATTER_Y);
             } else if (state.equals(GhostState.chase)) {

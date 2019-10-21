@@ -31,5 +31,8 @@ public abstract class movingGameObject {
 	public Location getLocation() {
 		return this.loc;
 	}
-    
+
+	public Direction getFacingDirection() {
+		return facingDirection;
+	}
 }
