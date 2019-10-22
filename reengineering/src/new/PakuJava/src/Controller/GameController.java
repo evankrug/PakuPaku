@@ -133,7 +133,8 @@ public class GameController {
     //Called every frame(or whenever timer ticks)
     public void update(){
         Controls input = receivedUserInput();
-        pakuUpdate(input);
+        if(input != Controls.escape && input != Controls.O && input != Controls.enter)
+            pakuUpdate(input.castToDir());
     }
 
     //talks to frontend, return input enum
@@ -170,7 +171,7 @@ public class GameController {
                 return;
         }
         
-        pakuEatsDots(paku.getLocation());
+        pakuEatsDots(paku.getLoc());
     }
 
     private void pakuEatsDots(Location location)
@@ -218,7 +219,7 @@ public class GameController {
      */
     private void pakuMove(Controls input)
     {
-       // paku.move(input);
+       paku.move(input);
 
     }
 }

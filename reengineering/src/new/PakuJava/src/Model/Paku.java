@@ -12,7 +12,7 @@ import Controller.Controls;*/
  *
  * @author kruge
  */
-public class Paku extends movingGameObject{
+public class Paku extends MovingGameObject{
 
     private static Paku paku = new Paku();  //to make this class a Singleton
     private int remainingLife;
@@ -64,6 +64,13 @@ public class Paku extends movingGameObject{
         return remainingLife;
     }
 
+    @Override
+    public Location getLoc() {
+        return loc;
+    }
 
-
+    @Override
+    public void setLoc(Location loc) {
+        this.loc = loc;
+    }
 }
