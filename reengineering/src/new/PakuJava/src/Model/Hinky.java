@@ -9,9 +9,10 @@ public class Hinky extends Ghost
     private final int SCATTER_X = 26;
     private final int SCATTER_Y = 30;
     private final int HINKY_VARIANCE = 2;
-    public Hinky()
+    private Ghost stinky;
+    public Hinky(Ghost stinky)
     {
-
+        this.stinky = stinky;
         loc = new Location(STARTING_X, STARTING_Y);
     }
     @ Override
@@ -48,8 +49,8 @@ public class Hinky extends Ghost
                     changeX = paku.getxLoc() + HINKY_VARIANCE;
                     changeY = paku.getyLoc();
                 }
-                changeX = ((changeX + loc.getxLoc()) / 2) - loc.getxLoc();
-                changeY = ((changeY + loc.getyLoc()) / 2) - loc.getyLoc();
+                changeX = ((changeX + stinky.loc.getxLoc()) / 2) - loc.getxLoc();
+                changeY = ((changeY + stinky.loc.getyLoc()) / 2) - loc.getyLoc();
             } else if (state.equals(GhostState.flee)) {
                 fleeMove();
             } else if (state.equals(GhostState.eaten)) {

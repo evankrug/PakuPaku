@@ -36,11 +36,11 @@ public abstract class Ghost extends movingGameObject {
     protected int exitCounter;
     protected int howFar;
     protected int fleeTotal;
+    protected int[][] map;
     GhostState state;
 
     public Ghost() {
         random = new Random();
-
     }
 
     @Override
@@ -137,105 +137,103 @@ public abstract class Ghost extends movingGameObject {
                 testAmount = 1;
             }
             if (facingDirection.equals(Direction.up) || facingDirection.equals(Direction.down)) {
-                if (modY == 0) {
-                    if (randomInt > 1) {
-                        if (loc.getxLoc() == 9 || loc.getxLoc() == 18)
-                            if (loc.getyLoc() > 8 && loc.getyLoc() < 18)
-                                allowTurn = true;
-                            else
-                                allowTurn = false;
+                if (randomInt > 1) {
+                    if (loc.getxLoc() == 9) {
+                        allowTurn = true;
+                    } else if (loc.getxLoc() == 18)
+                        if (loc.getyLoc() > 9 && loc.getyLoc() < 19)
+                            allowTurn = true;
                         else
                             allowTurn = false;
-
-                    } else
+                    else
                         allowTurn = false;
-                    if (absoluteX > absoluteY || changeY > 0)
-                        if (allowTurn || randomInt > 8) {
-                            if () {
 
-                            } else if () {
+                } else
+                    allowTurn = false;
 
-                            }
-                        } else {
-                            if () {
 
-                            } else ()
-                            {
-
-                            }
-
-                        }
-
+                if (absoluteX > absoluteY || changeY > 0) {
+                    turnUpDown();
+                } else if (map[loc.getxLoc()][loc.getyLoc() + testAmount] == 0 || allowTurn) {
+                    turnUpDown();
+                } else if (randomInt > 8) {
+                    turnUpDown();
+                } else {
+                    moveUpDown();
                 }
+
+
             } else if (facingDirection.equals(Direction.left) || facingDirection.equals(Direction.right)) {
-                if (modX == 0) {
-                    if (randomInt > 1) {
-                        if (loc.getxLoc() > 9 && loc.getxLoc() < 18)
-                            if (loc.getyLoc() > 10 || loc.getyLoc() < 22)
-                                allowTurn = true;
-                            else
-                                allowTurn = false;
+
+                if (randomInt > 1) {
+                    if (loc.getxLoc() > 9 && loc.getxLoc() < 18)
+                        if (loc.getyLoc() > 10 || loc.getyLoc() < 22)
+                            allowTurn = true;
                         else
                             allowTurn = false;
-
-                    } else
+                    else
                         allowTurn = false;
-                    if (absoluteX > absoluteY || changeY > 0)
-                        if (allowTurn || randomInt > 8) {
-                            if () {
 
-                            } else if () {
-
-                            }
-                        } else {
-                            if () {
-
-                            } else ()
-                            {
-
-                            }
-
-                        }
+                } else
+                    allowTurn = false;
+                if (absoluteX > absoluteY || changeY > 0) {
+                    turnLeftRight();
+                }
+                else 
+                {
+                    moveLeftRight();
                 }
 
-            } // left/right check
-        } // jailskip check
 
-        if (!state.equals(GhostState.flee)) {
-            if(!(loc.getyLoc() == 13))
-                if(!(loc.getxLoc() < 6 || loc.getxLoc() > 20))
-                    if(!alternate)
-                    {
-                        if(facingDirection.equals(Direction.up))
-                        {
-                            if()
-                                loc.setyLoc(loc.getyLoc() - howFar);
-                            else
-                                loc.setyLoc(loc.getyLoc() - 1);
+            }
+
+
+            // left/right check
+            // jailskip check
+
+            if (!state.equals(GhostState.flee)) {
+                if (!(loc.getyLoc() == 13))
+                    if (!(loc.getxLoc() < 6 || loc.getxLoc() > 20))
+                        if (!alternate) {
+                            if (facingDirection.equals(Direction.up)) {
+                                if ()
+                                    loc.setyLoc(loc.getyLoc() - howFar);
+                                else
+                                    loc.setyLoc(loc.getyLoc() - 1);
+                            } else if (facingDirection.equals(Direction.right)) {
+                                if ()
+                                    loc.setxLoc(loc.getxLoc() + howFar);
+                                else
+                                    loc.setxLoc(loc.getxLoc() + 1);
+                            } else if (facingDirection.equals(Direction.down)) {
+                                if ()
+                                    loc.setyLoc(loc.getyLoc() + howFar);
+                                else
+                                    loc.setyLoc(loc.getyLoc() + 1);
+                            } else if (facingDirection.equals(Direction.left)) {
+                                if ()
+                                    loc.setxLoc(loc.getxLoc() - howFar);
+                                else
+                                    loc.setxLoc(loc.getxLoc() - 1);
+                            }
                         }
-                        else if(facingDirection.equals(Direction.right))
-                        {
-                            if()
-                                loc.setxLoc(loc.getxLoc() + howFar);
-                            else
-                                loc.setxLoc(loc.getxLoc() + 1);
-                        }
-                        else if(facingDirection.equals(Direction.down))
-                        {
-                            if()
-                                loc.setyLoc(loc.getyLoc() + howFar);
-                            else
-                                loc.setyLoc(loc.getyLoc() + 1);
-                        }
-                        else if(facingDirection.equals(Direction.left))
-                        {
-                            if()
-                                loc.setxLoc(loc.getxLoc() - howFar);
-                            else
-                                loc.setxLoc(loc.getxLoc() - 1);
-                        }
-                    }
+            }
+
         }
+    }
+
+    private void moveLeftRight() {
+
+    }
+
+    private void moveUpDown() {
+    }
+
+    private void turnUpDown() {
+        if(map[])
+    }
+
+    private void turnLeftRight() {
 
     }
 
@@ -261,3 +259,4 @@ public abstract class Ghost extends movingGameObject {
             return name;
         }
     }
+}
