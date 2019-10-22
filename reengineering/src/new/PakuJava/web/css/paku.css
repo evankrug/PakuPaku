@@ -1,56 +1,23 @@
 #paku {
-    background: black;
-    width: 200px;
-}
-
-#paku circle {
-    stroke: yellow;
-    fill: none;
-}
-
-#paku circle {
-    stroke: yellow;
-    stroke-dasharray: 20,5;
-    fill: none;
-}
-
-#paku circle {
-    stroke: yellow;
-    stroke-dasharray: 126,100;
-    fill: none;
-}
-
-#paku circle {
-    stroke: yellow;
-    stroke-dasharray: 126,100;
-    stroke-dashoffset: -15;
-    fill: none;
-}
-
-#paku circle {
-    stroke: yellow;
-    stroke-dasharray: 126,100;
-    stroke-dashoffset: -15;
-    stroke-width: 10%;
-    fill: none;
-}
-
-#paku circle {
-    stroke: yellow;
-    stroke-dasharray: 126,100;
-    stroke-dashoffset: -15;
-    stroke-width: 50%;
-    fill: none;
+    background: transparent;
+    width: var(--entity_height);
+    transform: rotate(0deg);
+    transition: transform 0s;
+    position: absolute;
 }
 
 #paku circle {
     stroke: yellow;
     stroke-width: 50%;
     fill: none;
-    animation: chomp 0.15s linear infinite alternate;
+    animation: waka 0.15s linear infinite alternate;
 }
 
-@keyframes chomp {
+#paku[status="stop"] circle {
+    animation: none;
+}
+
+@keyframes waka {
     from {
         stroke-dasharray: 157,100;
         stroke-dashoffset: 0;
@@ -59,4 +26,16 @@
         stroke-dasharray: 126,100;
         stroke-dashoffset: -15;
     }
+}
+
+#paku[direction="left"] {
+    transform: rotate(180deg);
+}
+
+#paku[direction="down"] {
+    transform: rotate(90deg);
+}
+
+#paku[direction="up"] {
+    transform: rotate(-90deg);
 }

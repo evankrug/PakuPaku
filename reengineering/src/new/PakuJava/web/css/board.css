@@ -6,11 +6,13 @@
     flex: 93;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
+    background-clip: border-box;
+    padding: 4%;
 }
 
-#game_board::before {
+#game_board[state="game_over"]::before {
     content: "GAME OVER";
     font-family: var(--font_family);
     font-size: var(--font_size);
@@ -31,4 +33,26 @@
 
 #powerups {
     flex: 11;
+}
+
+.game_board_row {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.game_board_box {
+    flex: 1;
+    display: block;
+}
+
+.game_board_box::before {
+    content: ".";
+    font-size: 20px;
+    color: white;
+    display: block;
+    position: relative;
+    left: 25%;
+    top: 0%;
 }
