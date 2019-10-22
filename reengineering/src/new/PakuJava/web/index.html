@@ -21,426 +21,434 @@
     <link href="resources/favicon.ico" rel="icon" type="imgate/x-icon" />
 </head>
 <body>
+    <svg aria-hidden="true" focusable="false" style="width:0;height:0;position:absolute;">
+        <radialGradient id="radial_gradient">
+            <stop offset="0%" stop-color="var(--super_pellet)" />
+            <stop offset="25%" stop-color="var(--super_pellet)" />
+            <stop offset="60%" stop-color="var(--pellet)" />
+            <stop offset="100%" stop-color="var(--background)" />
+        </radialGradient>
+    </svg>
     <div id="display" class="container">
         <div id="left_container" class="container">
             <div id="game_board" state="play" >
                 <div id="row_0" class="game_board_row">
-                    <div id="p0_0" class="game_board_box"></div>
-                    <div id="p0_1" class="game_board_box"></div>
-                    <div id="p0_2" class="game_board_box"></div>
-                    <div id="p0_3" class="game_board_box"></div>
-                    <div id="p0_4" class="game_board_box"></div>
-                    <div id="p0_5" class="game_board_box"></div>
-                    <div id="p0_6" class="game_board_box"></div>
-                    <div id="p0_7" class="game_board_box"></div>
-                    <div id="p0_8" class="game_board_box"></div>
-                    <div id="p0_9" class="game_board_box"></div>
-                    <div id="p0_10" class="game_board_box"></div>
-                    <div id="p0_11" class="game_board_box"></div>
+                    <div id="p0_0" class="pellet"></div>
+                    <div id="p0_1" class="pellet"></div>
+                    <div id="p0_2" class="pellet"></div>
+                    <div id="p0_3" class="pellet"></div>
+                    <div id="p0_4" class="pellet"></div>
+                    <div id="p0_5" class="pellet"></div>
+                    <div id="p0_6" class="pellet"></div>
+                    <div id="p0_7" class="pellet"></div>
+                    <div id="p0_8" class="pellet"></div>
+                    <div id="p0_9" class="pellet"></div>
+                    <div id="p0_10" class="pellet"></div>
+                    <div id="p0_11" class="pellet"></div>
                     <div id="p0_s0" style="flex: 2"></div>
-                    <div id="p0_12" class="game_board_box"></div>
-                    <div id="p0_13" class="game_board_box"></div>
-                    <div id="p0_14" class="game_board_box"></div>
-                    <div id="p0_15" class="game_board_box"></div>
-                    <div id="p0_16" class="game_board_box"></div>
-                    <div id="p0_17" class="game_board_box"></div>
-                    <div id="p0_28" class="game_board_box"></div>
-                    <div id="p0_19" class="game_board_box"></div>
-                    <div id="p0_20" class="game_board_box"></div>
-                    <div id="p0_21" class="game_board_box"></div>
-                    <div id="p0_22" class="game_board_box"></div>
-                    <div id="p0_23" class="game_board_box"></div>
+                    <div id="p0_12" class="pellet"></div>
+                    <div id="p0_13" class="pellet"></div>
+                    <div id="p0_14" class="pellet"></div>
+                    <div id="p0_15" class="pellet"></div>
+                    <div id="p0_16" class="pellet"></div>
+                    <div id="p0_17" class="pellet"></div>
+                    <div id="p0_28" class="pellet"></div>
+                    <div id="p0_19" class="pellet"></div>
+                    <div id="p0_20" class="pellet"></div>
+                    <div id="p0_21" class="pellet"></div>
+                    <div id="p0_22" class="pellet"></div>
+                    <div id="p0_23" class="pellet"></div>
                 </div>
                 <div id="row_1" class="game_board_row">
-                    <div id="p1_0" class="game_board_box"></div>
+                    <div id="p1_0" class="pellet"></div>
                     <div id="p1_s0" style="flex: 4"></div>
-                    <div id="p1_1" class="game_board_box"></div>
+                    <div id="p1_1" class="pellet"></div>
                     <div id="p1_s1" style="flex: 5"></div>
-                    <div id="p1_2" class="game_board_box"></div>
+                    <div id="p1_2" class="pellet"></div>
                     <div id="p1_s2" style="flex: 2"></div>
-                    <div id="p1_3" class="game_board_box"></div>
+                    <div id="p1_3" class="pellet"></div>
                     <div id="p1_s3" style="flex: 5"></div>
-                    <div id="p1_4" class="game_board_box"></div>
+                    <div id="p1_4" class="pellet"></div>
                     <div id="p1_s4" style="flex: 4"></div>
-                    <div id="p1_5" class="game_board_box"></div>
+                    <div id="p1_5" class="pellet"></div>
                 </div>
                 <div id="row_2" class="game_board_row">
-                    <div id="p2_0" class="game_board_box super_pellet">
+                    <div id="p2_0" class="pellet super_pellet">
                         <svg preserveAspectRatio="xMidYMid" viewbox="0 0 10 10">
-                            <circle cx="50%" cy="50%" r="40%" ></circle>
+                            <circle cx="60%" cy="60%" r="40%" ></circle>
                         </svg>
                     </div>
                     <div id="p2_s1" style="flex: 4"></div>
-                    <div id="p2_1" class="game_board_box"></div>
+                    <div id="p2_1" class="pellet"></div>
                     <div id="p2_s2" style="flex: 5"></div>
-                    <div id="p2_2" class="game_board_box"></div>
+                    <div id="p2_2" class="pellet"></div>
                     <div id="p2_s3" style="flex: 2"></div>
-                    <div id="p2_3" class="game_board_box"></div>
+                    <div id="p2_3" class="pellet"></div>
                     <div id="p2_s4" style="flex: 5"></div>
-                    <div id="p2_4" class="game_board_box"></div>
+                    <div id="p2_4" class="pellet"></div>
                     <div id="p2_s5" style="flex: 4"></div>
-                    <div id="p2_5" class="game_board_box super_pellet">
+                    <div id="p2_5" class="pellet super_pellet">
                         <svg preserveAspectRatio="xMidYMid" viewbox="0 0 10 10">
-                            <circle cx="50%" cy="50%" r="40%" ></circle>
+                            <circle cx="60%" cy="60%" r="40%" ></circle>
                         </svg>
                     </div>
                 </div>
                 <div id="row_3" class="game_board_row">
-                    <div id="p3_0" class="game_board_box"></div>
+                    <div id="p3_0" class="pellet"></div>
                     <div id="p3_s0" style="flex: 4"></div>
-                    <div id="p3_1" class="game_board_box"></div>
+                    <div id="p3_1" class="pellet"></div>
                     <div id="p3_s1" style="flex: 5"></div>
-                    <div id="p3_2" class="game_board_box"></div>
+                    <div id="p3_2" class="pellet"></div>
                     <div id="p3_s2" style="flex: 2"></div>
-                    <div id="p3_3" class="game_board_box"></div>
+                    <div id="p3_3" class="pellet"></div>
                     <div id="p3_s3" style="flex: 5"></div>
-                    <div id="p3_4" class="game_board_box"></div>
+                    <div id="p3_4" class="pellet"></div>
                     <div id="p3_s4" style="flex: 4"></div>
-                    <div id="p3_5" class="game_board_box"></div>
+                    <div id="p3_5" class="pellet"></div>
                 </div>
                 <div id="row_4" class="game_board_row">
-                    <div id="p4_0" class="game_board_box"></div>
-                    <div id="p4_1" class="game_board_box"></div>
-                    <div id="p4_2" class="game_board_box"></div>
-                    <div id="p4_3" class="game_board_box"></div>
-                    <div id="p4_4" class="game_board_box"></div>
-                    <div id="p4_5" class="game_board_box"></div>
-                    <div id="p4_6" class="game_board_box"></div>
-                    <div id="p4_7" class="game_board_box"></div>
-                    <div id="p4_8" class="game_board_box"></div>
-                    <div id="p4_9" class="game_board_box"></div>
-                    <div id="p4_10" class="game_board_box"></div>
-                    <div id="p4_11" class="game_board_box"></div>
-                    <div id="p4_12" class="game_board_box"></div>
-                    <div id="p4_13" class="game_board_box"></div>
-                    <div id="p4_14" class="game_board_box"></div>
-                    <div id="p4_15" class="game_board_box"></div>
-                    <div id="p4_16" class="game_board_box"></div>
-                    <div id="p4_17" class="game_board_box"></div>
-                    <div id="p4_18" class="game_board_box"></div>
-                    <div id="p4_19" class="game_board_box"></div>
-                    <div id="p4_20" class="game_board_box"></div>
-                    <div id="p4_21" class="game_board_box"></div>
-                    <div id="p4_22" class="game_board_box"></div>
-                    <div id="p4_23" class="game_board_box"></div>
-                    <div id="p4_24" class="game_board_box"></div>
-                    <div id="p4_25" class="game_board_box"></div>
+                    <div id="p4_0" class="pellet"></div>
+                    <div id="p4_1" class="pellet"></div>
+                    <div id="p4_2" class="pellet"></div>
+                    <div id="p4_3" class="pellet"></div>
+                    <div id="p4_4" class="pellet"></div>
+                    <div id="p4_5" class="pellet"></div>
+                    <div id="p4_6" class="pellet"></div>
+                    <div id="p4_7" class="pellet"></div>
+                    <div id="p4_8" class="pellet"></div>
+                    <div id="p4_9" class="pellet"></div>
+                    <div id="p4_10" class="pellet"></div>
+                    <div id="p4_11" class="pellet"></div>
+                    <div id="p4_12" class="pellet"></div>
+                    <div id="p4_13" class="pellet"></div>
+                    <div id="p4_14" class="pellet"></div>
+                    <div id="p4_15" class="pellet"></div>
+                    <div id="p4_16" class="pellet"></div>
+                    <div id="p4_17" class="pellet"></div>
+                    <div id="p4_18" class="pellet"></div>
+                    <div id="p4_19" class="pellet"></div>
+                    <div id="p4_20" class="pellet"></div>
+                    <div id="p4_21" class="pellet"></div>
+                    <div id="p4_22" class="pellet"></div>
+                    <div id="p4_23" class="pellet"></div>
+                    <div id="p4_24" class="pellet"></div>
+                    <div id="p4_25" class="pellet"></div>
                 </div>
                 <div id="row_5" class="game_board_row">
-                    <div id="p5_0" class="game_board_box"></div>
+                    <div id="p5_0" class="pellet"></div>
                     <div id="p5_s0" style="flex: 4"></div>
-                    <div id="p5_1" class="game_board_box"></div>
+                    <div id="p5_1" class="pellet"></div>
                     <div id="p5_s1" style="flex: 2"></div>
-                    <div id="p5_2" class="game_board_box"></div>
+                    <div id="p5_2" class="pellet"></div>
                     <div id="p5_s2" style="flex: 8"></div>
-                    <div id="p5_3" class="game_board_box"></div>
+                    <div id="p5_3" class="pellet"></div>
                     <div id="p5_s3" style="flex: 2"></div>
-                    <div id="p5_4" class="game_board_box"></div>
+                    <div id="p5_4" class="pellet"></div>
                     <div id="p5_s4" style="flex: 4"></div>
-                    <div id="p5_5" class="game_board_box"></div>
+                    <div id="p5_5" class="pellet"></div>
                 </div>
                 <div id="row_6" class="game_board_row">
-                    <div id="p6_0" class="game_board_box"></div>
+                    <div id="p6_0" class="pellet"></div>
                     <div id="p6_s0" style="flex: 4"></div>
-                    <div id="p6_1" class="game_board_box"></div>
+                    <div id="p6_1" class="pellet"></div>
                     <div id="p6_s1" style="flex: 2"></div>
-                    <div id="p6_2" class="game_board_box"></div>
+                    <div id="p6_2" class="pellet"></div>
                     <div id="p6_s2" style="flex: 8"></div>
-                    <div id="p6_3" class="game_board_box"></div>
+                    <div id="p6_3" class="pellet"></div>
                     <div id="p6_s3" style="flex: 2"></div>
-                    <div id="p6_4" class="game_board_box"></div>
+                    <div id="p6_4" class="pellet"></div>
                     <div id="p6_s4" style="flex: 4"></div>
-                    <div id="p6_5" class="game_board_box"></div>
+                    <div id="p6_5" class="pellet"></div>
                 </div>
                 <div id="row_7" class="game_board_row">
-                    <div id="p7_0" class="game_board_box"></div>
-                    <div id="p7_1" class="game_board_box"></div>
-                    <div id="p7_2" class="game_board_box"></div>
-                    <div id="p7_3" class="game_board_box"></div>
-                    <div id="p7_4" class="game_board_box"></div>
-                    <div id="p7_5" class="game_board_box"></div>
+                    <div id="p7_0" class="pellet"></div>
+                    <div id="p7_1" class="pellet"></div>
+                    <div id="p7_2" class="pellet"></div>
+                    <div id="p7_3" class="pellet"></div>
+                    <div id="p7_4" class="pellet"></div>
+                    <div id="p7_5" class="pellet"></div>
                     <div id="p7_s0" style="flex: 2 "></div>
-                    <div id="p7_6" class="game_board_box"></div>
-                    <div id="p7_7" class="game_board_box"></div>
-                    <div id="p7_8" class="game_board_box"></div>
-                    <div id="p7_9" class="game_board_box"></div>
+                    <div id="p7_6" class="pellet"></div>
+                    <div id="p7_7" class="pellet"></div>
+                    <div id="p7_8" class="pellet"></div>
+                    <div id="p7_9" class="pellet"></div>
                     <div id="p7_s1" style="flex: 2 "></div>
-                    <div id="p7_10" class="game_board_box"></div>
-                    <div id="p7_11" class="game_board_box"></div>
-                    <div id="p7_12" class="game_board_box"></div>
-                    <div id="p7_13" class="game_board_box"></div>
+                    <div id="p7_10" class="pellet"></div>
+                    <div id="p7_11" class="pellet"></div>
+                    <div id="p7_12" class="pellet"></div>
+                    <div id="p7_13" class="pellet"></div>
                     <div id="p7_s2" style="flex: 2 "></div>
-                    <div id="p7_14" class="game_board_box"></div>
-                    <div id="p7_15" class="game_board_box"></div>
-                    <div id="p7_16" class="game_board_box"></div>
-                    <div id="p7_17" class="game_board_box"></div>
-                    <div id="p7_18" class="game_board_box"></div>
-                    <div id="p7_19" class="game_board_box"></div>
+                    <div id="p7_14" class="pellet"></div>
+                    <div id="p7_15" class="pellet"></div>
+                    <div id="p7_16" class="pellet"></div>
+                    <div id="p7_17" class="pellet"></div>
+                    <div id="p7_18" class="pellet"></div>
+                    <div id="p7_19" class="pellet"></div>
                 </div>
                 <div id="row_8" class="game_board_row">
                     <div id="p8_s0" style="flex: 5"></div>
-                    <div id="p8_0" class="game_board_box"></div>
+                    <div id="p8_0" class="pellet"></div>
                     <div id="p8_s1" style="flex: 14"></div>
-                    <div id="p8_1" class="game_board_box"></div>
+                    <div id="p8_1" class="pellet"></div>
                     <div id="p8_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_9" class="game_board_row">
                     <div id="p9_s0" style="flex: 5"></div>
-                    <div id="p9_0" class="game_board_box"></div>
+                    <div id="p9_0" class="pellet"></div>
                     <div id="p9_s1" style="flex: 14"></div>
-                    <div id="p9_1" class="game_board_box"></div>
+                    <div id="p9_1" class="pellet"></div>
                     <div id="p9_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_10" class="game_board_row">
                     <div id="p10_s0" style="flex: 5"></div>
-                    <div id="p10_0" class="game_board_box"></div>
+                    <div id="p10_0" class="pellet"></div>
                     <div id="p10_s1" style="flex: 14"></div>
-                    <div id="p10_1" class="game_board_box"></div>
+                    <div id="p10_1" class="pellet"></div>
                     <div id="p10_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_11" class="game_board_row">
                     <div id="p11_s0" style="flex: 5"></div>
-                    <div id="p11_0" class="game_board_box"></div>
+                    <div id="p11_0" class="pellet"></div>
                     <div id="p11_s1" style="flex: 14"></div>
-                    <div id="p11_1" class="game_board_box"></div>
+                    <div id="p11_1" class="pellet"></div>
                     <div id="p11_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_12" class="game_board_row">
                     <div id="p12_s0" style="flex: 5"></div>
-                    <div id="p12_0" class="game_board_box"></div>
+                    <div id="p12_0" class="pellet"></div>
                     <div id="p12_s1" style="flex: 14"></div>
-                    <div id="p12_1" class="game_board_box"></div>
+                    <div id="p12_1" class="pellet"></div>
                     <div id="p12_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_13" class="game_board_row">
                     <div id="p13_s0" style="flex: 5"></div>
-                    <div id="p13_0" class="game_board_box"></div>
+                    <div id="p13_0" class="pellet"></div>
                     <div id="p13_s1" style="flex: 14"></div>
-                    <div id="p13_1" class="game_board_box"></div>
+                    <div id="p13_1" class="pellet"></div>
                     <div id="p13_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_14" class="game_board_row">
                     <div id="p14_s0" style="flex: 5"></div>
-                    <div id="p14_0" class="game_board_box"></div>
+                    <div id="p14_0" class="pellet"></div>
                     <div id="p14_s1" style="flex: 14"></div>
-                    <div id="p14_1" class="game_board_box"></div>
+                    <div id="p14_1" class="pellet"></div>
                     <div id="p14_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_15" class="game_board_row">
                     <div id="p15_s0" style="flex: 5"></div>
-                    <div id="p15_0" class="game_board_box"></div>
+                    <div id="p15_0" class="pellet"></div>
                     <div id="p15_s1" style="flex: 14"></div>
-                    <div id="p15_1" class="game_board_box"></div>
+                    <div id="p15_1" class="pellet"></div>
                     <div id="p15_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_16" class="game_board_row">
                     <div id="p16_s0" style="flex: 5"></div>
-                    <div id="p16_0" class="game_board_box"></div>
+                    <div id="p16_0" class="pellet"></div>
                     <div id="p16_s1" style="flex: 14"></div>
-                    <div id="p16_1" class="game_board_box"></div>
+                    <div id="p16_1" class="pellet"></div>
                     <div id="p16_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_17" class="game_board_row">
                     <div id="p17_s0" style="flex: 5"></div>
-                    <div id="p17_0" class="game_board_box"></div>
+                    <div id="p17_0" class="pellet"></div>
                     <div id="p17_s1" style="flex: 14"></div>
-                    <div id="p17_1" class="game_board_box"></div>
+                    <div id="p17_1" class="pellet"></div>
                     <div id="p17_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_18" class="game_board_row">
                     <div id="p18_s0" style="flex: 5"></div>
-                    <div id="p18_0" class="game_board_box"></div>
+                    <div id="p18_0" class="pellet"></div>
                     <div id="p18_s1" style="flex: 14"></div>
-                    <div id="p18_1" class="game_board_box"></div>
+                    <div id="p18_1" class="pellet"></div>
                     <div id="p18_s2" style="flex: 5"></div>
                 </div>
                 <div id="row_19" class="game_board_row">
-                    <div id="p19_0" class="game_board_box"></div>
-                    <div id="p19_1" class="game_board_box"></div>
-                    <div id="p19_2" class="game_board_box"></div>
-                    <div id="p19_3" class="game_board_box"></div>
-                    <div id="p19_4" class="game_board_box"></div>
-                    <div id="p19_5" class="game_board_box"></div>
-                    <div id="p19_6" class="game_board_box"></div>
-                    <div id="p19_7" class="game_board_box"></div>
-                    <div id="p19_8" class="game_board_box"></div>
-                    <div id="p19_9" class="game_board_box"></div>
-                    <div id="p19_10" class="game_board_box"></div>
-                    <div id="p19_11" class="game_board_box"></div>
+                    <div id="p19_0" class="pellet"></div>
+                    <div id="p19_1" class="pellet"></div>
+                    <div id="p19_2" class="pellet"></div>
+                    <div id="p19_3" class="pellet"></div>
+                    <div id="p19_4" class="pellet"></div>
+                    <div id="p19_5" class="pellet"></div>
+                    <div id="p19_6" class="pellet"></div>
+                    <div id="p19_7" class="pellet"></div>
+                    <div id="p19_8" class="pellet"></div>
+                    <div id="p19_9" class="pellet"></div>
+                    <div id="p19_10" class="pellet"></div>
+                    <div id="p19_11" class="pellet"></div>
                     <div id="p19_s0" style="flex: 2"></div>
-                    <div id="p19_12" class="game_board_box"></div>
-                    <div id="p19_13" class="game_board_box"></div>
-                    <div id="p19_14" class="game_board_box"></div>
-                    <div id="p19_15" class="game_board_box"></div>
-                    <div id="p19_16" class="game_board_box"></div>
-                    <div id="p19_17" class="game_board_box"></div>
-                    <div id="p19_18" class="game_board_box"></div>
-                    <div id="p19_19" class="game_board_box"></div>
-                    <div id="p19_20" class="game_board_box"></div>
-                    <div id="p19_21" class="game_board_box"></div>
-                    <div id="p19_22" class="game_board_box"></div>
-                    <div id="p19_23" class="game_board_box"></div>
+                    <div id="p19_12" class="pellet"></div>
+                    <div id="p19_13" class="pellet"></div>
+                    <div id="p19_14" class="pellet"></div>
+                    <div id="p19_15" class="pellet"></div>
+                    <div id="p19_16" class="pellet"></div>
+                    <div id="p19_17" class="pellet"></div>
+                    <div id="p19_18" class="pellet"></div>
+                    <div id="p19_19" class="pellet"></div>
+                    <div id="p19_20" class="pellet"></div>
+                    <div id="p19_21" class="pellet"></div>
+                    <div id="p19_22" class="pellet"></div>
+                    <div id="p19_23" class="pellet"></div>
                 </div>
                 <div id="row_20" class="game_board_row">
-                    <div id="p20_0" class="game_board_box"></div>
+                    <div id="p20_0" class="pellet"></div>
                     <div id="p20_s0" style="flex: 4"></div>
-                    <div id="p20_1" class="game_board_box"></div>
+                    <div id="p20_1" class="pellet"></div>
                     <div id="p20_s1" style="flex: 5"></div>
-                    <div id="p20_2" class="game_board_box"></div>
+                    <div id="p20_2" class="pellet"></div>
                     <div id="p20_s2" style="flex: 2"></div>
-                    <div id="p20_3" class="game_board_box"></div>
+                    <div id="p20_3" class="pellet"></div>
                     <div id="p20_s3" style="flex: 5"></div>
-                    <div id="p20_4" class="game_board_box"></div>
+                    <div id="p20_4" class="pellet"></div>
                     <div id="p20_s4" style="flex: 4"></div>
-                    <div id="p20_5" class="game_board_box"></div>
+                    <div id="p20_5" class="pellet"></div>
                 </div>
                 <div id="row_21" class="game_board_row">
-                    <div id="p21_0" class="game_board_box"></div>
+                    <div id="p21_0" class="pellet"></div>
                     <div id="p21_s0" style="flex: 4"></div>
-                    <div id="p21_1" class="game_board_box"></div>
+                    <div id="p21_1" class="pellet"></div>
                     <div id="p21_s1" style="flex: 5"></div>
-                    <div id="p21_2" class="game_board_box"></div>
+                    <div id="p21_2" class="pellet"></div>
                     <div id="p21_s2" style="flex: 2"></div>
-                    <div id="p21_3" class="game_board_box"></div>
+                    <div id="p21_3" class="pellet"></div>
                     <div id="p21_s3" style="flex: 5"></div>
-                    <div id="p21_4" class="game_board_box"></div>
+                    <div id="p21_4" class="pellet"></div>
                     <div id="p21_s4" style="flex: 4"></div>
-                    <div id="p21_5" class="game_board_box"></div>
+                    <div id="p21_5" class="pellet"></div>
                 </div>
                 <div id="row_22" class="game_board_row">
-                    <div id="p22_0" class="game_board_box super_pellet">
+                    <div id="p22_0" class="pellet super_pellet">
                         <svg preserveAspectRatio="xMidYMid" viewbox="0 0 10 10">
-                            <circle cx="50%" cy="50%" r="40%" ></circle>
+                            <circle cx="60%" cy="60%" r="40%" ></circle>
                         </svg>
                     </div>
-                    <div id="p22_1" class="game_board_box"></div>
-                    <div id="p22_2" class="game_board_box"></div>
+                    <div id="p22_1" class="pellet"></div>
+                    <div id="p22_2" class="pellet"></div>
                     <div id="p22_s0" style="flex:2"></div>
-                    <div id="p22_3" class="game_board_box"></div>
-                    <div id="p22_4" class="game_board_box"></div>
-                    <div id="p22_5" class="game_board_box"></div>
-                    <div id="p22_6" class="game_board_box"></div>
-                    <div id="p22_7" class="game_board_box"></div>
-                    <div id="p22_8" class="game_board_box"></div>
-                    <div id="p22_9" class="game_board_box"></div>
-                    <div id="p22_10" class="game_board_box"></div>
-                    <div id="p22_11" class="game_board_box"></div>
-                    <div id="p22_12" class="game_board_box"></div>
-                    <div id="p22_13" class="game_board_box"></div>
-                    <div id="p22_14" class="game_board_box"></div>
-                    <div id="p22_15" class="game_board_box"></div>
-                    <div id="p22_16" class="game_board_box"></div>
-                    <div id="p22_17" class="game_board_box"></div>
-                    <div id="p22_18" class="game_board_box"></div>
+                    <div id="p22_3" class="pellet"></div>
+                    <div id="p22_4" class="pellet"></div>
+                    <div id="p22_5" class="pellet"></div>
+                    <div id="p22_6" class="pellet"></div>
+                    <div id="p22_7" class="pellet"></div>
+                    <div id="p22_8" class="pellet"></div>
+                    <div id="p22_9" class="pellet"></div>
+                    <div id="p22_10" class="pellet"></div>
+                    <div id="p22_11" class="pellet"></div>
+                    <div id="p22_12" class="pellet"></div>
+                    <div id="p22_13" class="pellet"></div>
+                    <div id="p22_14" class="pellet"></div>
+                    <div id="p22_15" class="pellet"></div>
+                    <div id="p22_16" class="pellet"></div>
+                    <div id="p22_17" class="pellet"></div>
+                    <div id="p22_18" class="pellet"></div>
                     <div id="p22_s1" style="flex:2"></div>
-                    <div id="p22_19" class="game_board_box"></div>
-                    <div id="p22_20" class="game_board_box"></div>
-                    <div id="p22_21" class="game_board_box super_pellet">
+                    <div id="p22_19" class="pellet"></div>
+                    <div id="p22_20" class="pellet"></div>
+                    <div id="p22_21" class="pellet super_pellet">
                         <svg preserveAspectRatio="xMidYMid" viewbox="0 0 10 10">
-                            <circle cx="50%" cy="50%" r="40%" ></circle>
+                            <circle cx="60%" cy="60%" r="40%" ></circle>
                         </svg>
                     </div>
                 </div>
                 <div id="row_23" class="game_board_row">
                     <div id="p23_s0" style="flex:2"></div>
-                    <div id="p23_0" class="game_board_box"></div>
+                    <div id="p23_0" class="pellet"></div>
                     <div id="p23_s1" style="flex:2"></div>
-                    <div id="p23_1" class="game_board_box"></div>
+                    <div id="p23_1" class="pellet"></div>
                     <div id="p23_s2" style="flex:2"></div>
-                    <div id="p23_2" class="game_board_box"></div>
+                    <div id="p23_2" class="pellet"></div>
                     <div id="p23_s3" style="flex:8"></div>
-                    <div id="p23_3" class="game_board_box"></div>
+                    <div id="p23_3" class="pellet"></div>
                     <div id="p23_s4" style="flex:2"></div>
-                    <div id="p23_4" class="game_board_box"></div>
+                    <div id="p23_4" class="pellet"></div>
                     <div id="p23_s5" style="flex:2"></div>
-                    <div id="p23_5" class="game_board_box"></div>
+                    <div id="p23_5" class="pellet"></div>
                     <div id="p23_s6" style="flex:2"></div>
                 </div>
                 <div id="row_24" class="game_board_row">
                     <div id="p24_s0" style="flex:2"></div>
-                    <div id="p24_0" class="game_board_box"></div>
+                    <div id="p24_0" class="pellet"></div>
                     <div id="p24_s1" style="flex:2"></div>
-                    <div id="p24_1" class="game_board_box"></div>
+                    <div id="p24_1" class="pellet"></div>
                     <div id="p24_s2" style="flex:2"></div>
-                    <div id="p24_2" class="game_board_box"></div>
+                    <div id="p24_2" class="pellet"></div>
                     <div id="p24_s3" style="flex:8"></div>
-                    <div id="p24_3" class="game_board_box"></div>
+                    <div id="p24_3" class="pellet"></div>
                     <div id="p24_s4" style="flex:2"></div>
-                    <div id="p24_4" class="game_board_box"></div>
+                    <div id="p24_4" class="pellet"></div>
                     <div id="p24_s5" style="flex:2"></div>
-                    <div id="p24_5" class="game_board_box"></div>
+                    <div id="p24_5" class="pellet"></div>
                     <div id="p24_s6" style="flex:2"></div>
                 </div>
                 <div id="row_25" class="game_board_row">
-                    <div id="p25_0" class="game_board_box"></div>
-                    <div id="p25_1" class="game_board_box"></div>
-                    <div id="p25_2" class="game_board_box"></div>
-                    <div id="p25_3" class="game_board_box"></div>
-                    <div id="p25_4" class="game_board_box"></div>
-                    <div id="p25_5" class="game_board_box"></div>
+                    <div id="p25_0" class="pellet"></div>
+                    <div id="p25_1" class="pellet"></div>
+                    <div id="p25_2" class="pellet"></div>
+                    <div id="p25_3" class="pellet"></div>
+                    <div id="p25_4" class="pellet"></div>
+                    <div id="p25_5" class="pellet"></div>
                     <div id="p25_s0" style="flex: 2"></div>
-                    <div id="p25_6" class="game_board_box"></div>
-                    <div id="p25_7" class="game_board_box"></div>
-                    <div id="p25_8" class="game_board_box"></div>
-                    <div id="p25_9" class="game_board_box"></div>
+                    <div id="p25_6" class="pellet"></div>
+                    <div id="p25_7" class="pellet"></div>
+                    <div id="p25_8" class="pellet"></div>
+                    <div id="p25_9" class="pellet"></div>
                     <div id="p25_s1" style="flex: 2"></div>
-                    <div id="p25_10" class="game_board_box"></div>
-                    <div id="p25_11" class="game_board_box"></div>
-                    <div id="p25_12" class="game_board_box"></div>
-                    <div id="p25_13" class="game_board_box"></div>
+                    <div id="p25_10" class="pellet"></div>
+                    <div id="p25_11" class="pellet"></div>
+                    <div id="p25_12" class="pellet"></div>
+                    <div id="p25_13" class="pellet"></div>
                     <div id="p25_s2" style="flex: 2"></div>
-                    <div id="p25_14" class="game_board_box"></div>
-                    <div id="p25_15" class="game_board_box"></div>
-                    <div id="p25_16" class="game_board_box"></div>
-                    <div id="p25_17" class="game_board_box"></div>
-                    <div id="p25_18" class="game_board_box"></div>
-                    <div id="p25_19" class="game_board_box"></div>
+                    <div id="p25_14" class="pellet"></div>
+                    <div id="p25_15" class="pellet"></div>
+                    <div id="p25_16" class="pellet"></div>
+                    <div id="p25_17" class="pellet"></div>
+                    <div id="p25_18" class="pellet"></div>
+                    <div id="p25_19" class="pellet"></div>
                 </div>
                 <div id="row_26" class="game_board_row">
-                    <div id="p26_0" class="game_board_box"></div>
+                    <div id="p26_0" class="pellet"></div>
                     <div id="p26_s0" style="flex: 10"></div>
-                    <div id="p26_1" class="game_board_box"></div>
+                    <div id="p26_1" class="pellet"></div>
                     <div id="p26_s1" style="flex: 2"></div>
-                    <div id="p26_2" class="game_board_box"></div>
+                    <div id="p26_2" class="pellet"></div>
                     <div id="p26_s2" style="flex: 10"></div>
-                    <div id="p26_3" class="game_board_box"></div>
+                    <div id="p26_3" class="pellet"></div>
                 </div>
                 <div id="row_27" class="game_board_row">
-                    <div id="p27_0" class="game_board_box"></div>
+                    <div id="p27_0" class="pellet"></div>
                     <div id="p27_s0" style="flex: 10"></div>
-                    <div id="p27_1" class="game_board_box"></div>
+                    <div id="p27_1" class="pellet"></div>
                     <div id="p27_s1" style="flex: 2"></div>
-                    <div id="p27_2" class="game_board_box"></div>
+                    <div id="p27_2" class="pellet"></div>
                     <div id="p27_s2" style="flex: 10"></div>
-                    <div id="p27_3" class="game_board_box"></div>
+                    <div id="p27_3" class="pellet"></div>
                 </div>
                 <div id="row_28" class="game_board_row">
-                    <div id="p28_0" class="game_board_box"></div>
-                    <div id="p28_1" class="game_board_box"></div>
-                    <div id="p28_2" class="game_board_box"></div>
-                    <div id="p28_3" class="game_board_box"></div>
-                    <div id="p28_4" class="game_board_box"></div>
-                    <div id="p28_5" class="game_board_box"></div>
-                    <div id="p28_6" class="game_board_box"></div>
-                    <div id="p28_7" class="game_board_box"></div>
-                    <div id="p28_8" class="game_board_box"></div>
-                    <div id="p28_9" class="game_board_box"></div>
-                    <div id="p28_10" class="game_board_box"></div>
-                    <div id="p28_11" class="game_board_box"></div>
-                    <div id="p28_12" class="game_board_box"></div>
-                    <div id="p28_13" class="game_board_box"></div>
-                    <div id="p28_14" class="game_board_box"></div>
-                    <div id="p28_15" class="game_board_box"></div>
-                    <div id="p28_16" class="game_board_box"></div>
-                    <div id="p28_17" class="game_board_box"></div>
-                    <div id="p28_18" class="game_board_box"></div>
-                    <div id="p28_19" class="game_board_box"></div>
-                    <div id="p28_20" class="game_board_box"></div>
-                    <div id="p28_21" class="game_board_box"></div>
-                    <div id="p28_22" class="game_board_box"></div>
-                    <div id="p28_23" class="game_board_box"></div>
-                    <div id="p28_24" class="game_board_box"></div>
-                    <div id="p28_25" class="game_board_box"></div>
+                    <div id="p28_0" class="pellet"></div>
+                    <div id="p28_1" class="pellet"></div>
+                    <div id="p28_2" class="pellet"></div>
+                    <div id="p28_3" class="pellet"></div>
+                    <div id="p28_4" class="pellet"></div>
+                    <div id="p28_5" class="pellet"></div>
+                    <div id="p28_6" class="pellet"></div>
+                    <div id="p28_7" class="pellet"></div>
+                    <div id="p28_8" class="pellet"></div>
+                    <div id="p28_9" class="pellet"></div>
+                    <div id="p28_10" class="pellet"></div>
+                    <div id="p28_11" class="pellet"></div>
+                    <div id="p28_12" class="pellet"></div>
+                    <div id="p28_13" class="pellet"></div>
+                    <div id="p28_14" class="pellet"></div>
+                    <div id="p28_15" class="pellet"></div>
+                    <div id="p28_16" class="pellet"></div>
+                    <div id="p28_17" class="pellet"></div>
+                    <div id="p28_18" class="pellet"></div>
+                    <div id="p28_19" class="pellet"></div>
+                    <div id="p28_20" class="pellet"></div>
+                    <div id="p28_21" class="pellet"></div>
+                    <div id="p28_22" class="pellet"></div>
+                    <div id="p28_23" class="pellet"></div>
+                    <div id="p28_24" class="pellet"></div>
+                    <div id="p28_25" class="pellet"></div>
                 </div>
                 <svg id="paku" preserveAspectRatio="xMidYMid" viewbox="0 0 100 100" direction="right" status="go">
                     <circle cx="50%" cy="50%" r="25%" ></circle>

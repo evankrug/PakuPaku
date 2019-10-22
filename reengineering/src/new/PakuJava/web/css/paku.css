@@ -7,7 +7,7 @@
 }
 
 #paku > circle {
-    stroke: yellow;
+    stroke: var(--paku);
     stroke-width: 50%;
     fill: none;
     animation: waka 0.15s linear infinite alternate;

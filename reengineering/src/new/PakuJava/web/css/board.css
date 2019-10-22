@@ -42,22 +42,22 @@
     width: 100%;
 }
 
-.game_board_box {
+.pellet {
     flex: 1;
     display: block;
 }
 
-.game_board_box::before {
+.pellet::before {
      content: ".";
      font-size: 20px;
-     color: white;
+     color: var(--pellet);
      display: block;
      position: relative;
      left: 25%;
      top: 0%;
  }
 
-.game_board_box.super_pellet::before {
+.pellet.super_pellet::before {
     content: none;
 }
 
@@ -69,5 +69,6 @@
 }
 
 .super_pellet > svg > circle {
-    fill: greenyellow;
+    fill: var(--pellet);
+    fill: url(#radial_gradient);
 }
