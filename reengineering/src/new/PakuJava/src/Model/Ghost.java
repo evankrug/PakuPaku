@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Model;/*
-import Model.movingGameObject;
+import Model.MovingGameObject;
 import org.json.simple.JSONObject;
 import Controller.Controls;*/
 
@@ -16,6 +16,7 @@ import java.util.Random;
 
 
 public abstract class Ghost extends movingGameObject {
+
 
     protected final int FAR_RIGHT = 26;
     private final int JAIL_BOTTOM = 17;
@@ -36,6 +37,7 @@ public abstract class Ghost extends movingGameObject {
     protected int exitCounter;
     protected int howFar;
     protected int fleeTotal;
+
     GhostState state;
 
     public Ghost() {

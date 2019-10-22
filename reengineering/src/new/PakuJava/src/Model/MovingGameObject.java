@@ -4,7 +4,7 @@ import java.util.ArrayList;
 //import org.json.simple.JSONObject;
 
 
-public abstract class movingGameObject {
+public abstract class MovingGameObject {
 
 	public enum States{
 
@@ -15,7 +15,7 @@ public abstract class movingGameObject {
 	protected Location loc;
 	protected int modX, modY;
 
-	public movingGameObject(int x, int y, States state, Direction dir){
+	public MovingGameObject(int x, int y, States state, Direction dir){
 		position = new ArrayList<>();
 		position.add(x);
 		position.add(y);
@@ -23,16 +23,20 @@ public abstract class movingGameObject {
 		this.facingDirection = dir;
 	}
 
-	public movingGameObject(){
+	public MovingGameObject(){
 
 	}
 
 	public abstract void move(Direction dir);
-	public Location getLocation() {
-		return this.loc;
-	}
 
 	public Direction getFacingDirection() {
 		return facingDirection;
+	}
+	public Location getLoc() {
+		return loc;
+	}
+
+	public void setLoc(Location loc) {
+		this.loc = loc;
 	}
 }

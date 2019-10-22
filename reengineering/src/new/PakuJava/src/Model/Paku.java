@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Model;/*
-import Model.movingGameObject;
+import Model.MovingGameObject;
 import org.json.simple.JSONObject;
 import Controller.Controls;*/
 
