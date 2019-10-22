@@ -1,18 +1,26 @@
 :root {
+    /* Colors */
     --background: #000;
-    --paku: yellow;
-    --primary_text: white;
-    --font_family: 'Press Start 2P', Monospace;
-    --screen_height: 100vh;
-    --aspect_ratio_width: 3.2;
-    --aspect_ratio_height: 2;
-    --font_size: 2vw; /*35px;*/
     --font_gray_1: #A9A9A9;
     --font_gray_light: #E9E9E9;
     --font_teal_dark: #00A9AA;
-    --red: red; /*UPDATE COLOR*/
-    --green: green; /*UPDATE COLOR*/
+    --red: #FF5555;
+    --green: #00AB01;
+    --green_light: #55FF56;
+    --paku: #25525586;
+    --stinky: #AA0001;
+    --kinky: #FF56FF;
+    --hinky: #55FFFF;
+    --blaine: #AA5600;
+    --pellet: #AAAAAA;
+    /* Measurements */
+    --screen_height: 100vh;
+    --aspect_ratio_width: 3.2;
+    --aspect_ratio_height: 2;
+    --font_size: 2vw;
     --entity_height: calc(var(--screen_height) / 22);
+    /* Other */
+    --font_family: 'Press Start 2P', Monospace;
 }
 
 * {
@@ -51,7 +59,6 @@ body {
     height: var(--screen_height);
     flex-direction: row;
     align-self: center;
-    border: 6px solid white; /*TODO: REMOVE ME*/
 }
 
 #display > .container {

@@ -48,11 +48,26 @@
 }
 
 .game_board_box::before {
-    content: ".";
-    font-size: 20px;
-    color: white;
+     content: ".";
+     font-size: 20px;
+     color: white;
+     display: block;
+     position: relative;
+     left: 25%;
+     top: 0%;
+ }
+
+.game_board_box.super_pellet::before {
+    content: none;
+}
+
+.super_pellet > svg {
+    background: transparent;
+    width: 100%;
+    height: 100%;
     display: block;
-    position: relative;
-    left: 25%;
-    top: 0%;
+}
+
+.super_pellet > svg > circle {
+    fill: greenyellow;
 }
