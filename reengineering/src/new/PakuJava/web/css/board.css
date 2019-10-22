@@ -49,7 +49,7 @@
 
 .pellet::before {
      content: ".";
-     font-size: 20px;
+     font-size: calc(var(--screen_height) / 42);
      color: var(--pellet);
      display: block;
      position: relative;
@@ -71,4 +71,10 @@
 .super_pellet > svg > circle {
     fill: var(--pellet);
     fill: url(#radial_gradient);
+}
+
+.super_pellet > svg > rect {
+    width: 100%;
+    height: 100%;
+    fill: var(--pellet);
 }
