@@ -3,6 +3,8 @@ package Controller;
 import Model.Ghost;
 import Model.Ghost.Ghosts;
 import Model.Paku;
+import Model.GameStatus;
+import Model.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
@@ -25,10 +27,10 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-/*import netscape.javascript.JSObject;
-import org.json.simple.JSONObject;
+import netscape.javascript.JSObject;
+import org.json.json.JSONObject;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;*/
+import com.google.gson.GsonBuilder;
 
 
 /**
@@ -63,7 +65,8 @@ public class GameController {
 
     private JSONObject jo = new JSONObject();
 
-    private ArrayList[][] map = new ArrayList[28][31];
+    private ArrayList<ArrayList> map;
+    private ArrayList<Integer> eachrow;
 
 
 
@@ -72,6 +75,8 @@ public class GameController {
         ghostlist = new ArrayList<>();
         gamelevel = 0;
         LoadMap();
+        map = new ArrayList<ArrayList>();
+
     }
 
     private void LoadMap() {
@@ -86,9 +91,13 @@ public class GameController {
             String[] nextRecord;
             while ((nextRecord = csvReader.readNext()) != null) {
 
-                for(String number: nextRecord)
+                eachrow = new ArrayList<Integer>();
+
+                for(String number: nextRecord){
                     System.out.println(number);
-                break;
+                    eachrow.add(Integer.parseInt(number));
+                }
+                map.add(eachrow);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -160,7 +169,7 @@ public class GameController {
         pakuEatsDots();
     }
 
-    private void pakuEatsDots()
+    private void pakuEatsDots(Location location)
     {
 
     }
