@@ -1,0 +1,17 @@
+.ghost {
+    background: transparent;
+    width: var(--entity_height);
+    height: var(--entity_height);
+    position: absolute;
+}
+
+#hinky {
+
+}
+
+#stinky[state="normal"][direction="down"] {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='116' height='117.33' version='1.1' viewBox='0 0 116 117.33334' xmlns='http://www.w3.org/2000/svg' xmlns:cc='http://creativecommons.org/ns%23' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23'%3E%3Cmetadata%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=''%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource='http://purl.org/dc/dcmitype/StillImage'/%3E%3Cdc:title/%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cg%3E%3Cpath d='m30.667 32v32h32v-32h-32zm42.666 0v32h32v-32h-32z' fill='%23ddd' stroke-width='1.3333'/%3E%3C/g%3E%3Cpath d='m41.335 53.334v10.668h10.666v-10.668h-10.666zm42.666 0v10.668h10.666v-10.668h-10.666z' fill='%232020fe' stroke-width='1.3333'/%3E%3Cpath d='m0 80v-37.333h9.3333v-21.333h10.667v-10.667h21.333v-10.667h32v10.667h21.333v10.667h10.667v10.667h-32v32h32v-21.333h10.667v74.667h-21.333v-10.667h-21.333v10.667h-32v-10.667h-21.333v10.667h-20v-37.333zm62.667-32v-16h-32v32h32v-16z' fill='%23d00' stroke-width='1.3333'/%3E%3C/svg%3E%0A");
+    background-color:transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
