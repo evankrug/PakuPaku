@@ -1,17 +1,217 @@
 .ghost {
-    background: transparent;
-    width: var(--entity_height);
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: var(--entity_height);
+    width: var(--entity_height);
     position: absolute;
 }
 
-#hinky {
-
-}
-
-#stinky[state="normal"][direction="down"] {
-    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='116' height='117.33' version='1.1' viewBox='0 0 116 117.33334' xmlns='http://www.w3.org/2000/svg' xmlns:cc='http://creativecommons.org/ns%23' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23'%3E%3Cmetadata%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=''%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource='http://purl.org/dc/dcmitype/StillImage'/%3E%3Cdc:title/%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cg%3E%3Cpath d='m30.667 32v32h32v-32h-32zm42.666 0v32h32v-32h-32z' fill='%23ddd' stroke-width='1.3333'/%3E%3C/g%3E%3Cpath d='m41.335 53.334v10.668h10.666v-10.668h-10.666zm42.666 0v10.668h10.666v-10.668h-10.666z' fill='%232020fe' stroke-width='1.3333'/%3E%3Cpath d='m0 80v-37.333h9.3333v-21.333h10.667v-10.667h21.333v-10.667h32v10.667h21.333v10.667h10.667v10.667h-32v32h32v-21.333h10.667v74.667h-21.333v-10.667h-21.333v10.667h-32v-10.667h-21.333v10.667h-20v-37.333zm62.667-32v-16h-32v32h32v-16z' fill='%23d00' stroke-width='1.3333'/%3E%3C/svg%3E%0A");
-    background-color:transparent;
-    background-size: contain;
+.ghost::after,
+.ghost::before {
+    content: "";
+    background-color: transparent;
+    background-size: cover;
     background-repeat: no-repeat;
+    width: var(--entity_height);
+    height: var(--entity_height);
+    display: block;
+    position: absolute;
+    opacity: 1;
 }
+
+@keyframes ghost-movement {
+    0%, 50.999% {
+        opacity: 1;
+    }
+    1.999%, 49% {
+        opacity: 0;
+    }
+}
+
+
+.ghost::after {
+    animation: ghost-movement .5s infinite both;
+}
+
+.ghost::before {
+    animation: ghost-movement .5s infinite both reverse;
+}
+
+
+
+#kinky[state="normal"][direction="down"]::after {
+     background-image: url("../resources/svg/ghosts/kinky.svg#down_1");
+ }
+
+#kinky[state="normal"][direction="down"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#down_2");
+}
+
+#kinky[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#up_1");
+}
+
+#kinky[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#up_2");
+}
+
+#kinky[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#left_1");
+}
+
+#kinky[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#left_2");
+}
+
+#kinky[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#right_1");
+}
+
+#kinky[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#right_2");
+}
+
+
+
+#stinky[state="normal"][direction="down"]::after {
+    background-image: url("../resources/svg/ghosts/stinky.svg#down_1");
+}
+
+#stinky[state="normal"][direction="down"]::before{
+    background-image: url("../resources/svg/ghosts/stinky.svg#down_2");
+}
+
+#stinky[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/stinky.svg#up_1");
+}
+
+#stinky[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/stinky.svg#up_2");
+}
+
+#stinky[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/stinky.svg#left_1");
+}
+
+#stinky[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/stinky.svg#left_2");
+}
+
+#stinky[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/stinky.svg#right_1");
+}
+
+#stinky[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/stinky.svg#right_2");
+}
+
+
+
+#hinky[state="normal"][direction="down"]::after {
+    background-image: url("../resources/svg/ghosts/hinky.svg#down_1");
+}
+
+#hinky[state="normal"][direction="down"]::before{
+    background-image: url("../resources/svg/ghosts/hinky.svg#down_2");
+}
+
+#hinky[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/hinky.svg#up_1");
+}
+
+#hinky[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/hinky.svg#up_2");
+}
+
+#hinky[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/hinky.svg#left_1");
+}
+
+#hinky[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/hinky.svg#left_2");
+}
+
+#hinky[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/hinky.svg#right_1");
+}
+
+#hinky[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/hinky.svg#right_2");
+}
+
+
+
+#blaine[state="normal"][direction="down"]::after {
+    background-image: url("../resources/svg/ghosts/blaine.svg#down_1");
+}
+
+#blaine[state="normal"][direction="down"]::before{
+    background-image: url("../resources/svg/ghosts/blaine.svg#down_2");
+}
+
+#blaine[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/blaine.svg#up_1");
+}
+
+#blaine[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/blaine.svg#up_2");
+}
+
+#blaine[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/blaine.svg#left_1");
+}
+
+#blaine[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/blaine.svg#left_2");
+}
+
+#blaine[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/blaine.svg#right_1");
+}
+
+#blaine[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/blaine.svg#right_2");
+}
+
+
+
+
+.ghost[state="eaten"]::after {
+    animation: none;
+}
+
+.ghost[state="eaten"][direction="down"]::after {
+    background-image: url("../resources/svg/ghosts/eaten.svg#down");
+}
+
+.ghost[state="eaten"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/eaten.svg#up");
+}
+
+.ghost[state="eaten"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/eaten.svg#left");
+}
+
+.ghost[state="eaten"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/eaten.svg#right");
+}
+
+
+#stinky {
+    right: 250px;
+}
+
+#kinky {
+    right: 100px;
+}
+
+#hinky {
+    right: 150px;
+}
+
+#blaine {
+    right: 200px;
+}
+
+/*TODO: Add Support for 'Scared' state (SVG assets need to be updated)*/

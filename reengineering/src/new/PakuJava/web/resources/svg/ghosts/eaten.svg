@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg shape-rendering="crispEdges" version="1.1" viewBox="0 0 12 48" xmlns="http://www.w3.org/2000/svg">
+  <g shape-rendering="crispEdges">
+    <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+    <path d="m4 5v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+  </g>
+  <g transform="translate(0,12)" shape-rendering="crispEdges">
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m4 3v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+  </g>
+  <g transform="translate(0,24)" shape-rendering="crispEdges">
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m3 4v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+  </g>
+  <g transform="translate(0 ,36)" shape-rendering="crispEdges">
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m5 4v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+    </g>
+  <view id="right" viewBox="0 54 12 12"/>
+  <view id="up" viewBox="0 30 12 12"/>
+  <view id="left" viewBox="0 42 12 12"/>
+  <view id="down" viewBox="0 18 12 12"/>
+</svg>
