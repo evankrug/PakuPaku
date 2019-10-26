@@ -2,10 +2,10 @@ package asset;
 
 public enum MapMapping {
     zero("wall"),
-    one("dot"), //red
-    two("empty"), //pink
-    three("superdot"), //blue
-    four("teleport");  //yellow
+    one("dot"),
+    two("empty"),
+    three("superdot"),
+    four("teleport");
 
     private String name;
 

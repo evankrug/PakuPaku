@@ -2,7 +2,9 @@ package Model;
 
 public class Location
 {
+
     private int xLoc, yLoc;
+
 
     public Location(int xLoc, int yLoc)
     {
@@ -17,6 +19,7 @@ public class Location
     public int getyLoc() {
         return yLoc;
     }
+
     public void setxLoc(int x)
     {
         xLoc = x;
@@ -25,5 +28,6 @@ public class Location
     {
         yLoc = y;
     }
+
 
 }
