@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg shape-rendering="crispEdges" version="1.1" viewBox="0 0 24 48" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(12)" shape-rendering="crispEdges">
+    <path d="m0 12v-8h1v-2h1v-1h2v-1h3v1h2v1h2v2h1v8h-2v-1h-2v1h-4v-1h-2v1h-2" fill="#aa0001"/>
+    <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+    <path d="m4 5v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+  </g>
+  <g>
+    <path d="m0 12v-8h1v-2h1v-1h2v-1h3v1h2v1h2v2h1v8h-1v-1h-2v1h-2v-1h-2v1h-2v-1h-2v1h-1" fill="#aa0001"/>
+    <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+    <path d="m4 5v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+  </g>
+  <g transform="translate(0,12)" shape-rendering="crispEdges">
+    <g transform="translate(12)" shape-rendering="crispEdges">
+      <path d="m0 12v-8h1v-2h1v-1h2v-1h3v1h2v1h2v2h1v8h-2v-1h-2v1h-4v-1h-2v1h-2" fill="#aa0001"/>
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m4 3v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+    </g>
+    <g>
+      <path d="m0 12v-8h1v-2h1v-1h2v-1h3v1h2v1h2v2h1v8h-1v-1h-2v1h-2v-1h-2v1h-2v-1h-2v1h-1" fill="#aa0001"/>
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m4 3v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+    </g>
+  </g>
+  <g transform="translate(0,24)" shape-rendering="crispEdges">
+    <g transform="translate(12)" shape-rendering="crispEdges">
+      <path d="m0 12v-8h1v-2h1v-1h2v-1h3v1h2v1h2v2h1v8h-2v-1h-2v1h-4v-1h-2v1h-2" fill="#aa0001"/>
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m3 4v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+    </g>
+    <g>
+      <path d="m0 12v-8h1v-2h1v-1h2v-1h3v1h2v1h2v2h1v8h-1v-1h-2v1h-2v-1h-2v1h-2v-1h-2v1h-1" fill="#aa0001"/>
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m3 4v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+    </g>
+  </g>
+  <g transform="translate(0,36)" shape-rendering="crispEdges">
+    <g transform="translate(12)" shape-rendering="crispEdges">
+      <path d="m0 12v-8h1v-2h1v-1h2v-1h3v1h2v1h2v2h1v8h-2v-1h-2v1h-4v-1h-2v1h-2" fill="#aa0001"/>
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m5 4v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+    </g>
+    <g>
+      <path d="m0 12v-8h1v-2h1v-1h2v-1h3v1h2v1h2v2h1v8h-1v-1h-2v1h-2v-1h-2v1h-2v-1h-2v1h-1" fill="#aa0001"/>
+      <path d="m3 3v3h3v-3zm4 0v3h3v-3z" fill="#ddd"/>
+      <path d="m5 4v1h1v-1zm4 0v1h1v-1z" fill="#2020fe"/>
+    </g>
+  </g>
+  <view id="right_1" viewBox="0 42 12 12"/>
+  <view id="right_2" viewBox="12 42 12 12"/>
+  <view id="up_1" viewBox="0 18 12 12"/>
+  <view id="up_2" viewBox="12 18 12 12"/>
+  <view id="left_1" viewBox="0 30 12 12"/>
+  <view id="left_2" viewBox="12 30 12 12"/>
+  <view id="down_1" viewBox="0 6 12 12"/>
+  <view id="down_2" viewBox="12 6 12 12"/>
+</svg>

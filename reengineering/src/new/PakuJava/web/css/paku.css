@@ -1,0 +1,40 @@
+#paku {
+    transform: rotate(0deg);
+    --speed: 1s;
+    --x_coord: 0;
+    --y_coord: 0;
+}
+
+#paku > circle {
+    stroke: var(--paku);
+    stroke-width: 50%;
+    fill: none;
+    animation: waka 0.15s linear infinite alternate;
+}
+
+#paku[status="stop"] > circle {
+    animation: none;
+}
+
+@keyframes waka {
+    from {
+        stroke-dasharray: 157,100;
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dasharray: 126,100;
+        stroke-dashoffset: -15;
+    }
+}
+
+#paku[direction="left"] {
+    transform: rotate(180deg);
+}
+
+#paku[direction="down"] {
+    transform: rotate(90deg);
+}
+
+#paku[direction="up"] {
+    transform: rotate(-90deg);
+}
