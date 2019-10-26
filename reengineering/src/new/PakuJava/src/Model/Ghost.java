@@ -216,14 +216,6 @@ public abstract class Ghost extends MovingGameObject {
     }
 
     private void turnUpDown() {
-        if(map[])
-    }
-
-    private void turnLeftRight() {
-
-
-    }
-    private void turnUpDown() {
         if (changeX > 0) {
             if (map[loc.getxLoc() + 1][loc.getyLoc()] > 0) {
                 facingDirection = Direction.right;
