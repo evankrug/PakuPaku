@@ -1,6 +1,8 @@
 class Paku extends MovingEntity {
     constructor() {
         super('paku');
+        this.constructor.stylesheet = "paku.css";
+        this.constructor.cssElementName = "#paku";
     }
 
     static attrNames = {
@@ -8,7 +10,9 @@ class Paku extends MovingEntity {
         status: 'status'
     };
 
+    // valid status for paku
     static statuses = ["go, stop"];
 
+    // updates 'status' of pauk
     changeStatus = status => this.setAttr(this.constructor.attrNames.status, status);
 }

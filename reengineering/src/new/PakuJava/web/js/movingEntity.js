@@ -8,16 +8,31 @@ class MovingEntity {
            throw "Invalid Moving Entity Id: " + this.id;
    }
 
+   static stylesheet;
+   static cssElementName;
    static xPropName = '--x_coord';
-   static yPropName = '--y_cord';
-   static directions = ["up", "down", "left", "right"];
+   static yPropName = '--y_coord';
+   static directions = {
+       up:      "up",
+       down:    "down",
+       right:   "right",
+       left:    "left"
+   };
 
-   setX = newX => util.setPropertyValue(this.element, this.constructor.xPropName, newX);
+   // updates 'x' value of the associated HTML element by modifying CSS custom properties
+   setX = newX => this.setProperty(this.constructor.xPropName, newX);
 
-   setY = newY => util.setPropertyValue(this.element, this.constructor.yPropName, newY);
+   // updates 'y' value of the associated HTML element by modifying CSS custom properties
+   setY = newY => this.setProperty(this.constructor.yPropName, newY);
 
-   changeDirection = direction => this.element.setAttribute(this.constructor.attrNames.direction, direction);
+    // updates the direction an entity is facing. This direction is only which way the srpite faces.
+    // It is NOT related to the direction of movement
+   changeDirection = direction => this.setAttr(this.constructor.attrNames.direction, direction);
 
-   setAttr = (attrName, value) => util.setAttributeValue(this.element, attrName, value);
+   // update HTML attributes of current entity
+   setAttr = (attrName, value) => Util.setAttributeValue(this.element, attrName, value);
+
+   // update CSS custom property of current entity
+   setProperty = (property, value) => Util.setPropertyValue(this.constructor.stylesheet, this.constructor.cssElementName, property, value);
 
 }
