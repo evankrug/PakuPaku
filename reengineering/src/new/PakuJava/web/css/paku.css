@@ -1,9 +1,8 @@
 #paku {
-    background: transparent;
-    width: var(--entity_height);
     transform: rotate(0deg);
-    transition: transform 0s;
-    position: absolute;
+    --speed: 1s;
+    --x_coord: 0;
+    --y_coord: 0;
 }
 
 #paku > circle {

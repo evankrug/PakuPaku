@@ -15,12 +15,13 @@
     --pellet: #AAAAAA;
     --super_pellet: #FFF;
     /* Measurements */
+    --left_width_flex: 84;
+    --right_width_flex: 76;
     --screen_height: 100vh;
     --aspect_ratio_width: 3.2;
     --aspect_ratio_height: 2;
     --font_size: 2vw;
-    --entity_height: calc(var(--screen_height) / 22);
-    /* Other */
+    --display_width: calc(var(--screen_height) * var(--aspect_ratio_width) / var(--aspect_ratio_height));/* Other */
     --font_family: 'Press Start 2P', Monospace;
 }
 
@@ -56,7 +57,7 @@ body {
 }
 
 #display {
-    width: calc(var(--screen_height) * var(--aspect_ratio_width) / var(--aspect_ratio_height)); /* maintains 4:3 aspect ration */
+    width: var(--display_width);
     height: var(--screen_height);
     flex-direction: row;
     align-self: center;
@@ -68,11 +69,11 @@ body {
 }
 
 #left_container {
-    flex: 84;
+    flex: var(--left_width_flex);
 }
 
 #right_container {
-    flex: 76;
+    flex: var(--right_width_flex);
 }
 
 #right_container > div {

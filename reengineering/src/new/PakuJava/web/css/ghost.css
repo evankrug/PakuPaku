@@ -1,10 +1,7 @@
 .ghost {
-    background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
-    height: var(--entity_height);
-    width: var(--entity_height);
-    position: absolute;
+    --speed: 1s;
 }
 
 .ghost::after,
@@ -29,7 +26,7 @@
     }
 }
 
-
+/* Creates the ghost animation effect */
 .ghost::after {
     animation: ghost-movement .5s infinite both;
 }
@@ -39,46 +36,16 @@
 }
 
 
-
-#kinky[state="normal"][direction="down"]::after {
-     background-image: url("../resources/svg/ghosts/kinky.svg#down_1");
- }
-
-#kinky[state="normal"][direction="down"]::before{
-    background-image: url("../resources/svg/ghosts/kinky.svg#down_2");
+#stinky {
+    --x_coord: 0;
+    --y_coord: 0;
 }
 
-#kinky[state="normal"][direction="up"]::after {
-    background-image: url("../resources/svg/ghosts/kinky.svg#up_1");
-}
-
-#kinky[state="normal"][direction="up"]::before{
-    background-image: url("../resources/svg/ghosts/kinky.svg#up_2");
-}
-
-#kinky[state="normal"][direction="left"]::after {
-    background-image: url("../resources/svg/ghosts/kinky.svg#left_1");
-}
-
-#kinky[state="normal"][direction="left"]::before{
-    background-image: url("../resources/svg/ghosts/kinky.svg#left_2");
-}
-
-#kinky[state="normal"][direction="right"]::after {
-    background-image: url("../resources/svg/ghosts/kinky.svg#right_1");
-}
-
-#kinky[state="normal"][direction="right"]::before{
-    background-image: url("../resources/svg/ghosts/kinky.svg#right_2");
-}
-
-
-
-#stinky[state="normal"][direction="down"]::after {
+#stinky[state="normal"]::after { /*Ghost's default to the 'down' position if invalid direction is sent*/
     background-image: url("../resources/svg/ghosts/stinky.svg#down_1");
 }
 
-#stinky[state="normal"][direction="down"]::before{
+#stinky[state="normal"]::before{
     background-image: url("../resources/svg/ghosts/stinky.svg#down_2");
 }
 
@@ -107,12 +74,54 @@
 }
 
 
+#kinky {
+    --x_coord: 0;
+    --y_coord: 0;
+}
 
-#hinky[state="normal"][direction="down"]::after {
+#kinky[state="normal"]::after {
+     background-image: url("../resources/svg/ghosts/kinky.svg#down_1");
+ }
+
+#kinky[state="normal"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#down_2");
+}
+
+#kinky[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#up_1");
+}
+
+#kinky[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#up_2");
+}
+
+#kinky[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#left_1");
+}
+
+#kinky[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#left_2");
+}
+
+#kinky[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#right_1");
+}
+
+#kinky[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#right_2");
+}
+
+
+#hinky {
+    --x_coord: 0;
+    --y_coord: 0;
+}
+
+#hinky[state="normal"]::after {
     background-image: url("../resources/svg/ghosts/hinky.svg#down_1");
 }
 
-#hinky[state="normal"][direction="down"]::before{
+#hinky[state="normal"]::before{
     background-image: url("../resources/svg/ghosts/hinky.svg#down_2");
 }
 
@@ -141,12 +150,16 @@
 }
 
 
+#blaine {
+    --x_coord: 0;
+    --y_coord: 0;
+}
 
-#blaine[state="normal"][direction="down"]::after {
+#blaine[state="normal"]::after {
     background-image: url("../resources/svg/ghosts/blaine.svg#down_1");
 }
 
-#blaine[state="normal"][direction="down"]::before{
+#blaine[state="normal"]::before{
     background-image: url("../resources/svg/ghosts/blaine.svg#down_2");
 }
 
@@ -176,7 +189,7 @@
 
 
 
-
+/* Stops the ghost animation during eaten phase */
 .ghost[state="eaten"]::after {
     animation: none;
 }
@@ -198,20 +211,11 @@
 }
 
 
-#stinky {
-    right: 250px;
-}
 
-#kinky {
-    right: 100px;
-}
-
-#hinky {
-    right: 150px;
-}
-
-#blaine {
-    right: 200px;
-}
-
-/*TODO: Add Support for 'Scared' state (SVG assets need to be updated)*/
+/*TODO: Add Support for 'Scared' state (SVG assets need to be updated)
+   - Probably use a child element of the 'ghost' that is only triggered
+   when the ghost is scared. That child element is just the white
+   background swishing back and forth forever. When this happens,
+   modify the keyframe timing/frames so there are seconds where
+   both of the 'blue' before/after elements are hidden, allowing
+   the white background image of the child element to show through.*/

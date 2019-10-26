@@ -15,30 +15,39 @@ class Util {
     };
 
     // Sets the value of a given CSS property/value. Throws an exception if no such property exists.
-    setPropertyValue = (propertyName, newValue) => {
-        if(this.rootStyle.style.getPropertyValue(propertyName))
-            this.rootStyle.style.setProperty(propertyName, newValue);
+    setPropertyValue = (element, propertyName, newValue) => {
+        if(element.style.getPropertyValue(propertyName))
+            element.style.setProperty(propertyName, newValue);
         else
             throw "Exception: Property " + propertyName + " does not exist";
     };
 
     // Gets the :root pseudo element from 'globals.css'. This element can then be used
     // to update CSS variables using javascript.
-    getRootCssElement = () => {
-        for(let sheet of document.styleSheets)
-            if(sheet.href.includes("global.css"))
-                for(let rule of sheet.cssRules)
-                    if(rule.selectorText === ":root")
-                        this.rootStyle = rule;
-    };
+    getRootCssElement = () => this.rootStyle =  this.getCssElement("global.css", ":root");
 
     // Initializes the game window
     initGame = () => {
         this.getRootCssElement();
         this.heightAdjust();
-    }
+    };
+
+    getCssElement= (sheetName, elementName) => {
+        let el;
+
+        for(let sheet of document.styleSheets)
+            if(sheet.href.includes(sheetName))
+                for(let rule of sheet.cssRules)
+                    if(rule.selectorText === elementName)
+                        el = rule;
+        return el;
+    };
+
+    setAttributeValue = (element, attrName, value) => element.setAttribute(attrName, value);
 }
 
 // Main Method
 let util = new Util();
 util.initGame();
+
+//document.getElementById('paku').getPropertyValue('--paku_space_x');
