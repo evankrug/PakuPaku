@@ -242,6 +242,7 @@ public abstract class Ghost extends movingGameObject {
     }
 
 
+    /*
     public enum Ghosts {
         stinky("stinky"), //red
         kinky("kinky"), //pink
@@ -257,6 +258,7 @@ public abstract class Ghost extends movingGameObject {
 
         public String getName() {
             return name;
-        }
+        }git add 
     }
+    */
 }
