@@ -1,13 +1,40 @@
 :root {
+    /* Colors */
     --background: #000;
-    --paku: yellow;
-    --primary_text: white;
-    --font_family: 'Press Start 2p' Monospace;
+    --font_gray_1: #A9A9A9;
+    --font_gray_light: #E9E9E9;
+    --font_teal_dark: #00A9AA;
+    --red: #FF5555;
+    --green: #00AB01;
+    --green_light: #55FF56;
+    --paku: #FFFF56;
+    --stinky: #AA0001;
+    --kinky: #FF56FF;
+    --hinky: #55FFFF;
+    --blaine: #AA5600;
+    --pellet: #AAAAAA;
+    --super_pellet: #FFF;
+    /* Measurements */
+    --left_width_flex: 84;
+    --right_width_flex: 76;
     --screen_height: 100vh;
+    --aspect_ratio_width: 3.2;
+    --aspect_ratio_height: 2;
+    --font_size: 2vw;
+    --display_width: calc(var(--screen_height) * var(--aspect_ratio_width) / var(--aspect_ratio_height));/* Other */
+    --font_family: 'Press Start 2P', Monospace;
+}
+
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 html {
     background-color: var(--background);
+    text-transform: uppercase;
+    font-size: var(--font_size);
 }
 
 body {
@@ -21,38 +48,74 @@ body {
     justify-content: center;
 }
 
-#left_container {
-    flex: 1;
-    height: 100%;
+.container {
+    display: flex;
 }
 
-#right_container {
-    flex: 1;
-    background-color: yellow;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.score {
+    color: var(--font_teal_dark);
 }
 
 #display {
-    width: calc(var(--screen_height) * 4 / 3); /* maintains 4:3 aspect ration */
+    width: var(--display_width);
     height: var(--screen_height);
-    background-color: orange; /*TODO: Remove ME*/
-    display: flex;
     flex-direction: row;
+    align-self: center;
 }
 
-#game_board {
-    background-image: url(../resources/svg/Pacman_Background.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    flex: 9;
+#display > .container {
+    flex-direction: column;
+    height: 100%;
 }
 
-#score_display {
-    color: var(--primary_text);
+#left_container {
+    flex: var(--left_width_flex);
+}
+
+#right_container {
+    flex: var(--right_width_flex);
+}
+
+#right_container > div {
+    color: var(--font_gray_1);
+    align-self: center;
+}
+
+#score_container {
+    margin-top: 13vh;
+}
+
+#score_container > div {
+    text-align: center;
+}
+
+#your_score_lbl {
+    margin-top: 7vh;
+}
+
+#sound_display {
+    display: flex;
     flex: 1;
-    background-color: blue;
-    width: 100%;
+    align-items: flex-end;
+}
+
+.sound_hotkey {
+    color: var(--font_gray_light);
+}
+
+.sound_status {
+    width: 4vw;
+    margin-left: 1vw;
+}
+
+.sound_status::before {
+    content: "ON";
+    font-family: var(--font_family);
+    font-size: var(--font_size);
+    color: var(--green);
+}
+
+#sound_display[sound="off"] > .sound_status::before {
+    content: "OFF";
+    color: var(--red);
 }

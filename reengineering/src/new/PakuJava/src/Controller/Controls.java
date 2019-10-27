@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.Direction;
+
 public enum Controls {
     arrow_up("arrow_up"),
     arrow_down("arrow_down"),
@@ -11,7 +13,8 @@ public enum Controls {
     D("D"),
     escape("escape"),
     O("O"),
-    enter("enter");
+    enter("enter"),
+    none("none");
 
     private String name;
 
@@ -36,8 +39,11 @@ public enum Controls {
             case "escape": return escape;
             case "O": return O;
             case "enter": return enter;
+            case "none": return none;
         }
         return null;
     }
+
+
 
 }

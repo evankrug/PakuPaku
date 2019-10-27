@@ -28,7 +28,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import netscape.javascript.JSObject;
-import org.json.json.JSONObject;
+import org.json.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -67,6 +67,7 @@ public class GameController {
 
     private ArrayList<ArrayList> map;
     private ArrayList<Integer> eachrow;
+    private final String SAMPLE_CSV_FILE_PATH = "src/asset/map.csv";
 
 
 
@@ -74,14 +75,14 @@ public class GameController {
         System.out.println("Game controller has been created");
         ghostlist = new ArrayList<>();
         gamelevel = 0;
-        LoadMap();
         map = new ArrayList<ArrayList>();
-
+        LoadMap();
+        startGame();
     }
 
     private void LoadMap() {
         // For showing the dicionary. do not remove.
-        /*        File file = new File(".");
+        /*File file = new File(".");
         for(String fileNames : file.list()) System.out.println(fileNames);*/
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
@@ -95,7 +96,10 @@ public class GameController {
 
                 for(String number: nextRecord){
                     System.out.println(number);
-                    eachrow.add(Integer.parseInt(number));
+
+                    number = number.replaceAll("\\uFEFF", "");
+                    int temp = Integer.parseInt(number);
+                    eachrow.add(temp);
                 }
                 map.add(eachrow);
             }
@@ -118,10 +122,10 @@ public class GameController {
 
     //creates the four ghosts for gameplay
     public void spawnGhosts() {
-        ghostlist.add(new Ghost(Ghosts.stinky)); //red
-        ghostlist.add(new Ghost(Ghosts.kinky)); //blue
-        ghostlist.add(new Ghost(Ghosts.hinky)); //pink
-        ghostlist.add(new Ghost(Ghosts.blaine)); //orange
+        ghostlist.add(new Blaine()); //orange
+        ghostlist.add(new Hinky()); //pink
+        ghostlist.add(new Kinky()); //blue
+        ghostlist.add(new Stinky()); //red
 
     }
 
@@ -129,7 +133,8 @@ public class GameController {
     //Called every frame(or whenever timer ticks)
     public void update(){
         Controls input = receivedUserInput();
-        pakuUpdate(input);
+        if(input != Controls.escape && input != Controls.O && input != Controls.enter)
+            pakuUpdate(input.castToDir());
     }
 
     //talks to frontend, return input enum
@@ -144,8 +149,8 @@ public class GameController {
      */
     public void uiInput(JSONObject input)
     {
-        frame = input.frame;
-        String inputDir = input.input;
+        //frame = input.frame;
+        //String inputDir = input.input;
     }
 
     private void pakuUpdate(Controls input){
@@ -166,12 +171,12 @@ public class GameController {
                 return;
         }
         
-        pakuEatsDots();
+        pakuEatsDots(paku.getLoc());
     }
 
     private void pakuEatsDots(Location location)
     {
-
+        map.get(location.getxLoc()).get(location.getyLoc());
     }
 
     private void collideWithGhostProtocol() {
@@ -183,10 +188,7 @@ public class GameController {
 
     private boolean checkPakuAlive()
     {
-       if(!paku.isDead())
-           return true;
-       return false;
-
+        return !paku.isDead();
     }
 
     /**
@@ -217,7 +219,7 @@ public class GameController {
      */
     private void pakuMove(Controls input)
     {
-       // paku.move(input);
+       paku.move(input);
 
     }
 }

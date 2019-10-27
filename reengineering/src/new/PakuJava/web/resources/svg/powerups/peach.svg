@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 128 128"
+   height="128"
+   width="128"
+   id="svg2"
+   version="1.1">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6" />
+  <g
+     style="display:inline"
+     id="layer1">
+    <g
+       transform="translate(-4.9999999e-7,0.57696333)"
+       id="g817">
+      <path
+         id="path821"
+         d="m 42.091393,111.42473 v -5.33334 H 31.424727 20.75806 V 95.424727 84.75806 H 15.424727 10.091393 V 63.424727 42.091393 h 5.333334 5.333333 V 36.75806 31.424727 h 5.333333 5.333334 V 26.091393 20.75806 H 42.091393 52.75806 v -5.333333 -5.333334 h 5.333333 5.333334 V 4.75806 -0.57527333 h 16 16 V 4.75806 10.091393 H 90.091393 84.75806 v 5.333334 5.333333 h 5.333333 5.333334 v 5.333333 5.333334 h 5.333333 5.33333 v 5.333333 5.333333 h 5.33334 5.33333 V 63.424727 84.75806 h -5.33333 -5.33334 V 95.424727 106.09139 H 95.424727 84.75806 v 5.33334 5.33333 H 63.424727 42.091393 Z M 63.424727,26.091393 V 20.75806 H 58.091393 52.75806 v 5.333333 5.333334 h 5.333333 5.333334 z m 21.333333,0 V 20.75806 h -5.333333 -5.333334 v 5.333333 5.333334 h 5.333334 5.333333 z"
+         style="fill:#feb420;stroke-width:1.33333337" />
+      <path
+         id="path819"
+         d="M 63.424727,26.091393 V 20.75806 H 58.091393 52.75806 v -5.333333 -5.333334 h 5.333333 5.333334 V 4.75806 -0.57527333 h 16 16 V 4.75806 10.091393 H 90.091393 84.75806 v 5.333334 5.333333 h -5.333333 -5.333334 v 5.333333 5.333334 H 68.75806 63.424727 Z"
+         style="fill:#00dd00;stroke-width:1.33333337" />
+    </g>
+  </g>
+</svg>

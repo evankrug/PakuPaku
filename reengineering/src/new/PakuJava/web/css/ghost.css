@@ -1,0 +1,221 @@
+.ghost {
+    background-size: cover;
+    background-repeat: no-repeat;
+    --speed: 1s;
+}
+
+.ghost::after,
+.ghost::before {
+    content: "";
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: var(--entity_height);
+    height: var(--entity_height);
+    display: block;
+    position: absolute;
+    opacity: 1;
+}
+
+@keyframes ghost-movement {
+    0%, 50.999% {
+        opacity: 1;
+    }
+    1.999%, 49% {
+        opacity: 0;
+    }
+}
+
+/* Creates the ghost animation effect */
+.ghost::after {
+    animation: ghost-movement .5s infinite both;
+}
+
+.ghost::before {
+    animation: ghost-movement .5s infinite both reverse;
+}
+
+
+#stinky {
+    --x_coord: 0;
+    --y_coord: 0;
+}
+
+#stinky[state="normal"]::after { /*Ghost's default to the 'down' position if invalid direction is sent*/
+    background-image: url("../resources/svg/ghosts/stinky.svg#down_1");
+}
+
+#stinky[state="normal"]::before{
+    background-image: url("../resources/svg/ghosts/stinky.svg#down_2");
+}
+
+#stinky[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/stinky.svg#up_1");
+}
+
+#stinky[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/stinky.svg#up_2");
+}
+
+#stinky[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/stinky.svg#left_1");
+}
+
+#stinky[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/stinky.svg#left_2");
+}
+
+#stinky[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/stinky.svg#right_1");
+}
+
+#stinky[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/stinky.svg#right_2");
+}
+
+
+#kinky {
+    --x_coord: 0;
+    --y_coord: 0;
+}
+
+#kinky[state="normal"]::after {
+     background-image: url("../resources/svg/ghosts/kinky.svg#down_1");
+ }
+
+#kinky[state="normal"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#down_2");
+}
+
+#kinky[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#up_1");
+}
+
+#kinky[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#up_2");
+}
+
+#kinky[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#left_1");
+}
+
+#kinky[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#left_2");
+}
+
+#kinky[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/kinky.svg#right_1");
+}
+
+#kinky[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/kinky.svg#right_2");
+}
+
+
+#hinky {
+    --x_coord: 0;
+    --y_coord: 0;
+}
+
+#hinky[state="normal"]::after {
+    background-image: url("../resources/svg/ghosts/hinky.svg#down_1");
+}
+
+#hinky[state="normal"]::before{
+    background-image: url("../resources/svg/ghosts/hinky.svg#down_2");
+}
+
+#hinky[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/hinky.svg#up_1");
+}
+
+#hinky[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/hinky.svg#up_2");
+}
+
+#hinky[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/hinky.svg#left_1");
+}
+
+#hinky[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/hinky.svg#left_2");
+}
+
+#hinky[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/hinky.svg#right_1");
+}
+
+#hinky[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/hinky.svg#right_2");
+}
+
+
+#blaine {
+    --x_coord: 0;
+    --y_coord: 0;
+}
+
+#blaine[state="normal"]::after {
+    background-image: url("../resources/svg/ghosts/blaine.svg#down_1");
+}
+
+#blaine[state="normal"]::before{
+    background-image: url("../resources/svg/ghosts/blaine.svg#down_2");
+}
+
+#blaine[state="normal"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/blaine.svg#up_1");
+}
+
+#blaine[state="normal"][direction="up"]::before{
+    background-image: url("../resources/svg/ghosts/blaine.svg#up_2");
+}
+
+#blaine[state="normal"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/blaine.svg#left_1");
+}
+
+#blaine[state="normal"][direction="left"]::before{
+    background-image: url("../resources/svg/ghosts/blaine.svg#left_2");
+}
+
+#blaine[state="normal"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/blaine.svg#right_1");
+}
+
+#blaine[state="normal"][direction="right"]::before{
+    background-image: url("../resources/svg/ghosts/blaine.svg#right_2");
+}
+
+
+
+/* Stops the ghost animation during eaten phase */
+.ghost[state="eaten"]::after {
+    animation: none;
+}
+
+.ghost[state="eaten"][direction="down"]::after {
+    background-image: url("../resources/svg/ghosts/eaten.svg#down");
+}
+
+.ghost[state="eaten"][direction="up"]::after {
+    background-image: url("../resources/svg/ghosts/eaten.svg#up");
+}
+
+.ghost[state="eaten"][direction="left"]::after {
+    background-image: url("../resources/svg/ghosts/eaten.svg#left");
+}
+
+.ghost[state="eaten"][direction="right"]::after {
+    background-image: url("../resources/svg/ghosts/eaten.svg#right");
+}
+
+
+
+/*TODO: Add Support for 'Scared' state (SVG assets need to be updated)
+   - Probably use a child element of the 'ghost' that is only triggered
+   when the ghost is scared. That child element is just the white
+   background swishing back and forth forever. When this happens,
+   modify the keyframe timing/frames so there are seconds where
+   both of the 'blue' before/after elements are hidden, allowing
+   the white background image of the child element to show through.*/
