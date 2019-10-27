@@ -36,7 +36,7 @@
     </svg>
     <div id="display" class="container">
         <div id="left_container" class="container">
-            <div id="game_board" state="play" >
+            <div id="game_board" state="game_over" >
                 <div id="row_0" class="game_board_row">
                     <div id="p0_0" class="pellet"></div>
                     <div id="p0_1" class="pellet"></div>
@@ -455,7 +455,7 @@
                     <div id="p28_24" class="pellet"></div>
                     <div id="p28_25" class="pellet"></div>
                 </div>
-                <svg id="paku" preserveAspectRatio="xMidYMid" viewbox="0 0 100 100" direction="right" status="go">
+                <svg id="paku" preserveAspectRatio="xMidYMid" viewbox="0 0 100 100" direction="down" status="go">
                     <circle cx="50%" cy="50%" r="25%" ></circle>
                 </svg>
                 <div id="stinky" class="ghost" direction="right" state="normal"></div>
@@ -465,19 +465,26 @@
             </div>
             <div id="bottom_row">
                 <div id="lives" class="container">
-                    <div id="life_1"></div>
-                    <div id="life_2"></div>
-                    <div id="live_3"></div>
+                    <svg id="life_1" class="life" preserveAspectRatio="xMidYMid" viewbox="0 0 100 100" status="show">
+                        <circle cx="50%" cy="50%" r="25%" ></circle>
+                    </svg>
+                    <svg id="life_1" class="life" preserveAspectRatio="xMidYMid" viewbox="0 0 100 100" status="show">
+                        <circle cx="50%" cy="50%" r="25%" ></circle>
+                    </svg>
+                    <svg id="life_3" class="life" preserveAspectRatio="xMidYMid" viewbox="0 0 100 100" status="show">
+                        <circle cx="50%" cy="50%" r="25%" ></circle>
+                    </svg>
                 </div>
+                <div id="bottom_row_spacing"></div>
                 <div id="powerups" class="container">
-                    <div id="powerup_7"></div>
-                    <div id="powerup_6"></div>
-                    <div id="powerup_5"></div>
-                    <div id="powerup_4"></div>
-                    <div id="powerup_3"></div>
-                    <div id="powerup_2"></div>
-                    <div id="powerup_1"></div>
-                    <div id="powerup_0"></div>
+                    <div id="powerup_7" class="powerup" type="apple"></div>
+                    <div id="powerup_6" class="powerup" type="bell"></div>
+                    <div id="powerup_5" class="powerup" type="cherry"></div>
+                    <div id="powerup_4" class="powerup" type="grape"></div>
+                    <div id="powerup_3" class="powerup" type="key"></div>
+                    <div id="powerup_2" class="powerup" type="peach"></div>
+                    <div id="powerup_1" class="powerup" type="ship"></div>
+                    <div id="powerup_0" class="powerup" type="strawberry"></div>
                 </div>
             </div>
         </div>
@@ -515,7 +522,7 @@
         Ghost.addGhost(blaine);
 
         let keyListener = document.addEventListener("keypress", (e) => Util.handleKeypress(e.code));
-        Util.startInterval();
+        //Util.startInterval();
 
         paku.setX(10);
 

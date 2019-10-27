@@ -11,9 +11,9 @@ public class PakuPaku extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int requestFrameId = Integer.parseInt(request.getParameter("frameId"));
 
-        if(requestFrameId != ++lastFrameId)
-            response.sendError(HttpServletResponse.SC_CONFLICT); // Frame was missing, indicating that the game has entered an invalid state
-        else {
+        //if(requestFrameId != ++lastFrameId)
+        //    response.sendError(HttpServletResponse.SC_CONFLICT); // Frame was missing, indicating that the game has entered an invalid state
+        //else {
             System.out.println("Frame " + requestFrameId);
             if (request.getParameter("keycode") != null)
                 System.out.println("Keycode: " + request.getParameter("keycode"));
@@ -25,7 +25,7 @@ public class PakuPaku extends HttpServlet {
 
             out.print("{\"responseData\": \"Success! This is the Response From a Servlet!!!\"}");
             out.flush();
-        }
+        //}
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
