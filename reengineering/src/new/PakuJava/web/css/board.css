@@ -12,12 +12,23 @@
     padding: 4%;
 }
 
-#game_board[state="game_over"]::before {
-    content: "GAME OVER";
+#game_board::before {
     font-family: var(--font_family);
     font-size: var(--font_size);
     color: var(--paku);
-    text-align: center;
+    position: absolute;
+    align-self: center;
+    display: block;
+    top: 51%;
+}
+
+#game_board[state="game_over"]::before {
+    content: "GAME OVER";
+}
+
+#game_board[state="ready"]::before {
+    content: "READY!";
+    font-style: italic;
 }
 
 #bottom_row {
@@ -25,14 +36,21 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    padding: 0 4% 0 4%;
 }
 
 #lives {
     flex: 3;
+    padding-left: 2%;
+}
+
+#bottom_row_spacing {
+    flex: 4;
 }
 
 #powerups {
-    flex: 11;
+    flex: 8;
+    padding-right: 2%;
 }
 
 .game_board_row {
@@ -77,4 +95,65 @@
     width: 100%;
     height: 100%;
     fill: var(--pellet);
+}
+
+.powerup {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%
+}
+
+.powerup[type="apple"]{
+    background-image: url(../resources/svg/powerups/apple.svg);
+}
+
+.powerup[type="bell"]{
+    background-image: url(../resources/svg/powerups/bell.svg);
+}
+
+.powerup[type="cherry"]{
+    background-image: url(../resources/svg/powerups/cherry.svg);
+}
+
+.powerup[type="grape"]{
+    background-image: url(../resources/svg/powerups/grape.svg);
+}
+
+.powerup[type="key"]{
+    background-image: url(../resources/svg/powerups/key.svg);
+}
+
+.powerup[type="peach"]{
+    background-image: url(../resources/svg/powerups/peach.svg);
+}
+
+.powerup[type="ship"]{
+    background-image: url(../resources/svg/powerups/ship.svg);
+}
+
+.powerup[type="strawberry"]{
+    background-image: url(../resources/svg/powerups/strawberry.svg);
+}
+
+.life {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+.life > circle {
+    stroke: var(--paku);
+    stroke-width: 50%;
+    fill: none;
+    stroke-dasharray: 126,100;
+    stroke-dashoffset: -15;
+}
+
+.life[status="show"] {
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
 }

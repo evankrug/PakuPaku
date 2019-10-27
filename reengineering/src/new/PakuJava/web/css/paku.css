@@ -1,6 +1,6 @@
 #paku {
     transform: rotate(0deg);
-    --speed: 1s;
+    --speed: 0.3s;
     --x_coord: 0;
     --y_coord: 0;
 }
