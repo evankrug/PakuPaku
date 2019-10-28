@@ -15,14 +15,13 @@ public class Kinky extends Ghost
         loc = new Location(STARTING_X, STARTING_Y);
     }
     @Override
-    public void resetLocationt() {
+    public void resetLocation() {
         loc.setxLoc(STARTING_X);
         loc.setyLoc(STARTING_Y);
     }
     @ Override
-    public void move(Direction dir)   {
-        public void move(Direction dir) {
-            Location paku = Paku.getInstance().getLocation();
+        public void move() {
+            Location paku = Paku.getInstance().getLoc();
             modX = loc.getxLoc() % 3;
             modY = (loc.getyLoc() + 1) % 3;
             if (inJail()) {

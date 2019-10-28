@@ -146,7 +146,7 @@ public class GameController {
     {
         paku.resetLocation();
         for(Ghost ghost : ghostlist){
-            ghost.reset();
+            ghost.resetLocation();
         }
         ghostlist.get(0).resetMultiplier();
     }
@@ -154,7 +154,7 @@ public class GameController {
     {
         paku.resetPaku();
         for(Ghost ghost : ghostlist){
-            ghost.reset();
+            ghost.resetLocation();
         }
         ghostlist.get(0).resetMultiplier();
         gamelevel = 1;
@@ -164,7 +164,7 @@ public class GameController {
     private void nextLevel() {
         paku.resetLocation();
         for(Ghost ghost : ghostlist){
-            ghost.reset();
+            ghost.resetLocation();
         }
         ghostlist.get(0).resetMultiplier();
         gamelevel = gamelevel++;
@@ -193,9 +193,9 @@ public class GameController {
     public void uiInput(JSONObject keyBoardInput) throws JSONException {
         //frame = input.frame;
 
-        Controls inputDir = input.input;
-        Direction dr = inputDir.castToDir();
-        pakuUpdate(dr);      //the idea here is to get Paku diretional input from UI to be processed by the game logic
+        //Controls inputDir = input.input;
+        //Direction dr = inputDir.castToDir();
+        //pakuUpdate(dr);      //the idea here is to get Paku diretional input from UI to be processed by the game logic
 
         //String input = (String) keyBoardInput.get("input")[0];
 
