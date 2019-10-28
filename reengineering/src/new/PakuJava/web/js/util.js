@@ -3,7 +3,7 @@ class Util {
     static rootStyle;
     static lastKeyPressed;
     static frameNumber = 0;
-    static frameInterval= 1000; //Send a request every second
+    static frameInterval= 120; //Send a request every second
     static intervalId;
     static requestURL = "http://localhost:8080/paku_war_exploded/servlet/PakuPakuServlet";
     static aspectRatio = {
@@ -70,10 +70,10 @@ class Util {
     static pakuY = 0;
     // Parses data received from server
     static handleAjaxSuccess = (data) => {
-        console.log("Returned Data:");
-        console.log(JSON.parse(data));
+        //console.log("Returned Data:");
+        //console.log(JSON.parse(data));
 
-        Ghost.updateAllGhostStates("eaten");
+        //Ghost.updateAllGhostStates("eaten");
         paku.setY(++this.pakuY);
 
     };

@@ -15,13 +15,13 @@ public class Blaine extends Ghost
         loc = new Location(STARTING_X, STARTING_Y);
     }
     @Override
-    public void reset() {
+    public void resetLocation() {
         loc.setxLoc(STARTING_X);
         loc.setyLoc(STARTING_Y);
     }
     @Override
-    public void move() {
-        Location paku = Paku.getInstance().getLoc();
+    public void move(Direction dir) {
+        Location paku = Paku.getInstance().getLocation();
         alternate = !alternate;
         modX = loc.getxLoc() % 3;
         modY = (loc.getyLoc() + 1) % 3;

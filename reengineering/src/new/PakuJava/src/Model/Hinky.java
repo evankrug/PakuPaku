@@ -16,7 +16,7 @@ public class Hinky extends Ghost
         loc = new Location(STARTING_X, STARTING_Y);
     }
     @Override
-    public void reset() {
+    public void resetLocation() {
         loc.setxLoc(STARTING_X);
         loc.setyLoc(STARTING_Y);
     }

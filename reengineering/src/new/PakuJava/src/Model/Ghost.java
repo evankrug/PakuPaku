@@ -261,6 +261,9 @@ public abstract class Ghost extends MovingGameObject {
     public void setState(GhostState state) {
         this.state = state;
     }
+
+
+
     public GhostState getState()
     {
         return this.state;
@@ -275,7 +278,11 @@ public abstract class Ghost extends MovingGameObject {
     public void resetMultiplier()
     {
         multiplier = 1;
+
     }
-    public abstract void reset();
+
+
+    public abstract void resetLocation();
+
 
 }
