@@ -276,4 +276,6 @@ public abstract class Ghost extends MovingGameObject {
     {
         multiplier = 1;
     }
+    public abstract void reset();
+
 }

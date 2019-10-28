@@ -55,6 +55,8 @@ public class GameController {
     private ArrayList<Integer> eachrow;
     private final String SAMPLE_CSV_FILE_PATH = "src/asset/map.csv";
 
+    private int extraLives;
+
     public GameController() {
         System.out.println("Game controller has been created");
         ghostlist = new ArrayList<>();
@@ -105,9 +107,13 @@ public class GameController {
             {
 
             }
+            resetGame();
             while(gameStatus.equals(GameStatus.play))
             {
-
+                if(gameStatus.equals(GameStatus.nextLevel))
+                    nextLevel();
+                else if(gameStatus.equals(GameStatus.pakuDiedButStillHasLifeLeft))
+                    respawn();
             }
             while(gameStatus.equals(GameStatus.highScore))
             {
@@ -117,6 +123,8 @@ public class GameController {
             gameStatus = GameStatus.mainMenu;
         }
     }
+
+
 
     public int increaseGhostSpeed(int ghostSpeed) {
         return (int) Math.pow(gamelevel, ghostSpeedToThePower);
@@ -132,7 +140,33 @@ public class GameController {
 
     }
 
+    public void respawn()
+    {
+        paku.resetLocation();
+        for(Ghost ghost : ghostlist){
+            ghost.reset();
+        }
+        ghostlist.get(0).resetMultiplier();
+    }
+    public void resetGame()
+    {
+        paku.resetPaku();
+        for(Ghost ghost : ghostlist){
+            ghost.reset();
+        }
+        ghostlist.get(0).resetMultiplier();
+        gamelevel = 1;
+        extraLives = 1;
+    }
 
+    private void nextLevel() {
+        paku.resetLocation();
+        for(Ghost ghost : ghostlist){
+            ghost.reset();
+        }
+        ghostlist.get(0).resetMultiplier();
+        gamelevel = gamelevel++;
+    }
     //Called every frame(or whenever timer ticks)
     public void update(){
         Controls input = receivedUserInput();
@@ -176,6 +210,11 @@ public class GameController {
         }
         
         pakuEatsDots(paku.getLoc());
+        if(score.getScore() > (pointsPerLife * extraLives))
+        {
+            extraLives = 2;
+            paku.addLife();
+        }
     }
 
     private void pakuEatsDots(Location location)

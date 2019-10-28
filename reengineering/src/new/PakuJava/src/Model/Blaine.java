@@ -14,7 +14,11 @@ public class Blaine extends Ghost
     {
         loc = new Location(STARTING_X, STARTING_Y);
     }
-
+    @Override
+    public void reset() {
+        loc.setxLoc(STARTING_X);
+        loc.setyLoc(STARTING_Y);
+    }
     @Override
     public void move() {
         Location paku = Paku.getInstance().getLoc();
