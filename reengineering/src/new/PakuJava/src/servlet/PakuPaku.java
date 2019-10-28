@@ -1,5 +1,7 @@
 package servlet;
 
+import Controller.GameController;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.*;
@@ -35,5 +37,7 @@ public class PakuPaku extends HttpServlet {
 
     public void init() {
         System.out.println("Server is Starting...");
+        GameController control = new GameController();
+        control.startGame();
     }
 }

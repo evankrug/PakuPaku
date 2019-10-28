@@ -14,6 +14,7 @@ import java.io.IOException;
 import com.opencsv.CSVReader;
 
 import java.io.Reader;
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -55,7 +56,7 @@ public class GameController {
 
     private ArrayList<ArrayList> map;
     private ArrayList<Integer> eachrow;
-    private final String SAMPLE_CSV_FILE_PATH = "src/asset/map.csv";
+    private final String SAMPLE_CSV_FILE_PATH = "../../../PakuJava/src/asset/map.csv";
 
     private int extraLives;
 
@@ -70,8 +71,8 @@ public class GameController {
 
     private void LoadMap() {
         // For showing the dicionary. do not remove.
-        /*File file = new File(".");
-        for(String fileNames : file.list()) System.out.println(fileNames);*/
+        File file = new File(".");
+        for(String fileNames : file.list()) System.out.println(fileNames);
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
                 CSVReader csvReader = new CSVReader(reader);
@@ -102,28 +103,7 @@ public class GameController {
         paku = Paku.getInstance();
         spawnGhosts();
         score = new Score();
-        gameStatus = GameStatus.mainMenu;
-        while (!gameStatus.equals(GameStatus.closing))
-        {
-            while (gameStatus.equals(GameStatus.mainMenu))
-            {
-
-            }
-            resetGame();
-            while(gameStatus.equals(GameStatus.play))
-            {
-                if(gameStatus.equals(GameStatus.nextLevel))
-                    nextLevel();
-                else if(gameStatus.equals(GameStatus.pakuDiedButStillHasLifeLeft))
-                    respawn();
-            }
-            while(gameStatus.equals(GameStatus.highScore))
-            {
-
-            }
-            score.reset();
-            gameStatus = GameStatus.mainMenu;
-        }
+        gameStatus = GameStatus.staring;
     }
 
 
