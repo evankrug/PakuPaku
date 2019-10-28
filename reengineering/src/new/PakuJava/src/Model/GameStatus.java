@@ -8,4 +8,5 @@ public enum GameStatus {
     pakuDiedButStillHasLifeLeft,
     GameOver,
     nextLevel,
+    closing
 }

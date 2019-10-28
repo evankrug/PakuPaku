@@ -26,6 +26,7 @@ public abstract class Ghost extends MovingGameObject {
     private final int WARP_LEVEL = 14;
     private final int EATEN_Y = 10;
     private final int EATEN_X = 13;
+    protected final static int SCORE = 200;
     protected boolean jailSkip;
     protected boolean allowTurn = false;
     protected boolean alternate = false;
@@ -36,16 +37,12 @@ public abstract class Ghost extends MovingGameObject {
     protected int exitCounter;
     protected int howFar;
     protected int fleeTotal;
+    protected static int multiplier = 1;
     protected int[][] map;
     GhostState state;
 
     public Ghost() {
         random = new Random();
-    }
-
-    @Override
-    public void move(Direction dir) {
-
     }
 
     protected boolean inJail() {
@@ -139,7 +136,7 @@ public abstract class Ghost extends MovingGameObject {
             if (facingDirection.equals(Direction.up) || facingDirection.equals(Direction.down)) {
                 if (randomInt > 1) {
                     if (loc.getxLoc() == 9 || loc.getxLoc() == 18)
-                        if (loc.getyLoc() > 9 && loc.getyLoc() < 19)
+                        if (loc.getyLoc() > 9 && loc.getyLoc() < 27)
                             allowTurn = true;
                         else
                             allowTurn = false;
@@ -160,7 +157,7 @@ public abstract class Ghost extends MovingGameObject {
             } else if (facingDirection.equals(Direction.left) || facingDirection.equals(Direction.right)) {
                 if (randomInt > 1) {
                     if (loc.getxLoc() > 9 && loc.getxLoc() < 18)
-                        if (loc.getyLoc() > 10 || loc.getyLoc() < 22)
+                        if (loc.getyLoc() > 9 || loc.getyLoc() < 22)
                             allowTurn = true;
                         else
                             allowTurn = false;
@@ -206,15 +203,9 @@ public abstract class Ghost extends MovingGameObject {
                         }
                     }
         }
-    }
 
-    private void moveLeftRight() {
 
     }
-
-    private void moveUpDown() {
-    }
-
     private void turnUpDown() {
         if (changeX > 0) {
             if (map[loc.getxLoc() + 1][loc.getyLoc()] > 0) {
@@ -222,7 +213,7 @@ public abstract class Ghost extends MovingGameObject {
             } else if (map[loc.getxLoc() - 1][loc.getyLoc()] > 0) {
                 if (map[loc.getxLoc()][loc.getyLoc() + testAmount] == 0) {
                     facingDirection = Direction.left;
-                } else if (allowTurn && loc.getxLoc() == 9) {
+                } else if (allowTurn && loc.getxLoc() == 7) {
                     facingDirection = Direction.left;
                 }
             }
@@ -232,7 +223,7 @@ public abstract class Ghost extends MovingGameObject {
             } else if (map[loc.getxLoc() + 1][loc.getyLoc()] > 0) {
                 if (map[loc.getxLoc()][loc.getyLoc() + testAmount] == 0) {
                     facingDirection = Direction.right;
-                } else if (allowTurn && loc.getxLoc() == 9) {
+                } else if (allowTurn && loc.getxLoc() == 7) {
                     facingDirection = Direction.right;
                 }
             }
@@ -270,6 +261,7 @@ public abstract class Ghost extends MovingGameObject {
     public void setState(GhostState state) {
         this.state = state;
     }
+<<<<<<< HEAD
 
 
     /*
@@ -289,6 +281,22 @@ public abstract class Ghost extends MovingGameObject {
         public String getName() {
             return name;
         }git add 
+=======
+    public GhostState getState()
+    {
+        return this.state;
+    }
+    public void addScore(Score score)
+    {
+        score.addScore(SCORE * multiplier);
+        if(multiplier != 32 )
+            multiplier = multiplier * 2;
+        this.setState(GhostState.eaten);
+    }
+    public void resetMultiplier()
+    {
+        multiplier = 1;
+>>>>>>> d1ced4ef3e45ed0be547eb33c4f51507bf6b9ece
     }
     */
 }

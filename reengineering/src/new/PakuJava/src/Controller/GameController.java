@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.Ghost;
-import Model.Ghost.Ghosts;
 import Model.Paku;
 import Model.GameStatus;
 import Model.*;
@@ -9,28 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.lang.Math;
-import java.io.BufferedReader;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.rmi.RemoteException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.Arrays;
+
 import com.opencsv.CSVReader;
-import java.io.IOException;
+
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import netscape.javascript.JSObject;
 import org.json.JSONObject;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 
 /**
@@ -54,13 +40,13 @@ public class GameController {
 
     private int gamelevel;
     private GameStatus gameStatus;
-
+    private Score score;
     private final double ghostSpeed = 10;
     private final double ghostSpeedToThePower = 0.6;
     private Paku paku;
 
     private int frame;  //the number of the current frame
-    private Controls inputDirection;
+    private Direction inputDirection = Direction.stay;
 
 
     private JSONObject jo = new JSONObject();
@@ -68,8 +54,6 @@ public class GameController {
     private ArrayList<ArrayList> map;
     private ArrayList<Integer> eachrow;
     private final String SAMPLE_CSV_FILE_PATH = "src/asset/map.csv";
-
-
 
     public GameController() {
         System.out.println("Game controller has been created");
@@ -113,7 +97,25 @@ public class GameController {
     public void startGame() {
         paku = Paku.getInstance();
         spawnGhosts();
-        gameStatus = GameStatus.staring;
+        score = new Score();
+        gameStatus = GameStatus.mainMenu;
+        while (!gameStatus.equals(GameStatus.closing))
+        {
+            while (gameStatus.equals(GameStatus.mainMenu))
+            {
+
+            }
+            while(gameStatus.equals(GameStatus.play))
+            {
+
+            }
+            while(gameStatus.equals(GameStatus.highScore))
+            {
+
+            }
+            score.reset();
+            gameStatus = GameStatus.mainMenu;
+        }
     }
 
     public int increaseGhostSpeed(int ghostSpeed) {
@@ -123,9 +125,10 @@ public class GameController {
     //creates the four ghosts for gameplay
     public void spawnGhosts() {
         ghostlist.add(new Blaine()); //orange
-        ghostlist.add(new Hinky()); //pink
         ghostlist.add(new Kinky()); //blue
-        ghostlist.add(new Stinky()); //red
+        Stinky stinky = new Stinky();
+        ghostlist.add(stinky); //red
+        ghostlist.add(new Hinky(stinky)); //pink, Hinky needs Stinky's info to move. please do not modify
 
     }
 
@@ -134,8 +137,9 @@ public class GameController {
     public void update(){
         Controls input = receivedUserInput();
         if(input != Controls.escape && input != Controls.O && input != Controls.enter)
-            pakuUpdate(input.castToDir());
+            pakuUpdate((input.castToDir(input)));
     }
+
 
     //talks to frontend, return input enum
     private Controls receivedUserInput() {
@@ -153,7 +157,7 @@ public class GameController {
         //String inputDir = input.input;
     }
 
-    private void pakuUpdate(Controls input){
+    private void pakuUpdate(Direction input){
         pakuMove(input);
         if(collideWithGhost())
         {
@@ -177,50 +181,79 @@ public class GameController {
     private void pakuEatsDots(Location location)
     {
         map.get(location.getxLoc()).get(location.getyLoc());
+
     }
 
     private void collideWithGhostProtocol() {
-        if(!checkPakuAlive()){
-            gameStatus = GameStatus.GameOver;
-            return;
-        }
-    }
+        boolean death = false;
+        for(Ghost ghost : ghostlist){
 
-    private boolean checkPakuAlive()
-    {
-        return !paku.isDead();
+            if(!ghost.getState().equals(GhostState.flee) || !ghost.getState().equals(GhostState.eaten))
+            {
+                paku.substractLife();
+                death = true;
+            }
+            if(ghost.getState().equals(GhostState.flee))
+            {
+                ghost.addScore(score);
+            }
+        }
+        if(paku.isGameOver()){
+            gameStatus = GameStatus.GameOver;
+        }
+        else if(death)
+        {
+            gameStatus = GameStatus.pakuDiedButStillHasLifeLeft;
+        }
+
     }
 
     /**
      * Calls each ghost's move method, which updates the ghost's position
      */
     private void ghostsMove() {
+        boolean fleeing = false;
         for (Ghost ghost: ghostlist) {
-            //ghost.move();
+            ghost.move();
+            if(ghost.getState().equals(GhostState.flee) || ghost.getState().equals(GhostState.eaten))
+                fleeing = true;
         }
+        if(!fleeing)
+            ghostlist.get(0).resetMultiplier();
     }
-
     /**
      * checks whether paku collided with ghost
      * @return
      */
     private boolean collideWithGhost() {
         for(Ghost ghost : ghostlist){
-           // if((ghost.getPositionX() == paku.getPositionX()){
-          //      return true;
-           // }
+           if(!ghost.getState().equals(GhostState.eaten))
+           {
+                if(paku.getLoc().getxLoc() == ghost.getLoc().getxLoc())
+                    if(paku.getLoc().getyLoc() == ghost.getLoc().getyLoc())
+                        return true;
+           }
         }
-
         return false;
     }
 
     /**
      * Calls paku's move method, which updates the paku's position
      */
-    private void pakuMove(Controls input)
+    private void pakuMove(Direction input)
     {
-       paku.move(input);
+        if(!input.equals(Direction.stay))
+            if(!inputDirection.equals(input) || !inputDirection.equals(Direction.stay)) {
+                paku.setDir(input);
+                inputDirection = input;
+            }
+        paku.move();
 
+    }
+    private void spawnFruit()
+    {
+        Fruit fruit;
+        // Todo: level check and then fruit spawn based on enum.
     }
 }
     

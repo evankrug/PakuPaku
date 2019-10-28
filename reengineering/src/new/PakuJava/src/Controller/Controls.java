@@ -43,6 +43,27 @@ public enum Controls {
         }
         return null;
     }
+    public Direction castToDir(Controls control)
+    {
+        if(control.equals(Controls.arrow_up) || control.equals(Controls.W))
+        {
+            return Direction.up;
+        }
+        else if(control.equals(Controls.arrow_down) || control.equals(Controls.S))
+        {
+            return Direction.down;
+        }
+        else if(control.equals(Controls.arrow_left) || control.equals(Controls.A))
+        {
+            return Direction.left;
+        }
+        else if(control.equals(Controls.arrow_right) || control.equals(Controls.D))
+        {
+            return Direction.right;
+        }
+        else
+            return Direction.stay;
+    }
 
 
 

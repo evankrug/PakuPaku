@@ -40,7 +40,7 @@ public class Paku extends MovingGameObject{
 
     //JSONObject jo = new JSONObject();
     @Override
-    public void move(Direction dir)
+    public void move()
     {
         //jo.put(dir.toString());
 
@@ -55,8 +55,8 @@ public class Paku extends MovingGameObject{
         remainingLife++;
     }
 
-    public boolean isDead(){
-        return remainingLife <= 0;
+    public boolean isGameOver(){
+        return remainingLife > 0;
     }
 
     public int getRemainingLife()
@@ -69,8 +69,24 @@ public class Paku extends MovingGameObject{
         return loc;
     }
 
-    @Override
+
     public void setLoc(Location loc) {
         this.loc = loc;
     }
+    public void setDir(Direction dir)
+    {
+        this.facingDirection = dir;
+    }
+    public void resetPaku()
+    {
+        loc.setyLoc(STARTING_Y);
+        loc.setxLoc(STARTING_X);
+        remainingLife = STARTINGLIFES;
+    }
+    public void resetLocation()
+    {
+        loc.setyLoc(STARTING_Y);
+        loc.setxLoc(STARTING_X);
+    }
+
 }
