@@ -47,18 +47,31 @@ public class Paku extends MovingGameObject{
     }
 
 
+    /**
+     * decrements paku life number
+     */
     public void substractLife(){
         remainingLife--;
     }
 
+    /**
+     * adds a life for paku; called after certains score acheived??
+     */
     public void addLife(){
         remainingLife++;
     }
 
+    /**
+     * Checks whether Paku is out of lives; if so, the game is over and must be reset
+     * @return
+     */
     public boolean isGameOver(){
         return remainingLife > 0;
     }
 
+    /**
+     *returns the number of remaining lives for paku
+     */
     public int getRemainingLife()
     {
         return remainingLife;
@@ -77,12 +90,22 @@ public class Paku extends MovingGameObject{
     {
         this.facingDirection = dir;
     }
+
+
+    /**
+     * This resets the game; Puts Paku back in its initial position and resets its number of lives
+     */
     public void resetPaku()
     {
         loc.setyLoc(STARTING_Y);
         loc.setxLoc(STARTING_X);
         remainingLife = STARTINGLIFES;
     }
+
+
+    /**
+     * This resets a round; Paku gets put back to its original position
+     */
     public void resetLocation()
     {
         loc.setyLoc(STARTING_Y);

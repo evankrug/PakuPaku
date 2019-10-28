@@ -281,4 +281,8 @@ public abstract class Ghost extends MovingGameObject {
 
     }
 
+
+    public abstract void resetLocation();
+
+
 }
