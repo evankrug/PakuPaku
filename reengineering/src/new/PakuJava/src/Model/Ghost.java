@@ -272,6 +272,10 @@ public abstract class Ghost extends MovingGameObject {
             multiplier = multiplier * 2;
         this.setState(GhostState.eaten);
     }
+    public void resetMultiplier()
+    {
+        multiplier = 1;
+    }
     public enum Ghosts {
         stinky("stinky"), //red
         kinky("kinky"), //pink

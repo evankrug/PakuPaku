@@ -77,7 +77,13 @@ public class Paku extends MovingGameObject{
     {
         this.facingDirection = dir;
     }
-    public void reset()
+    public void resetPaku()
+    {
+        loc.setyLoc(STARTING_Y);
+        loc.setxLoc(STARTING_X);
+        remainingLife = STARTINGLIFES;
+    }
+    public void resetLocation()
     {
         loc.setyLoc(STARTING_Y);
         loc.setxLoc(STARTING_X);

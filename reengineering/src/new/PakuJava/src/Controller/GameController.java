@@ -55,10 +55,6 @@ public class GameController {
     private ArrayList<Integer> eachrow;
     private final String SAMPLE_CSV_FILE_PATH = "src/asset/map.csv";
 
-
-    private int lives;
-
-
     public GameController() {
         System.out.println("Game controller has been created");
         ghostlist = new ArrayList<>();
@@ -103,7 +99,6 @@ public class GameController {
         spawnGhosts();
         score = new Score();
         gameStatus = GameStatus.mainMenu;
-        lives = startingLives;
         while (!gameStatus.equals(GameStatus.closing))
         {
             while (gameStatus.equals(GameStatus.mainMenu))
@@ -216,11 +211,15 @@ public class GameController {
      * Calls each ghost's move method, which updates the ghost's position
      */
     private void ghostsMove() {
+        boolean fleeing = false;
         for (Ghost ghost: ghostlist) {
             ghost.move();
+            if(ghost.getState().equals(GhostState.flee) || ghost.getState().equals(GhostState.eaten))
+                fleeing = true;
         }
+        if(!fleeing)
+            ghostlist.get(0).resetMultiplier();
     }
-
     /**
      * checks whether paku collided with ghost
      * @return
@@ -249,6 +248,11 @@ public class GameController {
             }
         paku.move();
 
+    }
+    private void spawnFruit()
+    {
+        Fruit fruit;
+        // Todo: level check and then fruit spawn based on enum.
     }
 }
     
