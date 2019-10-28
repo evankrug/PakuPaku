@@ -16,7 +16,7 @@ public class Hinky extends Ghost
         loc = new Location(STARTING_X, STARTING_Y);
     }
     @ Override
-    public void move(Direction dir)   {
+    public void move()   {
         Location paku = Paku.getInstance().getLoc();
         Direction pakuDir = Paku.getInstance().getFacingDirection();
         alternate = !alternate;

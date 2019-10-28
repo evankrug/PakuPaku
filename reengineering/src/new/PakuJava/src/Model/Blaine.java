@@ -16,8 +16,8 @@ public class Blaine extends Ghost
     }
 
     @Override
-    public void move(Direction dir) {
-        Location paku = Paku.getInstance().getLocation();
+    public void move() {
+        Location paku = Paku.getInstance().getLoc();
         alternate = !alternate;
         modX = loc.getxLoc() % 3;
         modY = (loc.getyLoc() + 1) % 3;

@@ -27,7 +27,7 @@ public abstract class MovingGameObject {
 
 	}
 
-	public abstract void move(Direction dir);
+	public abstract void move();
 
 	public Direction getFacingDirection() {
 		return facingDirection;
@@ -36,7 +36,4 @@ public abstract class MovingGameObject {
 		return loc;
 	}
 
-	public void setLoc(Location loc) {
-		this.loc = loc;
-	}
 }
