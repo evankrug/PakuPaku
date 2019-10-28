@@ -9,13 +9,14 @@ public class Blaine extends Ghost
     private final int SCATTER_X = 1;
     private final int SCATTER_Y = 30;
 
-    private Location loc;
+
     public Blaine()
     {
         loc = new Location(STARTING_X, STARTING_Y);
     }
     @Override
-    public void resetLocation() {
+    public void resetLocation()
+    {
         loc.setxLoc(STARTING_X);
         loc.setyLoc(STARTING_Y);
     }

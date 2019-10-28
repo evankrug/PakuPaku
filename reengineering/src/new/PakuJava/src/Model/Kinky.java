@@ -4,11 +4,13 @@ package Model;
 public class Kinky extends Ghost
 {
 
-    private Location loc;
+    //private Location loc;  //already a location object in MovingGameObject --Evan
     private final int STARTING_X = 14;  //starting x and y coordinates of Paku; subject to change
     private final int STARTING_Y = 11;
     private final int SCATTER_X = 1;
     private final int SCATTER_Y = 1;
+
+
     public Kinky()
     {
 

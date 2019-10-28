@@ -52,7 +52,7 @@ public class GameController {
     private Direction inputDirection = Direction.stay;
 
 
-    private JSONObject jo = new JSONObject();
+    //private JSONObject jo = new JSONObject();  //rethinking this, replacing it with GameData object class --Evan
 
     private ArrayList<ArrayList> map;
     private ArrayList<Integer> eachrow;
@@ -66,7 +66,7 @@ public class GameController {
         gamelevel = 0;
         map = new ArrayList<ArrayList>();
         LoadMap();
-        startGame();
+      //  startGame();   //this method is already called from the Program class --Evan
     }
 
     private void LoadMap() {
@@ -104,6 +104,8 @@ public class GameController {
         spawnGhosts();
         score = new Score();
         gameStatus = GameStatus.staring;
+
+        GameData gameData = new GameData();   //INSTANTIATION OF GAMEDATA OBJECT; THERE SHOULD BE ONLY ONE
     }
 
 

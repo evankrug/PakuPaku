@@ -13,6 +13,9 @@ public abstract class MovingGameObject {
 	protected States state;
 	protected Direction facingDirection;
 	protected Location loc;
+
+	protected GameData gameData;  //used to centralize the locations of all MovingGameObjects
+
 	protected int modX, modY;
 
 	public MovingGameObject(int x, int y, States state, Direction dir){
@@ -21,6 +24,7 @@ public abstract class MovingGameObject {
 		position.add(y);
 		this.state = state;
 		this.facingDirection = dir;
+
 	}
 
 	public MovingGameObject(){
