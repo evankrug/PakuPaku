@@ -7,6 +7,7 @@ import Model.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.Math;
+import java.util.Arrays;
 
 import java.io.IOException;
 
@@ -16,6 +17,7 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 
@@ -171,24 +173,27 @@ public class GameController {
     public void update(){
         Controls input = receivedUserInput();
         if(input != Controls.escape && input != Controls.O && input != Controls.enter)
+        {
             pakuUpdate((input.castToDir(input)));
+        }
     }
 
 
     //talks to frontend, return input enum
     private Controls receivedUserInput() {
-        return null;
+
+        return null;//Controls.getControl(uiInput(keyBoardInput));
     }
 
 
 
     /*
-    This method receives the data from the UI i the form of a JSON object
+    This method receives the data from the UI in the form of a JSON object
      */
-    public void uiInput(JSONObject input)
-    {
+    public void uiInput(JSONObject keyBoardInput) throws JSONException {
         //frame = input.frame;
-        //String inputDir = input.input;
+        //String input = (String) keyBoardInput.get("input")[0];
+
     }
 
     private void pakuUpdate(Direction input){

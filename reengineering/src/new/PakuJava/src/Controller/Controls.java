@@ -26,7 +26,9 @@ public enum Controls {
         return name;
     }
 
-    public Controls getControl(String input) {
+    public static Controls getControl(String input) {
+        if(input == null)
+            return none;
         switch(input){
             case "arrow_up": return arrow_up;
             case "arrow_down": return arrow_down;
@@ -43,8 +45,11 @@ public enum Controls {
         }
         return null;
     }
-    public Direction castToDir(Controls control)
+
+    public static Direction castToDir(Controls control)
     {
+        if(control == null)
+            return Direction.stay;
         if(control.equals(Controls.arrow_up) || control.equals(Controls.W))
         {
             return Direction.up;
