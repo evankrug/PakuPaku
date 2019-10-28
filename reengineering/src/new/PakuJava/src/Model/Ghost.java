@@ -276,23 +276,4 @@ public abstract class Ghost extends MovingGameObject {
     {
         multiplier = 1;
     }
-    public enum Ghosts {
-        stinky("stinky"), //red
-        kinky("kinky"), //pink
-        hinky("hinky"), //blue
-        blaine("blaine");  //yellow
-
-        private String name;
-
-
-        Ghosts(String name) {
-            this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-
-    }
 }

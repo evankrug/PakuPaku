@@ -185,26 +185,27 @@ public class GameController {
     }
 
     private void collideWithGhostProtocol() {
+        boolean death = false;
         for(Ghost ghost : ghostlist){
+
             if(!ghost.getState().equals(GhostState.flee) || !ghost.getState().equals(GhostState.eaten))
             {
                 paku.substractLife();
-                gameStatus = GameStatus.pakuDiedButStillHasLifeLeft;
+                death = true;
             }
             if(ghost.getState().equals(GhostState.flee))
             {
                 ghost.addScore(score);
             }
         }
-        if(checkGameOver()){
+        if(paku.isGameOver()){
             gameStatus = GameStatus.GameOver;
-            return;
         }
-    }
+        else if(death)
+        {
+            gameStatus = GameStatus.pakuDiedButStillHasLifeLeft;
+        }
 
-    private boolean checkGameOver()
-    {
-        return paku.isGameOver();
     }
 
     /**
