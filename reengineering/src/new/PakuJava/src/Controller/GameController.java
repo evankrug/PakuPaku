@@ -195,7 +195,7 @@ public class GameController {
 
         Controls inputDir = input.input;
         Direction dr = inputDir.castToDir();
-        pakuUpdate();
+        pakuUpdate(dr);      //the idea here is to get Paku diretional input from UI to be processed by the game logic
 
         //String input = (String) keyBoardInput.get("input")[0];
 
