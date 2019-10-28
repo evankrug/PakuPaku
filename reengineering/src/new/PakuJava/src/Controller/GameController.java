@@ -188,7 +188,10 @@ public class GameController {
     public void uiInput(JSONObject input)
     {
         //frame = input.frame;
-        //String inputDir = input.input;
+        Controls inputDir = input.input;
+        Direction dr = inputDir.castToDir();
+        pakuUpdate
+
     }
 
     private void pakuUpdate(Direction input){

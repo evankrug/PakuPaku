@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a6b1980-9c11-41d8-841b-80d1e0aa3c63" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Blaine.java" beforeDir="false" afterPath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Blaine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Fruit.java" beforeDir="false" afterPath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Fruit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Hinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Hinky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Kinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Kinky.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Paku.java" beforeDir="false" afterPath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Paku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Stinky.java" beforeDir="false" afterPath="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Stinky.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,35 +20,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="13" />
+          <entry key="java" value="16" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="13" />
+          <entry key="JAVA" value="16" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="870" />
+          <entry key="java" value="944" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="870" />
+          <entry key="JAVA" value="944" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
-              <caret line="257" column="31" lean-forward="true" selection-start-line="257" selection-start-column="31" selection-end-line="257" selection-end-column="31" />
+            <state relative-caret-position="156">
+              <caret line="192" column="18" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
               <folding>
                 <element signature="e#3726#3727#0" expanded="true" />
                 <element signature="e#3796#3797#0" expanded="true" />
@@ -64,6 +56,13 @@
                 <element signature="e#5169#5170#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/Controls.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-408" />
           </provider>
         </entry>
       </file>
@@ -95,7 +94,9 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/servlet/PakuPaku.java">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-102" />
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -143,11 +144,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Hinky.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Fruit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#2281#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,6 +173,9 @@
       <find>ghostlist</find>
       <find>resetmult</find>
       <find>loca</find>
+      <find>jo</find>
+      <find>JSON</find>
+      <find>direc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,13 +185,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/GameStatus.java" />
-        <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/GameController.java" />
         <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Paku.java" />
         <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Ghost.java" />
         <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Kinky.java" />
         <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Stinky.java" />
         <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Blaine.java" />
         <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Hinky.java" />
+        <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Fruit.java" />
+        <option value="$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/GameController.java" />
       </list>
     </option>
   </component>
@@ -313,7 +329,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572234715748" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572236435634" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/reengineering/src/new/PakuJava/out/artifacts/paku_war_exploded" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -419,12 +435,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572143663786</updated>
-      <workItem from="1572143667690" duration="14017000" />
+      <workItem from="1572143667690" duration="15058000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14017000" />
+    <option name="totallyTimeSpent" value="15058000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -498,22 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="257" column="31" lean-forward="true" selection-start-line="257" selection-start-column="31" selection-end-line="257" selection-end-column="31" />
-          <folding>
-            <element signature="e#3726#3727#0" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
-            <element signature="e#5142#5143#0" expanded="true" />
-            <element signature="e#5169#5170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Direction.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Paku.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-315">
@@ -537,9 +537,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/servlet/PakuPaku.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/GhostState.java">
       <provider selected="true" editor-type-id="text-editor" />
@@ -585,6 +582,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Fruit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#2281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/servlet/PakuPaku.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Model/Direction.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/Controls.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reengineering/src/new/PakuJava/src/Controller/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="192" column="18" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
+          <folding>
+            <element signature="e#3726#3727#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#5142#5143#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
