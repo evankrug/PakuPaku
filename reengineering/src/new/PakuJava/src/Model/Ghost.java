@@ -261,27 +261,9 @@ public abstract class Ghost extends MovingGameObject {
     public void setState(GhostState state) {
         this.state = state;
     }
-<<<<<<< HEAD
 
 
-    /*
-    public enum Ghosts {
-        stinky("stinky"), //red
-        kinky("kinky"), //pink
-        hinky("hinky"), //blue
-        blaine("blaine");  //yellow
 
-        private String name;
-
-
-        Ghosts(String name) {
-            this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }git add 
-=======
     public GhostState getState()
     {
         return this.state;
@@ -296,7 +278,7 @@ public abstract class Ghost extends MovingGameObject {
     public void resetMultiplier()
     {
         multiplier = 1;
->>>>>>> d1ced4ef3e45ed0be547eb33c4f51507bf6b9ece
+
     }
-    */
+
 }
