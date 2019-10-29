@@ -54,14 +54,14 @@ public class GameController {
 
     private int frame;  //the number of the current frame
     private Direction inputDirection = Direction.stay;
-
+    private Fruit fruit = null;
 
     //private JSONObject jo = new JSONObject();  //rethinking this, replacing it with GameData object class --Evan
 
     private ArrayList<ArrayList> map;
     private ArrayList<Integer> eachrow;
     private final String SAMPLE_CSV_FILE_PATH = "../../../PakuJava/src/asset/map.csv";
-
+    // used for checking the score based extra lives.
     private int extraLives;
 
     public GameController() {
@@ -70,7 +70,7 @@ public class GameController {
         gamelevel = 0;
         map = new ArrayList<ArrayList>();
         LoadMap();
-        scoreList = new Arraylist<Integer>();
+        scoreList = new ArrayList<Integer>();
       //  startGame();   //this method is already called from the Program class --Evan
     }
 
@@ -229,6 +229,10 @@ public class GameController {
             collideWithGhostProtocol();
             if(gameStatus == GameStatus.GameOver)
                 return;
+            else
+            {
+                respawn();
+            }
         }
         
         pakuEatsDots(paku.getLoc());
@@ -237,12 +241,33 @@ public class GameController {
             extraLives = 2;
             paku.addLife();
         }
+        /*if(//no dots)
+          {
+             gameStatus = GameState.NextLevel;
+             nextLevel();
+          }*/
     }
 
     private void pakuEatsDots(Location location)
     {
-        map.get(location.getxLoc()).get(location.getyLoc());
-
+        //map.get(location.getxLoc()).get(location.getyLoc());
+        ArrayList column = map.get(location.getxLoc());
+        int tile = (int)column.get(location.getyLoc());
+        if(tile == 1)
+        {
+            //add score for pellet
+        }
+        if(tile == 3)
+        {
+            for(Ghost ghost : ghostlist)
+            {
+                if(!ghost.getState().equals(GhostState.eaten))
+                {
+                    ghost.setState(GhostState.flee);
+                }
+            }
+            //add score for super pellet.
+        }
     }
 
     private void collideWithGhostProtocol() {
@@ -261,7 +286,7 @@ public class GameController {
         }
         if(paku.isGameOver()){
             gameStatus = GameStatus.GameOver;
-            gameData.setGameStatus(gameStatus);
+           // gameData.setGameStatus(gameStatus);
         }
         else if(death)
         {
@@ -315,8 +340,14 @@ public class GameController {
     }
     private void spawnFruit()
     {
-        Fruit fruit;
-        // Todo: level check and then fruit spawn based on enum.
+        if(fruit == null)
+        {
+            fruit = new Fruit(gamelevel);
+            ArrayList column = map.get(14);
+            column.set(24, 4); //todo: Find a number for fruit on the map
+            map.set(14, column);
+
+        }
     }
 
 
