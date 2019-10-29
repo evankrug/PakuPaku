@@ -75,7 +75,7 @@ public class GameController {
     }
 
     private void LoadMap() {
-        // For showing the dicionary. do not remove.
+        // For showing the dictionary. do not remove.
         File file = new File(".");
         for(String fileNames : file.list()) System.out.println(fileNames);
         try (
@@ -211,8 +211,6 @@ public class GameController {
         //pakuUpdate(dr);      //the idea here is to get Paku diretional input from UI to be processed by the game logic
 
         //String input = (String) keyBoardInput.get("input")[0];
-
-
     }
 
     private void pakuUpdate(Direction input){

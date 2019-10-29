@@ -42,7 +42,7 @@ public class GameData
             int highScoreToSend = getHighScore();
             dataToSend.put("score", highScoreToSend);
 
-            int scoreToSend = getScore();
+            int scoreToSend = getScore().getCurrentScore();
             dataToSend.put("score", scoreToSend);
 
             dataToSend.put("sound", true);
