@@ -7,19 +7,26 @@ package Model;
 
 public class GameData
 {
-    GameStatus gameStatus;
-    Location pakuLoc; //x, y location of the paku
+
+    private static GameData data = new GameData();  //to make this class a Singleton
+    private GameStatus gameStatus;
+    private Location pakuLoc; //x, y location of the paku
 
     // The ghost locations
-    Location blaineLoc;
-    Location stinkyLoc;
-    Location hinkyLoc;
-    Location kinkyLoc;
+    private Location blaineLoc;
+    private Location stinkyLoc;
+    private Location hinkyLoc;
+    private Location kinkyLoc;
 
 
-    public GameData()
+    private GameData()
     {
 
+    }
+
+    public static GameData getInstance()
+    {
+        return data;
     }
 
     public void setGameStatus(GameStatus gameStatus) {

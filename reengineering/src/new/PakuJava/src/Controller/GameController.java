@@ -45,8 +45,9 @@ public class GameController {
     private GameStatus gameStatus;
     private Score score;
     private final double ghostSpeed = 10;
-    private final double ghostSpeedToThePower = 0.6;
-    private Paku paku;
+    private final double g
+
+    GameData gameData; //GAMEDATA OBJECT; THERE SHOULD BE ONLY ONE
 
     private int frame;  //the number of the current frame
     private Direction inputDirection = Direction.stay;
@@ -105,7 +106,7 @@ public class GameController {
         score = new Score();
         gameStatus = GameStatus.staring;
 
-        GameData gameData = new GameData();   //INSTANTIATION OF GAMEDATA OBJECT; THERE SHOULD BE ONLY ONE
+        gameData = GameData.getInstance();  //INSTANTIATION OF GAMEDATA OBJECT
     }
 
 
