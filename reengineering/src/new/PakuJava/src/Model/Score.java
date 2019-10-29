@@ -15,6 +15,10 @@ public class Score
 {
     private int currentScore;
 
+<<<<<<< HEAD
+=======
+    private List<Integer> scoreList;
+>>>>>>> e81b3dcfaa91bda449f3c69dd04cf691aaddcde3
 
     public Score()
     {
@@ -30,6 +34,7 @@ public class Score
         return currentScore;
     }
 
+    
 
     /*  currently no use for this reset method, since a new score object is created every game --Evan
     public void reset()
