@@ -6,6 +6,7 @@ public class Location
     private int xLoc, yLoc;
 
 
+
     public Location(int xLoc, int yLoc)
     {
         this.xLoc = xLoc;

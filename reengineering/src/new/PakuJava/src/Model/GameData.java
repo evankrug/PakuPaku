@@ -1,5 +1,8 @@
 package Model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 /**
  * This class holds all data to be sent to UI at any given time
@@ -18,10 +21,34 @@ public class GameData
     private Location hinkyLoc;
     private Location kinkyLoc;
 
+    private Score score;
+
+    JSONObject object;
 
     private GameData()
     {
+        object = new JSONObject();
 
+    }
+
+    public void createObject()
+    {
+        try {
+            String gameStatusToSend = GameStatus.getStatusUI(this.gameStatus);
+            object.put("game_state", gameStatusToSend);
+        }
+
+        catch (JSONException ex)
+        {
+
+        }
+
+    }
+
+    public JSONObject getData()
+    {
+
+        return object;
     }
 
     public static GameData getInstance()
@@ -81,6 +108,11 @@ public class GameData
         return kinkyLoc;
     }
 
+    public Score getScore() {
+        return score;
+    }
 
-
+    public void setScore(Score score) {
+        this.score = score;
+    }
 }

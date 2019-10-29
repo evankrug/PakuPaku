@@ -41,13 +41,14 @@ public class GameController {
     private final int superElroy = 10;
     private final int dotPoint = 10;
 
+    private Paku paku;
     private int gamelevel;
     private GameStatus gameStatus;
     private Score score;
     private final double ghostSpeed = 10;
-    private final double g
 
-    GameData gameData; //GAMEDATA OBJECT; THERE SHOULD BE ONLY ONE
+
+    private GameData gameData; //GAMEDATA OBJECT; THERE SHOULD BE ONLY ONE
 
     private int frame;  //the number of the current frame
     private Direction inputDirection = Direction.stay;
@@ -101,19 +102,24 @@ public class GameController {
 
     //Responsible for setting up the game
     public void startGame() {
+        gameData = GameData.getInstance();  //INSTANTIATION OF GAMEDATA OBJECT
         paku = Paku.getInstance();
+        paku.setGameData(gameData); //giving Paku a reference to gameData
         spawnGhosts();
         score = new Score();
         gameStatus = GameStatus.staring;
+        gameData.setGameStatus(gameStatus);  //update gameStatus
 
-        gameData = GameData.getInstance();  //INSTANTIATION OF GAMEDATA OBJECT
+
     }
 
 
 
+    /*
     public int increaseGhostSpeed(int ghostSpeed) {
         return (int) Math.pow(gamelevel, ghostSpeedToThePower);
     }
+    */
 
     //creates the four ghosts for gameplay
     public void spawnGhosts() {
@@ -247,10 +253,12 @@ public class GameController {
         }
         if(paku.isGameOver()){
             gameStatus = GameStatus.GameOver;
+            gameData.setGameStatus(gameStatus);
         }
         else if(death)
         {
             gameStatus = GameStatus.pakuDiedButStillHasLifeLeft;
+            gameData.setGameStatus(gameStatus);
         }
 
     }

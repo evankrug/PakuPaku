@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
+import java.util.List;
 
 /**
  *
@@ -12,9 +13,14 @@ package Model;
 public class Score 
 {
     private int score;
+    private int highScore;
+
+    private List<Integer> scorelist;
+
     public Score()
     {
         score = 0;
+        highScore = 0;
     }
 
     public void addScore(int score)
@@ -26,4 +32,19 @@ public class Score
         return score;
     }
     public void reset(){score = 0;}
+
+
+    /**
+     * Adds score to the list of scores (used to keep track of high scores)
+     */
+    public void archiveScore()
+    {
+        scoreList.add(score);
+    }
+
+
+    public int getHighScore()
+    {
+
+    }
 }
