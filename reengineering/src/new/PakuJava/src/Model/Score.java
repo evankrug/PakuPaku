@@ -15,7 +15,7 @@ public class Score
     private int score;
     private int highScore;
 
-    private List<Integer> scorelist;
+    private List<Integer> scoreList;
 
     public Score()
     {
@@ -31,6 +31,8 @@ public class Score
     public int getScore() {
         return score;
     }
+
+
     public void reset(){score = 0;}
 
 
