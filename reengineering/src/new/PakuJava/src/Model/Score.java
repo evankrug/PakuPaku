@@ -5,6 +5,7 @@
  */
 package Model;
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,39 +13,41 @@ import java.util.List;
  */
 public class Score 
 {
-    private int score;
-    private int highScore;
+    private int currentScore;
 
-    private List<Integer> scorelist;
 
     public Score()
     {
-        score = 0;
-        highScore = 0;
+        currentScore = 0;
     }
 
     public void addScore(int score)
     {
-        this.score += score;
+        this.currentScore += score;
     }
 
-    public int getScore() {
-        return score;
+    public int getCurrentScore() {
+        return currentScore;
     }
-    public void reset(){score = 0;}
 
 
-    /**
-     * Adds score to the list of scores (used to keep track of high scores)
-     */
-    public void archiveScore()
+    /*  currently no use for this reset method, since a new score object is created every game --Evan
+    public void reset()
     {
-        scoreList.add(score);
+        if(currentScore > 0)
+            archiveScore();
+        currentScore = 0;
     }
+    */
 
 
+
+
+    /*
     public int getHighScore()
     {
-
+        determineHighScore();
+        return highScore;
     }
+    */
 }

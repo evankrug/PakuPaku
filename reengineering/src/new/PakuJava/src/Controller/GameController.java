@@ -6,8 +6,6 @@ import Model.GameStatus;
 import Model.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.Math;
-import java.util.Arrays;
 
 import java.io.IOException;
 
@@ -48,6 +46,10 @@ public class GameController {
     private final double ghostSpeed = 10;
 
 
+    private int highScore;
+    private List<Integer> scoreList;
+
+
     private GameData gameData; //GAMEDATA OBJECT; THERE SHOULD BE ONLY ONE
 
     private int frame;  //the number of the current frame
@@ -68,6 +70,7 @@ public class GameController {
         gamelevel = 0;
         map = new ArrayList<ArrayList>();
         LoadMap();
+        scoreList = new Arraylist<Integer>();
       //  startGame();   //this method is already called from the Program class --Evan
     }
 
@@ -106,7 +109,7 @@ public class GameController {
         paku = Paku.getInstance();
         paku.setGameData(gameData); //giving Paku a reference to gameData
         spawnGhosts();
-        score = new Score();
+        score = new Score();  //new score object created each game
         gameStatus = GameStatus.staring;
         gameData.setGameStatus(gameStatus);  //update gameStatus
 
@@ -153,6 +156,10 @@ public class GameController {
         }
         ghostlist.get(0).resetMultiplier();
     }
+
+    /**
+     * Resets game
+     */
     public void resetGame()
     {
         paku.resetPaku();
@@ -162,6 +169,9 @@ public class GameController {
         ghostlist.get(0).resetMultiplier();
         gamelevel = 1;
         extraLives = 1;
+
+        archiveScore();  //add score to score list for high score tracking purposes
+        determineHighScore();  //update the current high score
     }
 
     private void nextLevel() {
@@ -224,7 +234,7 @@ public class GameController {
         }
         
         pakuEatsDots(paku.getLoc());
-        if(score.getScore() > (pointsPerLife * extraLives))
+        if(score.getCurrentScore() > (pointsPerLife * extraLives))
         {
             extraLives = 2;
             paku.addLife();
@@ -309,6 +319,28 @@ public class GameController {
     {
         Fruit fruit;
         // Todo: level check and then fruit spawn based on enum.
+    }
+
+
+    /**
+     * Adds currentScore to the list of scores (used to keep track of high scores)
+     */
+    private void archiveScore()
+    {
+        scoreList.add(currentScore);
+    }
+
+
+    /**
+     * Finds the highest currentScore in the list and updates highSore
+     */
+    private void determineHighScore()
+    {
+        for(int i = 0; i < scorelist.size(); i++)
+        {
+            if(scorelist.get(i) > highScore)
+                highScore = scorelist.get(i);
+        }
     }
 }
     
