@@ -122,6 +122,20 @@ public class GameController {
         ghostlist.add(stinky); //red
         ghostlist.add(new Hinky(stinky)); //pink, Hinky needs Stinky's info to move. please do not modify
 
+        setGhostGameDataReference();
+
+    }
+
+
+    /**
+     * Passes the gameData object to the ghosts so that they each have a reference to it so that they can update it
+     */
+    private void setGhostGameDataReference()
+    {
+        for(Ghost ghost : ghostlist)
+        {
+            ghost.setGameData(gameData);
+        }
     }
 
     public void respawn()

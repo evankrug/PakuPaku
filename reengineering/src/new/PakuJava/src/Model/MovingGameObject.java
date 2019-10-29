@@ -31,6 +31,11 @@ public abstract class MovingGameObject {
 
 	}
 
+	public void setGameData(GameData data)
+	{
+		this.gameData = data;
+	}
+
 	public abstract void move();
 
 	public Direction getFacingDirection() {
