@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Score 
 {
     private int currentScore;
+    private int highScore;
 
 
     private List<Integer> scoreList;
@@ -35,23 +36,45 @@ public class Score
 
 
 
-    /*  currently no use for this reset method, since a new score object is created every game --Evan
     public void reset()
     {
         if(currentScore > 0)
             archiveScore();
         currentScore = 0;
     }
-    */
 
 
 
+    /**
+     * Adds currentScore to the list of scores (used to keep track of high scores)
+     */
+    private void archiveScore()
+    {
+        scoreList.add(currentScore);
+    }
 
-    /*
+
+    /**
+     * Finds the highest currentScore in the list and updates highSore
+     */
+    private void determineHighScore()
+    {
+        for(int i = 0; i < scoreList.size(); i++)
+        {
+            if(scoreList.get(i) > highScore)
+                highScore = scoreList.get(i);
+        }
+    }
+
+
+
     public int getHighScore()
     {
         determineHighScore();
         return highScore;
     }
-    */
+
+    public List<Integer> getScoreList() {
+        return scoreList;
+    }
 }

@@ -3,7 +3,8 @@ package Model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -13,8 +14,43 @@ import java.util.Collection;
 public class GameData
 {
 
-    private static GameData data = new GameData();  //to make this class a Singleton
+    private List<Ghost> ghostList;
+    private final int NUM_GHOSTS = 4;
+
+    //values from PAS file lines 220-229
+    private final int pointsPerLife = 10000;
+    private final int startingLives = 3;
+    private final int startingLevel = 0;
+    private final int startingDots = 244;
+    private final int fruitCounter1 = startingDots - 70;
+    private final int fruitCounter2 = fruitCounter1 - 100;
+    private final int elroy = 20;  //I believe this refers to the number of dots paku must eat before blinky speeds up. Source: https://paku.fandom.com/wiki/Blinky
+    private final int superElroy = 10;
+    private final int dotPoint = 10;
+
+    private Paku paku;
+    private int gamelevel;
     private GameStatus gameStatus;
+
+    private final double ghostSpeed = 10;
+
+    private Score score;
+
+    private int frame;  //the number of the current frame
+    private Direction inputDirection;
+    private Fruit fruit = null;
+
+    //private JSONObject jo = new JSONObject();  //rethinking this, replacing it with GameData object class --Evan
+
+    private ArrayList<ArrayList> map;
+    private ArrayList<Integer> eachRow;
+
+    // used for checking the score based extra lives.
+    private int extraLives;
+
+
+    private static GameData data = new GameData();  //to make this class a Singleton
+
     private Location pakuLoc; //x, y location of the paku
 
     // The ghost locations
@@ -23,13 +59,24 @@ public class GameData
     private Location hinkyLoc;
     private Location kinkyLoc;
 
-    private Score score;
+
 
     JSONObject dataToSend;
 
     private GameData()
     {
+        paku = Paku.getInstance();
+        inputDirection = Direction.stay;
         dataToSend = new JSONObject();
+
+        score = new Score();
+
+
+        ghostList = new ArrayList<Ghost>();
+        gamelevel = 0;
+        map = new ArrayList<ArrayList>();
+        eachRow = new ArrayList<Integer>();
+
 
     }
 
@@ -42,13 +89,13 @@ public class GameData
             int highScoreToSend = getHighScore();
             dataToSend.put("score", highScoreToSend);
 
-            int scoreToSend = getScore().getCurrentScore();
+            int scoreToSend = getCurrentScore();
             dataToSend.put("score", scoreToSend);
 
             dataToSend.put("sound", true);
 
 
-            Collection board = ;
+            //Collection board = ;
             dataToSend.put("board", board);
 
             JSONObject locationToSend = new JSONObject();
@@ -156,11 +203,107 @@ public class GameData
         return kinkyLoc;
     }
 
+    public int getCurrentScore() {
+        return score.getCurrentScore();
+    }
+
+
+
+    public Paku getPaku() {
+        return paku;
+    }
+
+    public void setPaku(Paku paku) {
+        this.paku = paku;
+    }
+
+    public int getGamelevel() {
+        return gamelevel;
+    }
+
+    public void setGamelevel(int gamelevel) {
+        this.gamelevel = gamelevel;
+    }
+
+    public double getGhostSpeed() {
+        return ghostSpeed;
+    }
+
+    public int getHighScore() {
+        return score.getHighScore();
+    }
+
     public Score getScore() {
         return score;
     }
 
-    public void setScore(Score score) {
-        this.score = score;
+    public List<Integer> getScoreList() {
+        return score.getScoreList();
+    }
+
+
+
+    public int getFrame() {
+        return frame;
+    }
+
+    public void setFrame(int frame) {
+        this.frame = frame;
+    }
+
+    public Direction getInputDirection() {
+        return inputDirection;
+    }
+
+    public void setInputDirection(Direction inputDirection) {
+        this.inputDirection = inputDirection;
+    }
+
+    public Fruit getFruit() {
+        return fruit;
+    }
+
+    public void setFruit(Fruit fruit) {
+        this.fruit = fruit;
+    }
+
+    public ArrayList<ArrayList> getMap() {
+        return map;
+    }
+
+    public void setMap(ArrayList<ArrayList> map) {
+        this.map = map;
+    }
+
+    public ArrayList<Integer> getEachRow() {
+        return eachRow;
+    }
+
+    public void setEachRow(ArrayList<Integer> eachRow) {
+        this.eachRow = eachRow;
+    }
+
+    public String getSAMPLE_CSV_FILE_PATH() {
+        return SAMPLE_CSV_FILE_PATH;
+    }
+
+    public List<Ghost> getGhostList() {
+        return ghostList;
+    }
+
+    public void setGhostList(List<Ghost> ghostList) {
+        this.ghostList = ghostList;
+    }
+
+    public int getPointsPerLife() {
+        return pointsPerLife;
+    }
+
+    public int getExtraLives() {
+        return extraLives;
+    }
+
+    public void setExtraLives(int extraLives) {
+        this.extraLives = extraLives;
     }
 }

@@ -25,52 +25,19 @@ import org.json.JSONObject;
  * @author kruge
  */
 public class GameController {
-    private List<Ghost> ghostlist;
-    private final int NUM_GHOSTS = 4;
 
-    //values from PAS file lines 220-229
-    private final int pointsPerLife = 10000;
-    private final int startingLives = 3;
-    private final int startingLevel = 0;
-    private final int startingDots = 244;
-    private final int fruitCounter1 = startingDots - 70;
-    private final int fruitCounter2 = fruitCounter1 - 100;
-    private final int elroy = 20;  //I believe this refers to the number of dots paku must eat before blinky speeds up. Source: https://paku.fandom.com/wiki/Blinky
-    private final int superElroy = 10;
-    private final int dotPoint = 10;
-
-    private Paku paku;
-    private int gamelevel;
-    private GameStatus gameStatus;
-    private Score score;
-    private final double ghostSpeed = 10;
-
-
-    private int highScore;
-    private List<Integer> scoreList;
-
-
+    private final int POINTS_PER_DOT = 10;
     private GameData gameData; //GAMEDATA OBJECT; THERE SHOULD BE ONLY ONE
 
-    private int frame;  //the number of the current frame
-    private Direction inputDirection = Direction.stay;
-    private Fruit fruit = null;
-
-    //private JSONObject jo = new JSONObject();  //rethinking this, replacing it with GameData object class --Evan
-
-    private ArrayList<ArrayList> map;
-    private ArrayList<Integer> eachrow;
     private final String SAMPLE_CSV_FILE_PATH = "../../../PakuJava/src/asset/map.csv";
-    // used for checking the score based extra lives.
-    private int extraLives;
 
-    public GameController() {
-        System.out.println("Game controller has been created");
-        ghostlist = new ArrayList<>();
-        gamelevel = 0;
-        map = new ArrayList<ArrayList>();
+
+
+    public GameController()
+    {
+        gameData = GameData.getInstance();  //INSTANTIATION OF GAMEDATA OBJECT
         LoadMap();
-        scoreList = new ArrayList<Integer>();
+
       //  startGame();   //this method is already called from the Program class --Evan
     }
 
@@ -84,18 +51,21 @@ public class GameController {
         ) {
             // Reading Records One by One in a String array
             String[] nextRecord;
-            while ((nextRecord = csvReader.readNext()) != null) {
+            while ((nextRecord = csvReader.readNext()) != null)
+            {
 
-                eachrow = new ArrayList<Integer>();
+
+              //  eachrow = new ArrayList<Integer>();
 
                 for(String number: nextRecord){
                     System.out.println(number);
 
                     number = number.replaceAll("\\uFEFF", "");
                     int temp = Integer.parseInt(number);
-                    eachrow.add(temp);
+                    gameData.getEachRow().add(temp);
                 }
-                map.add(eachrow);
+                gameData.getMap().add(gameData.getEachRow());
+                //map.add(eachrow);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -104,19 +74,18 @@ public class GameController {
     }
 
     //Responsible for setting up the game
-    public void startGame() {
-        gameData = GameData.getInstance();  //INSTANTIATION OF GAMEDATA OBJECT
-        paku = Paku.getInstance();
+    public void startGame()
+    {
+
+        Paku paku = gameData.getPaku();
+
+
         paku.setGameData(gameData); //giving Paku a reference to gameData
         spawnGhosts();
-        score = new Score();  //new score object created each game
-        gameStatus = GameStatus.staring;
-        gameData.setGameStatus(gameStatus);  //update gameStatus
+       // score = new Score();  //new score object created each game UPDATE 10/29 no longer creating new score object each game --Evan
 
-
+        gameData.setGameStatus(GameStatus.staring);  //update gameStatus
     }
-
-
 
     /*
     public int increaseGhostSpeed(int ghostSpeed) {
@@ -125,24 +94,31 @@ public class GameController {
     */
 
     //creates the four ghosts for gameplay
-    public void spawnGhosts() {
-        ghostlist.add(new Blaine()); //orange
-        ghostlist.add(new Kinky()); //blue
+    public void spawnGhosts()
+    {
+        List<Ghost> ghostList = gameData.getGhostList();
+        ghostList.add(new Blaine()); //orange
+        ghostList.add(new Kinky()); //blue
         Stinky stinky = new Stinky();
-        ghostlist.add(stinky); //red
-        ghostlist.add(new Hinky(stinky)); //pink, Hinky needs Stinky's info to move. please do not modify
+        ghostList.add(stinky); //red
+        ghostList.add(new Hinky(stinky)); //pink, Hinky needs Stinky's info to move. please do not modify
 
-        setGhostGameDataReference();
+        gameData.setGhostList(ghostList);
+
+        setGhostGameDataReference();  //probably isn't needed --Evan 10/29
 
     }
 
 
     /**
      * Passes the gameData object to the ghosts so that they each have a reference to it so that they can update it
+     *
+     * UPDATE 10/29 probably obsolete now --Evan
      */
     private void setGhostGameDataReference()
     {
-        for(Ghost ghost : ghostlist)
+        List<Ghost> ghostList = gameData.getGhostList();
+        for(Ghost ghost : ghostList)
         {
             ghost.setGameData(gameData);
         }
@@ -150,37 +126,53 @@ public class GameController {
 
     public void respawn()
     {
+        List<Ghost> ghostList = gameData.getGhostList();
+        Paku paku = gameData.getPaku();
         paku.resetLocation();
-        for(Ghost ghost : ghostlist){
+        for(Ghost ghost : ghostList){
             ghost.resetLocation();
         }
-        ghostlist.get(0).resetMultiplier();
+        ghostList.get(0).resetMultiplier();
     }
+
+
+
+    //TODO: need method to retrieve data at game startup
 
     /**
      * Resets game
      */
     public void resetGame()
     {
-        paku.resetPaku();
-        for(Ghost ghost : ghostlist){
+        List<Ghost> ghostList = gameData.getGhostList();
+        gameData.getPaku().resetPaku();
+        for(Ghost ghost : ghostList){
             ghost.resetLocation();
         }
-        ghostlist.get(0).resetMultiplier();
-        gamelevel = 1;
-        extraLives = 1;
+        ghostList.get(0).resetMultiplier();
+        int gamelevel = 1;
+        gameData.setGamelevel(gamelevel);
 
-        archiveScore();  //add score to score list for high score tracking purposes
-        determineHighScore();  //update the current high score
+        int extraLives = 1;
+        gameData.setExtraLives(extraLives);
+
+        //tells the Score class to store the current score int the score list for high score tracking purposes, then resets current score to 0
+        gameData.getScore().reset();
+
     }
 
-    private void nextLevel() {
+    private void nextLevel()
+    {
+        List<Ghost> ghostList = gameData.getGhostList();
+        Paku paku = gameData.getPaku();
         paku.resetLocation();
-        for(Ghost ghost : ghostlist){
+        for(Ghost ghost : ghostList){
             ghost.resetLocation();
         }
-        ghostlist.get(0).resetMultiplier();
-        gamelevel = gamelevel++;
+        ghostList.get(0).resetMultiplier();
+        int gameLevel = gameData.getGamelevel();
+        gameLevel = gameLevel++;
+        gameData.setGamelevel(gameLevel);
     }
     //Called every frame(or whenever timer ticks)
     public void update(){
@@ -213,12 +205,16 @@ public class GameController {
         //String input = (String) keyBoardInput.get("input")[0];
     }
 
-    private void pakuUpdate(Direction input){
+    private void pakuUpdate(Direction input)
+    {
+        Paku paku = gameData.getPaku();
+        int pointsPerLife = gameData.getPointsPerLife();
+
         pakuMove(input);
         if(collideWithGhost())
         {
             collideWithGhostProtocol();
-            if(gameStatus == GameStatus.GameOver)
+            if(gameData.getGameStatus() == GameStatus.GameOver)
                 return;
         }
         else{
@@ -227,7 +223,7 @@ public class GameController {
         if(collideWithGhost())
         {
             collideWithGhostProtocol();
-            if(gameStatus == GameStatus.GameOver)
+            if(gameData.getGameStatus() == GameStatus.GameOver)
                 return;
             else
             {
@@ -236,9 +232,9 @@ public class GameController {
         }
         
         pakuEatsDots(paku.getLoc());
-        if(score.getCurrentScore() > (pointsPerLife * extraLives))
+        if(gameData.getCurrentScore() > (pointsPerLife * gameData.getExtraLives()))
         {
-            extraLives = 2;
+            gameData.setExtraLives(2);
             paku.addLife();
         }
         /*if(//no dots)
@@ -251,15 +247,17 @@ public class GameController {
     private void pakuEatsDots(Location location)
     {
         //map.get(location.getxLoc()).get(location.getyLoc());
+        ArrayList<ArrayList> map = gameData.getMap();
         ArrayList column = map.get(location.getxLoc());
+        List<Ghost> ghostList = gameData.getGhostList();
         int tile = (int)column.get(location.getyLoc());
         if(tile == 1)
         {
-            //add score for pellet
+            gameData.getScore().addScore(POINTS_PER_DOT); //add score for eating dot to current score
         }
         if(tile == 3)
         {
-            for(Ghost ghost : ghostlist)
+            for(Ghost ghost : ghostList)
             {
                 if(!ghost.getState().equals(GhostState.eaten))
                 {
@@ -272,7 +270,11 @@ public class GameController {
 
     private void collideWithGhostProtocol() {
         boolean death = false;
-        for(Ghost ghost : ghostlist){
+        List<Ghost> ghostList = gameData.getGhostList();
+        Paku paku = gameData.getPaku();
+        Score score = gameData.getScore();
+        GameStatus gameStatus = gameData.getGameStatus();
+        for(Ghost ghost : ghostList){
 
             if(!ghost.getState().equals(GhostState.flee) || !ghost.getState().equals(GhostState.eaten))
             {
@@ -286,7 +288,7 @@ public class GameController {
         }
         if(paku.isGameOver()){
             gameStatus = GameStatus.GameOver;
-           // gameData.setGameStatus(gameStatus);
+            gameData.setGameStatus(gameStatus);
         }
         else if(death)
         {
@@ -299,22 +301,28 @@ public class GameController {
     /**
      * Calls each ghost's move method, which updates the ghost's position
      */
-    private void ghostsMove() {
+    private void ghostsMove()
+    {
+        List<Ghost> ghostList = gameData.getGhostList();
         boolean fleeing = false;
-        for (Ghost ghost: ghostlist) {
+        for (Ghost ghost: ghostList) {
             ghost.move();
             if(ghost.getState().equals(GhostState.flee) || ghost.getState().equals(GhostState.eaten))
                 fleeing = true;
         }
         if(!fleeing)
-            ghostlist.get(0).resetMultiplier();
+            ghostList.get(0).resetMultiplier();
     }
     /**
      * checks whether paku collided with ghost
      * @return
      */
-    private boolean collideWithGhost() {
-        for(Ghost ghost : ghostlist){
+    private boolean collideWithGhost()
+    {
+        Paku paku = gameData.getPaku();
+        List<Ghost> ghostList = gameData.getGhostList();
+
+        for(Ghost ghost : ghostList){
            if(!ghost.getState().equals(GhostState.eaten))
            {
                 if(paku.getLoc().getxLoc() == ghost.getLoc().getxLoc())
@@ -330,16 +338,23 @@ public class GameController {
      */
     private void pakuMove(Direction input)
     {
+        Direction inputDirection = gameData.getInputDirection();
+        Paku paku = gameData.getPaku();
         if(!input.equals(Direction.stay))
             if(!inputDirection.equals(input) || !inputDirection.equals(Direction.stay)) {
                 paku.setDir(input);
-                inputDirection = input;
+                gameData.setInputDirection(input);
+                //inputDirection = input;
             }
         paku.move();
 
     }
     private void spawnFruit()
     {
+        Fruit fruit = gameData.getFruit();
+        int gamelevel = gameData.getGamelevel();
+        ArrayList<ArrayList> map = gameData.getMap();
+
         if(fruit == null)
         {
             fruit = new Fruit(gamelevel);
@@ -347,30 +362,13 @@ public class GameController {
             column.set(24, 4); //todo: Find a number for fruit on the map
             map.set(14, column);
 
+            gameData.setMap(map); //to update the map in gameData ?? --Evan
+
         }
     }
 
 
-    /**
-     * Adds currentScore to the list of scores (used to keep track of high scores)
-     */
-    private void archiveScore()
-    {
-        scoreList.add(currentScore);
-    }
 
-
-    /**
-     * Finds the highest currentScore in the list and updates highSore
-     */
-    private void determineHighScore()
-    {
-        for(int i = 0; i < scorelist.size(); i++)
-        {
-            if(scorelist.get(i) > highScore)
-                highScore = scorelist.get(i);
-        }
-    }
 }
     
 
